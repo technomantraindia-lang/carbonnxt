@@ -1,0 +1,43 @@
+:root {
+  --color-bg-primary: #03182B;
+  --color-bg-secondary: #072C45;
+  --color-bg-deep: #010E1A;
+  --color-bg-black: #010B13;
+
+  --color-teal-dark: #064F5A;
+  --color-teal: #0E8390;
+  --color-cyan: #3AD0DE;
+
+  --color-green: #39E878;
+  --color-mint: #70F5A5;
+  --color-green-soft: rgba(57, 232, 120, 0.15);
+
+  --color-white: #F4FAF8;
+  --color-text-primary: #EDF8F5;
+  --color-text-muted: #B8CDD1;
+  --color-text-dark: #03182B;
+
+  --color-border: rgba(112, 245, 165, 0.18);
+  --color-border-light: rgba(255, 255, 255, 0.1);
+
+  --color-glass: rgba(6, 35, 51, 0.58);
+  --color-glass-strong: rgba(3, 24, 43, 0.86);
+
+  --color-surface: rgba(4, 28, 46, 0.92);
+  --color-surface-raised: linear-gradient(165deg, rgba(10, 48, 72, 0.95), rgba(3, 22, 38, 0.98));
+  --color-surface-inset: linear-gradient(165deg, rgba(3, 22, 38, 0.98), rgba(1, 12, 22, 0.99));
+
+  --shadow-green: 0 0 40px rgba(57, 232, 120, 0.15);
+  --shadow-dark: 0 30px 90px rgba(0, 0, 0, 0.35);
+
+  --container-width: 1280px;
+  --header-height: 84px;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 0.45s;
+
+  --font-sans: 'Manrope', system-ui, sans-serif;
+  --font-display: 'Instrument Serif', Georgia, serif;
+}
