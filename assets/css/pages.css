@@ -316,19 +316,6 @@
   overflow: hidden;
 }
 
-/* Subtle background glow effect */
-.provide-section::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(58, 208, 222, 0.08) 0%, rgba(57, 232, 120, 0.03) 70%, transparent 100%);
-  z-index: 0;
-  pointer-events: none;
-}
 
 .provide-container {
   max-width: var(--container-width);
