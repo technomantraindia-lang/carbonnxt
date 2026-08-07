@@ -22,10 +22,6 @@
   .hero--video .hero__video {
     object-position: center 45%;
   }
-  .ecosystem { grid-template-columns: 1fr; }
-  .ecosystem__map { min-height: 400px; }
-  .ecosystem__detail { min-height: auto; }
-  .ecosystem__node { max-width: 9.5rem; font-size: 0.74rem; padding: 0.6rem 0.8rem; }
   .journey-steps { grid-template-columns: repeat(2, 1fr); }
   .audience-grid { grid-template-columns: 1fr 1fr; }
   .integrity-layout,
