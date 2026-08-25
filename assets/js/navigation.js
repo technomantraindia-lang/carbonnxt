@@ -1,18 +1,24 @@
 function initNavigation() {
-  const header = Utils.$('#site-header')
+  const header = document.getElementById('site-header')
   if (!header) return
 
-  const page = Utils.getPageName()
-  const isHome = page === 'index.html'
+  const rawPath = window.location.pathname.split('/').pop() || 'index.html'
+  let currentPage = rawPath.split('?')[0].split('#')[0].toLowerCase()
+  if (currentPage.endsWith('.html')) currentPage = currentPage.slice(0, -5)
+  if (!currentPage || currentPage === '' || currentPage === 'index') currentPage = 'index'
 
+  const isHome = currentPage === 'index'
   header.classList.add(isHome ? 'is-transparent' : 'is-solid')
 
   const allNavLinks = document.querySelectorAll('.site-nav__link, .nav-dropdown__menu a, .mobile-nav a, .mobile-nav__link')
   allNavLinks.forEach((link) => {
     const href = link.getAttribute('href')
     if (!href) return
-    const linkPage = href.split('/').pop().split('?')[0].split('#')[0]
-    if (linkPage === page || (page === 'index.html' && (linkPage === 'index.html' || linkPage === ''))) {
+    let linkPage = href.split('/').pop().split('?')[0].split('#')[0].toLowerCase()
+    if (linkPage.endsWith('.html')) linkPage = linkPage.slice(0, -5)
+    if (!linkPage || linkPage === '') linkPage = 'index'
+
+    if (linkPage === currentPage) {
       link.classList.add('is-active', 'active')
       link.setAttribute('aria-current', 'page')
     } else {

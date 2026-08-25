@@ -19,8 +19,10 @@ const Utils = {
   },
 
   getPageName() {
-    const path = window.location.pathname.split('/').pop() || 'index.html'
-    return path === '' ? 'index.html' : path
+    const raw = (window.location.pathname.split('/').pop() || 'index.html').split('?')[0].split('#')[0].toLowerCase()
+    let clean = raw
+    if (clean.endsWith('.html')) clean = clean.slice(0, -5)
+    return (!clean || clean === '' || clean === 'index') ? 'index.html' : clean + '.html'
   },
 
   getParam(name) {
