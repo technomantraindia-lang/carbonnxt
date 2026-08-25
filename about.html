@@ -435,76 +435,163 @@
       .about-hero__badge--bottom { left: 2%; }
     }
 
-    /* ---------- 2. WHO WE ARE ---------- */
-    .about-who__grid {
-      display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: clamp(40px, 6vw, 80px);
-      align-items: center;
+    /* ---------- 2. WHO WE ARE (Redesigned) ---------- */
+    .about-who {
+      padding-block: clamp(80px, 12vw, 120px);
+      background-color: #ffffff;
+      position: relative;
     }
-    .about-who__media { min-height: 440px; position: relative; }
-    .about-who__media img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 20px;
+
+    .about-who__intro-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto clamp(50px, 8vw, 80px);
     }
-    .about-who__chip {
-      position: absolute;
-      z-index: 2;
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--about-line);
-      background: rgba(5, 16, 29, 0.78);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      font-size: 0.8rem;
-      letter-spacing: 0.04em;
-      color: #d7e6df;
-      white-space: nowrap;
+
+    .about-who__intro-header .section-heading {
+      font-size: clamp(2.2rem, 4vw, 3.2rem) !important;
+      line-height: 1.15;
+      color: #0f211a !important;
+      font-weight: 800;
+      margin-bottom: 1.25rem;
     }
-    .about-who__chip strong { color: var(--about-accent); font-weight: 600; }
-    .about-who__chip--1 { top: 9%; left: 5%; }
-    .about-who__chip--2 { top: 46%; right: -3%; }
-    .about-who__chip--3 { bottom: 9%; left: 10%; }
-    .about-who__content .section-intro { margin-bottom: 16px; }
+
+    .about-who__intro-header p {
+      font-size: clamp(1.05rem, 1.4vw, 1.15rem);
+      line-height: 1.7;
+      color: #4e6057;
+      max-width: 65ch;
+      margin-inline: auto;
+    }
 
     .about-audience {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(18px, 2.6vw, 28px);
-      margin-top: clamp(40px, 6vw, 64px);
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: clamp(24px, 4vw, 40px);
     }
+
     .audience-card {
       position: relative;
-      min-height: 300px;
-      border-radius: 20px;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: clamp(30px, 4vw, 45px);
+      border: 1px solid rgba(2, 154, 98, 0.12);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
       overflow: hidden;
-      border: 1px solid var(--about-line);
       display: flex;
-      align-items: flex-end;
-      transition: border-color 0.35s ease, box-shadow 0.35s ease;
+      flex-direction: column;
+      z-index: 1;
     }
+
     .audience-card:hover {
-      border-color: rgba(61, 220, 151, 0.4);
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+      transform: translateY(-8px);
+      box-shadow: 0 25px 60px rgba(2, 154, 98, 0.12);
+      border-color: rgba(2, 154, 98, 0.3);
     }
-    .audience-card > img {
+
+    /* Soft glowing gradient blob in background on hover */
+    .audience-card::before {
+      content: "";
       position: absolute;
-      inset: 0;
+      top: 0;
+      right: 0;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(2, 154, 98, 0.08) 0%, transparent 70%);
+      transform: translate(30%, -30%);
+      z-index: -1;
+      border-radius: 50%;
+      transition: all 0.5s ease;
+    }
+    
+    .audience-card:hover::before {
+      transform: translate(10%, -10%) scale(1.5);
+      background: radial-gradient(circle, rgba(2, 154, 98, 0.12) 0%, transparent 70%);
+    }
+
+    .audience-card__icon-wrapper {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: rgba(2, 154, 98, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.75rem;
+      color: #029a62;
+    }
+
+    .audience-card__tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #029a62;
+      margin-bottom: 0.75rem;
+    }
+
+    .audience-card h3 {
+      font-size: clamp(1.4rem, 2vw, 1.75rem) !important;
+      font-weight: 700 !important;
+      color: #0f211a !important;
+      line-height: 1.2 !important;
+      margin-bottom: 1.25rem !important;
+    }
+
+    .audience-card p {
+      font-size: 1.02rem;
+      line-height: 1.65;
+      color: #4e6057;
+      margin-bottom: 1.75rem;
+      flex-grow: 1;
+    }
+
+    .audience-card__list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem 0;
+    }
+
+    .audience-card__list li {
+      position: relative;
+      padding-left: 1.75rem;
+      font-size: 0.95rem;
+      color: #334e42;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+
+    .audience-card__list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23029a62' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .audience-card__img-box {
+      width: 100%;
+      height: 200px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: auto;
+    }
+
+    .audience-card__img-box img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      transition: transform 0.6s ease;
     }
-    .audience-card:hover > img { transform: scale(1.05); }
-    .audience-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(4, 16, 29, 0.15) 0%, rgba(4, 16, 29, 0.88) 100%);
+
+    .audience-card:hover .audience-card__img-box img {
+      transform: scale(1.05);
     }
     .audience-card__body {
       position: relative;
@@ -1027,6 +1114,23 @@
             </a>
           </div>
 
+          <!-- Live Impact Metrics -->
+          <div class="about-hero__stats">
+            <div class="about-hero__stat-item">
+              <strong class="about-hero__stat-num">₹100M+</strong>
+              <span class="about-hero__stat-label">Advisory &amp; Asset Desk</span>
+            </div>
+            <div class="about-hero__stat-divider"></div>
+            <div class="about-hero__stat-item">
+              <strong class="about-hero__stat-num">100%</strong>
+              <span class="about-hero__stat-label">Verra &amp; GS Compliance</span>
+            </div>
+            <div class="about-hero__stat-divider"></div>
+            <div class="about-hero__stat-item">
+              <strong class="about-hero__stat-num">Pan-India</strong>
+              <span class="about-hero__stat-label">Project &amp; Buyer Network</span>
+            </div>
+          </div>
         </div>
 
         <!-- Right Column: Visual Frame with Floating Badges -->
@@ -1039,49 +1143,57 @@
       </div>
     </section>
 
-    <!-- ============ 2. WHO WE ARE ============ -->
+    <!-- ============ 2. WHO WE ARE (Redesigned) ============ -->
     <section class="section about-who" id="who-we-are" aria-labelledby="who-we-are-title">
       <div class="container">
-        <div class="about-who__grid">
-          <div class="about-who__content" data-reveal>
-            <span class="section-label">Who We Are</span>
-            <h2 class="section-heading display-serif" id="who-we-are-title">Expert Guidance for Both Sides of the Market</h2>
-            <p class="section-intro">
-              Carbon markets bring together climate projects, corporate buyers, brokers, investors,
-              standards, registries and verification processes. For many participants, navigating
-              that ecosystem can be complex.
-            </p>
-            <p class="text-muted">
-              CarbonNxt is designed to make that process easier. We support organizations that want
-              to source and manage credible carbon credits, while helping project developers prepare
-              projects for certification, reach suitable buyers and move transactions toward settlement.
-            </p>
+        <!-- Centered Intro Header -->
+        <div class="about-who__intro-header" data-reveal>
+          <div class="eyebrow-pill" style="margin-bottom: 1.25rem;">
+            <span class="eyebrow-pill__dot" aria-hidden="true"></span>
+            <span>WHO WE ARE</span>
           </div>
-          <div class="about-who__media img-frame img-zoom" data-reveal>
-            <img src="assets/images/ui/section-forest.jpg" alt="Pristine forest landscape representing carbon market ecology" loading="lazy">
-            <span class="about-who__chip about-who__chip--1"><strong>Buyers</strong> · Sourcing to retirement</span>
-            <span class="about-who__chip about-who__chip--2"><strong>Developers</strong> · Readiness to settlement</span>
-            <span class="about-who__chip about-who__chip--3"><strong>Brokers</strong> · Matched opportunities</span>
-          </div>
+          <h2 class="section-heading display-serif" id="who-we-are-title">Expert Guidance for Both Sides of the Market</h2>
+          <p>
+            Carbon markets bring together climate projects, corporate buyers, brokers, investors,
+            standards, and registries. CarbonNxt is designed to make navigating that ecosystem seamless, credible, and audit-ready.
+          </p>
         </div>
 
+        <!-- Interactive Audience Cards -->
         <div class="about-audience">
+          <!-- Buyers Card -->
           <article class="audience-card" data-reveal>
-            <img src="assets/images/ui/audience-buyers.jpg" alt="Corporate buyer evaluating verified carbon credits" loading="lazy">
-            <div class="audience-card__body">
-              <span class="audience-card__tag">For Buyers</span>
-              <h3>Source and Manage Credible Credits</h3>
-              <p>Support with sourcing, project evaluation, transaction execution, retirement where
-              applicable, and audit-ready documentation.</p>
+            <div class="audience-card__icon-wrapper">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <span class="audience-card__tag">For Buyers & Investors</span>
+            <h3>Source and Manage Credible Credits</h3>
+            <p>We support organizations that want to confidently source, evaluate, and manage high-quality carbon portfolios.</p>
+            <ul class="audience-card__list">
+              <li>Direct project sourcing & evaluation</li>
+              <li>Transaction execution & retirement</li>
+              <li>Audit-ready compliance documentation</li>
+            </ul>
+            <div class="audience-card__img-box">
+              <img src="assets/images/ui/audience-buyers.jpg" alt="Corporate buyer evaluating verified carbon credits" loading="lazy">
             </div>
           </article>
-          <article class="audience-card" data-reveal>
-            <img src="assets/images/ui/audience-developers.jpg" alt="Project developer preparing a climate project for certification" loading="lazy">
-            <div class="audience-card__body">
-              <span class="audience-card__tag">For Project Developers & Sellers</span>
-              <h3>From Project Readiness to Settlement</h3>
-              <p>Guidance on certification readiness, documentation, buyer matching, pricing,
-              contracting and settlement.</p>
+
+          <!-- Developers Card -->
+          <article class="audience-card" data-reveal="delay-1">
+            <div class="audience-card__icon-wrapper">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <span class="audience-card__tag">For Project Developers</span>
+            <h3>From Readiness to Settlement</h3>
+            <p>We help project developers prepare for certification, reach suitable buyers, and move transactions toward settlement.</p>
+            <ul class="audience-card__list">
+              <li>Certification & methodology readiness</li>
+              <li>Direct buyer matching & pricing strategy</li>
+              <li>Secure contracting & capital settlement</li>
+            </ul>
+            <div class="audience-card__img-box">
+              <img src="assets/images/ui/audience-developers.jpg" alt="Project developer preparing a climate project for certification" loading="lazy">
             </div>
           </article>
         </div>
