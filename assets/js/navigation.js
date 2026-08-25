@@ -7,13 +7,17 @@ function initNavigation() {
 
   header.classList.add(isHome ? 'is-transparent' : 'is-solid')
 
-  Utils.$$('.site-nav__link, .nav-dropdown__menu a, .mobile-nav a').forEach((link) => {
+  const allNavLinks = document.querySelectorAll('.site-nav__link, .nav-dropdown__menu a, .mobile-nav a, .mobile-nav__link')
+  allNavLinks.forEach((link) => {
     const href = link.getAttribute('href')
     if (!href) return
-    const linkPage = href.split('/').pop().split('?')[0]
-    if (linkPage === page || (page === 'index.html' && href === 'index.html')) {
-      link.classList.add('is-active')
+    const linkPage = href.split('/').pop().split('?')[0].split('#')[0]
+    if (linkPage === page || (page === 'index.html' && (linkPage === 'index.html' || linkPage === ''))) {
+      link.classList.add('is-active', 'active')
       link.setAttribute('aria-current', 'page')
+    } else {
+      link.classList.remove('is-active', 'active')
+      link.removeAttribute('aria-current')
     }
   })
 

@@ -179,12 +179,36 @@
 
 /* Navigation links color: always white/light-gray over dark glass header states */
 .site-header .site-nav__link {
-  color: rgba(255, 255, 255, 0.85) !important;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4) !important;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .site-header .site-nav__link:hover {
   color: #39e878 !important; /* Brighter neon green on hover over dark header */
+}
+
+/* Active navigation link highlight state */
+.site-header .site-nav__link.is-active,
+.site-header .site-nav__link.active,
+.site-nav__link.is-active,
+.site-nav__link.active {
+  color: #39e49a !important;
+  background: rgba(57, 228, 154, 0.16) !important;
+  border: 1px solid rgba(57, 228, 154, 0.35) !important;
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  text-shadow: 0 0 10px rgba(57, 228, 154, 0.4) !important;
+  box-shadow: 0 0 12px rgba(57, 228, 154, 0.2) !important;
+}
+
+.mobile-nav__link.is-active,
+.mobile-nav__link.active,
+.mobile-nav a.is-active,
+.mobile-nav a.active {
+  color: #39e49a !important;
+  background: rgba(57, 228, 154, 0.16) !important;
+  border-left: 4px solid #39e49a !important;
+  font-weight: 700 !important;
 }
 
 /* Keep the original white/green logo completely restored and unfiltered in all header states */

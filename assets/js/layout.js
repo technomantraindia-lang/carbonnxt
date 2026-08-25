@@ -26,6 +26,7 @@
       if (footerPh) footerPh.outerHTML = f
       const mn = document.getElementById('mobile-nav')
       if (mn) mn.removeAttribute('hidden')
+      if (typeof initNavigation === 'function') initNavigation()
     } catch {
       if (headerPh) {
         // Full offline fallback (e.g. file://) — mirrors assets/partials/header.html
@@ -70,6 +71,7 @@
               '<a href="contact.html" class="btn btn-primary">Inquiry</a>' +
             '</div>' +
           '</nav>'
+        if (typeof initNavigation === 'function') initNavigation()
       }
     }
   }
