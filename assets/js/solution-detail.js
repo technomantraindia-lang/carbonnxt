@@ -1,245 +1,61 @@
 /**
- * Dynamic Solution Detail Page Renderer for CarbonNxt
- * Content source: CarbonNxt_Solution_Inner_Pages.json
+ * Solution Detail Page — CarbonNxt
+ * Reads: CarbonNxt_Solution_Inner_Pages.json
  */
-  const FALLBACK_SOLUTIONS_DATA = {
-    "solutions": [
-      {
-        "id": "digital-mrv-monitoring",
-        "slug": "digital-mrv-monitoring",
-        "name": "Digital MRV & Monitoring",
-        "hero": {
-          "eyebrow": "DIGITAL MEASUREMENT, REPORTING & VERIFICATION",
-          "title": "Digital MRV & Monitoring",
-          "tagline": "Turn project activity into structured, traceable and review-ready data.",
-          "description": "CarbonNxt helps climate projects organize measurement, reporting and verification workflows through structured digital data capture, evidence management and ongoing monitoring support.",
-          "primary_cta": "Talk to a Carbon Expert",
-          "secondary_cta": "Submit Your Project"
-        },
-        "overview": {
-          "title": "Better Project Visibility Through Structured Digital MRV",
-          "paragraphs": [
-            "Carbon projects can involve large amounts of field, operational and documentary data. Digital MRV helps bring that information into a more organized workflow so project activity can be monitored and reviewed more consistently.",
-            "Depending on the methodology and project type, CarbonNxt can help structure data capture, evidence collection, monitoring records and reporting workflows.",
-            "The objective is not to replace the applicable standard or verifier, but to make project data easier to manage, trace and prepare for review."
-          ]
-        },
-        "key_capabilities": [
-          "Project data capture and organization",
-          "Field evidence management",
-          "Monitoring workflow design",
-          "Photo, video and document evidence structure",
-          "Operational record tracking",
-          "Location and timestamp data where relevant",
-          "Review-ready reporting workflows",
-          "Integration with field devices where applicable"
-        ],
-        "how_it_works": [
-          { "step": 1, "title": "Define Data Requirements", "description": "Identify the project, methodology and monitoring information that needs to be captured." },
-          { "step": 2, "title": "Structure Collection", "description": "Create consistent workflows for field, operational and documentary evidence." },
-          { "step": 3, "title": "Monitor Activity", "description": "Track project data over time instead of relying only on isolated reporting periods." },
-          { "step": 4, "title": "Prepare for Review", "description": "Organize evidence and reports so project teams can more easily support verification and audit processes." }
-        ],
-        "who_it_is_for": ["Project Developers", "Biochar Projects", "Clean Cooking Programs", "Methane Reduction Projects", "Renewable Energy Projects", "Carbon Removal Projects", "Corporate Carbon Programs"],
-        "use_cases": ["Biochar batch and production monitoring", "Cookstove distribution and usage records", "Livestock or methane intervention tracking", "Renewable-energy generation records", "Field-level project evidence", "Project documentation and monitoring history"],
-        "benefits": ["More consistent project-data capture", "Improved traceability", "Better evidence organization", "Reduced dependence on scattered manual records", "Clearer preparation for verification", "Stronger ongoing project visibility"],
-        "carbonnxt_support": ["MRV workflow planning", "Data-field definition", "Evidence-collection structure", "Project monitoring setup", "Documentation guidance", "Certification-readiness support", "Buyer-facing project-data preparation"],
-        "faq": [
-          { "question": "Does Digital MRV replace third-party verification?", "answer": "No. Digital MRV helps structure project data and evidence. Formal validation or verification requirements remain governed by the applicable standard and methodology." },
-          { "question": "Can Digital MRV work with field devices?", "answer": "Where suitable, field-data and IoT tools can be integrated into the monitoring workflow." },
-          { "question": "Is Digital MRV useful only after certification?", "answer": "No. It can also help developers prepare project records and monitoring systems before certification." }
-        ],
-        "cta": { "title": "Need a Better Way to Manage Project MRV?", "description": "Talk to CarbonNxt about structuring project monitoring, field evidence and verification-ready data workflows.", "primary_button": "Talk to a Carbon Expert", "secondary_button": "Submit Your Project" }
-      },
-      {
-        "id": "carbon-asset-digitisation",
-        "slug": "carbon-asset-digitisation",
-        "name": "Carbon Asset Digitisation",
-        "hero": {
-          "eyebrow": "DIGITAL CARBON ASSET MANAGEMENT",
-          "title": "Carbon Asset Digitisation",
-          "tagline": "Organize carbon projects, credits and transaction records in a clearer digital workflow.",
-          "description": "CarbonNxt helps structure carbon-asset information so project, credit, ownership and transaction records can be easier to manage, trace and review across the carbon-credit lifecycle.",
-          "primary_cta": "Talk to a Carbon Expert",
-          "secondary_cta": "Explore CarbonNxt"
-        },
-        "overview": {
-          "title": "From Fragmented Records to a More Connected Carbon-Asset View",
-          "paragraphs": [
-            "Carbon-market participants often work across project documents, registry references, transaction records, retirement information and portfolio files.",
-            "Carbon Asset Digitisation is intended to bring those records into a more structured digital format, helping users maintain better visibility across project and transaction activity.",
-            "CarbonNxt focuses on traceability and organization rather than presenting unsupported token or blockchain claims."
-          ]
-        },
-        "key_capabilities": ["Project record organization", "Credit and asset information management", "Transaction record tracking", "Ownership and retirement-status visibility", "Registry-reference organization", "Portfolio documentation structure", "Audit-trail support", "Buyer and seller record visibility"],
-        "how_it_works": [
-          { "step": 1, "title": "Collect Records", "description": "Bring together relevant project, credit, transaction and supporting information." },
-          { "step": 2, "title": "Structure the Asset", "description": "Organize records into a consistent digital format." },
-          { "step": 3, "title": "Track Changes", "description": "Maintain visibility across ownership, transaction and retirement events where applicable." },
-          { "step": 4, "title": "Use the Records", "description": "Support portfolio review, reporting, due diligence and audit workflows." }
-        ],
-        "who_it_is_for": ["Corporate Buyers", "Project Developers", "Brokers & Intermediaries", "Investors", "ESG & Sustainability Teams"],
-        "use_cases": ["Carbon-credit portfolio records", "Project documentation libraries", "Transaction history", "Retirement-status tracking", "Registry-reference management", "Audit and ESG record preparation"],
-        "benefits": ["Better carbon-asset visibility", "Improved traceability", "More organized records", "Simpler reporting workflows", "Clearer transaction history", "Reduced fragmentation across project and credit data"],
-        "carbonnxt_support": ["Carbon-asset record structure", "Portfolio organization", "Transaction-document management", "Registry-reference organization", "Retirement-record visibility", "Reporting support"],
-        "faq": [
-          { "question": "Is Carbon Asset Digitisation the same as tokenisation?", "answer": "Not necessarily. CarbonNxt uses this term to describe structured digital management of project and carbon-asset records." }
-        ],
-        "cta": { "title": "Need Clearer Visibility Across Your Carbon Assets?", "description": "CarbonNxt can help organize project, transaction and portfolio records into a more manageable digital workflow.", "primary_button": "Talk to a Carbon Expert", "secondary_button": "Contact CarbonNxt" }
-      },
-      {
-        "id": "carbon-market-advisory",
-        "slug": "carbon-market-advisory",
-        "name": "Carbon Market Advisory",
-        "hero": { "eyebrow": "EXPERT CARBON-MARKET SUPPORT", "title": "Carbon Market Advisory", "tagline": "Expert guidance from project readiness to buying, selling and transaction execution.", "description": "CarbonNxt supports buyers, sellers, project developers, brokers and investors with practical guidance across carbon-market participation, project readiness, sourcing, due diligence, pricing and transactions.", "primary_cta": "Talk to a Carbon Expert", "secondary_cta": "Contact Our Team" },
-        "overview": { "title": "Navigate the Carbon Market with an Expert at Your Side", "paragraphs": ["Carbon markets can be difficult to navigate because project quality, standards, methodologies, pricing and transaction requirements vary widely.", "CarbonNxt's advisory model is designed to give clients a clear point of support rather than leaving them to interpret the market alone.", "The advisory role can support both sides of the market: buyers looking for credible credits and project developers preparing projects for certification and sale."] },
-        "key_capabilities": ["Buyer requirement assessment", "Project-readiness guidance", "Certification-pathway support", "Credit sourcing", "Project and credit due diligence", "Pricing guidance", "Buyer-seller matching", "Transaction coordination"],
-        "how_it_works": [
-          { "step": 1, "title": "Understand the Goal", "description": "Clarify whether the client wants to buy, sell, develop, certify or evaluate carbon assets." },
-          { "step": 2, "title": "Assess the Market Path", "description": "Review project, credit, standard, documentation or buyer requirements." },
-          { "step": 3, "title": "Support Execution", "description": "Assist with sourcing, positioning, due diligence, pricing, matching or transaction steps." },
-          { "step": 4, "title": "Maintain Clear Records", "description": "Support documentation, portfolio visibility and reporting after the transaction." }
-        ],
-        "who_it_is_for": ["Corporates & Businesses", "Project Developers", "Carbon Credit Owners", "Brokers & Intermediaries", "Investors"],
-        "use_cases": ["First-time carbon-credit buying", "Long-term credit sourcing strategies", "Project certification readiness", "Carbon-credit sales", "Buyer matching", "Pricing discussions"],
-        "benefits": ["One point of accountability", "Reduced market complexity", "Better-informed buying and selling decisions", "Practical certification guidance"],
-        "carbonnxt_support": ["Buyer advisory", "Seller advisory", "Certification guidance", "Pricing guidance", "Market intelligence", "Project positioning", "Buyer matching", "Transaction management"],
-        "faq": [
-          { "question": "Is CarbonNxt only for large corporate buyers?", "answer": "No. The client-defined audience includes businesses, project developers, brokers, investors and sustainability teams." }
-        ],
-        "cta": { "title": "Need Help Navigating the Carbon Market?", "description": "Speak with CarbonNxt about buying, selling, certification, pricing, due diligence or market access.", "primary_button": "Talk to a Carbon Expert", "secondary_button": "Contact Our Team" }
-      },
-      {
-        "id": "knowledge-capacity-building",
-        "slug": "knowledge-capacity-building",
-        "name": "Knowledge & Capacity Building",
-        "hero": { "eyebrow": "CARBON-MARKET EDUCATION", "title": "Knowledge & Capacity Building", "tagline": "Help your team understand carbon markets before making critical decisions.", "description": "CarbonNxt provides practical learning support around carbon credits, standards, methodologies, project readiness, buying decisions, MRV and market participation.", "primary_cta": "Talk to Our Team", "secondary_cta": "Explore Insights" },
-        "overview": { "title": "Build Internal Carbon-Market Confidence", "paragraphs": ["Carbon markets involve specialist terminology, standards, project structures and transaction processes.", "CarbonNxt's knowledge and capacity-building solution is intended to make those concepts easier to understand through practical education.", "The focus is on helping organizations make better-informed decisions."] },
-        "key_capabilities": ["Carbon-market fundamentals", "Buyer education", "Project-developer education", "Standards orientation", "MRV awareness"],
-        "how_it_works": [
-          { "step": 1, "title": "Identify Knowledge Gaps", "description": "Understand what the team needs to know based on its role and goals." },
-          { "step": 2, "title": "Build the Learning Path", "description": "Focus on relevant topics such as buying, certification, MRV or project quality." },
-          { "step": 3, "title": "Deliver Practical Guidance", "description": "Use clear explanations, guides and examples." },
-          { "step": 4, "title": "Move from Learning to Action", "description": "Connect education with the next practical step in buying or developing." }
-        ],
-        "who_it_is_for": ["Corporate Sustainability Teams", "ESG Teams", "Project Developers", "Business Leadership"],
-        "use_cases": ["Buyer onboarding", "Project-developer readiness", "Internal ESG education", "Carbon-market orientation"],
-        "benefits": ["Better internal understanding", "More confident decision-making", "Reduced confusion around standards"],
-        "carbonnxt_support": ["Buyer guides", "Project Developer's Guide", "Educational content", "Standards orientation", "MRV awareness"],
-        "faq": [
-          { "question": "Is this only for project developers?", "answer": "No. It is useful for buyers, ESG teams, project developers, brokers and other market participants." }
-        ],
-        "cta": { "title": "Want Your Team to Understand Carbon Markets Better?", "description": "Talk to CarbonNxt about practical buyer, seller, certification and MRV education.", "primary_button": "Talk to Our Team", "secondary_button": "Explore Insights" }
-      },
-      {
-        "id": "field-data-iot-integration",
-        "slug": "field-data-iot-integration",
-        "name": "Field Data & IoT Integration",
-        "hero": { "eyebrow": "CONNECTED PROJECT MONITORING", "title": "Field Data & IoT Integration", "tagline": "Connect field activity with more consistent digital project monitoring.", "description": "Where project design and methodology support it, CarbonNxt can help structure field-data and connected-device workflows that improve operational visibility.", "primary_cta": "Talk to a Carbon Expert", "secondary_cta": "Submit Your Project" },
-        "overview": { "title": "Bring Field-Level Activity into the Digital Monitoring Workflow", "paragraphs": ["Many climate projects operate across farms, facilities, devices or distributed field locations.", "Field Data & IoT Integration is designed to connect relevant devices, sensors, gateways or structured field inputs with the broader monitoring workflow.", "The exact hardware and data approach depends on the project and methodology."] },
-        "key_capabilities": ["Field-data capture", "Sensor-data integration", "Gateway-supported collection", "Device identification", "Location-based evidence"],
-        "how_it_works": [
-          { "step": 1, "title": "Identify What Must Be Measured", "description": "Define the field or equipment data relevant to the project and methodology." },
-          { "step": 2, "title": "Select the Data Source", "description": "Use manual digital capture, sensors, devices or gateways." },
-          { "step": 3, "title": "Connect to Monitoring", "description": "Feed structured data into the project monitoring workflow." },
-          { "step": 4, "title": "Maintain Evidence", "description": "Use collected information to strengthen operational visibility." }
-        ],
-        "who_it_is_for": ["Biochar Projects", "Methane Reduction Projects", "Clean Cooking Programs", "Renewable Energy Projects"],
-        "use_cases": ["Biochar production monitoring", "Facility operating data", "Energy-generation data", "Field-device records"],
-        "benefits": ["More consistent field data", "Reduced manual fragmentation", "Improved project visibility"],
-        "carbonnxt_support": ["Field-data requirement planning", "Monitoring-workflow design", "Device and data mapping"],
-        "faq": [
-          { "question": "Does every CarbonNxt project need IoT hardware?", "answer": "No. Hardware should only be used where it adds value and is relevant." }
-        ],
-        "cta": { "title": "Need Better Field-Level Project Data?", "description": "Talk to CarbonNxt about connecting project activity, devices and field evidence.", "primary_button": "Talk to a Carbon Expert", "secondary_button": "Submit Your Project" }
-      }
-    ]
-  };
+(function () {
+  'use strict';
 
-  async function initSolutionDetail() {
-    const container = document.getElementById('solution-detail-app');
-    if (!container) return;
-
-    // Detect slug from URL query (?slug=...) or path
-    const urlParams = new URLSearchParams(window.location.search);
-    let slug = urlParams.get('slug');
-
-    if (!slug) {
-      const pathSegments = window.location.pathname.split('/').filter(Boolean);
-      const lastSeg = pathSegments.pop() || '';
-      slug = lastSeg.replace('.html', '').replace('solution-', '');
-    }
-
-    if (!slug || slug === 'detail') {
-      slug = 'digital-mrv-monitoring'; // Default fallback
-    }
-
-    let data = null;
-    try {
-      const possiblePaths = [
-        'CarbonNxt_Solution_Inner_Pages.json',
-        './CarbonNxt_Solution_Inner_Pages.json',
-        '../CarbonNxt_Solution_Inner_Pages.json',
-        '/CarbonNxt_Solution_Inner_Pages.json'
-      ];
-
-      for (const path of possiblePaths) {
-        try {
-          const res = await fetch(path);
-          if (res.ok) {
-            data = await res.json();
-            break;
-          }
-        } catch (e) {}
-      }
-    } catch (err) {}
-
-    if (!data || !data.solutions) {
-      data = FALLBACK_SOLUTIONS_DATA;
-    }
-
-    const cleanSlug = slug.toLowerCase().trim();
-    const solution = data.solutions.find(
-      (s) => s.slug === cleanSlug || s.id === cleanSlug || cleanSlug.includes(s.slug) || s.slug.includes(cleanSlug)
-    ) || data.solutions[0];
-
-    renderSolutionPage(container, solution);
+  // ── Get slug from URL ──
+  function getSlug() {
+    var params = new URLSearchParams(window.location.search);
+    return params.get('slug') || 'digital-mrv-monitoring';
   }
 
-  function renderSolutionPage(container, item) {
-    document.title = `${item.name} | CarbonNxt Solutions`;
+  // ── Fetch JSON ──
+  async function loadJSON() {
+    var res = await fetch('CarbonNxt_Solution_Inner_Pages.json');
+    if (!res.ok) throw new Error('Could not load JSON');
+    return res.json();
+  }
 
-    // Map visuals
-    const heroImage = 'assets/images/ui/platform-side.jpg';
-    const overviewImage = 'assets/images/ui/about-mission.jpg';
+  // ── Render ──
+  function render(container, item) {
+    document.title = item.name + ' | CarbonNxt Solutions';
 
-    // HTML Assembly
-    const html = `
+    var heroImage = 'assets/images/ui/platform-side.jpg';
+    var overviewImage = 'assets/images/ui/about-mission.jpg';
+
+    container.innerHTML = `
       <!-- 1. HERO -->
       <section class="sol-detail-hero">
         <div class="container">
+          <!-- Breadcrumbs -->
+          <nav style="margin-bottom:1.75rem;padding-top:0.5rem;" aria-label="Breadcrumb">
+            <ol style="list-style:none;padding:0;margin:0;display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+              <li><a href="index.html" style="color:rgba(255,255,255,0.55);font-size:0.88rem;font-weight:600;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#39e49a'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Home</a></li>
+              <li style="color:rgba(255,255,255,0.3);font-size:0.75rem;display:flex;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></li>
+              <li><a href="solutions.html" style="color:rgba(255,255,255,0.55);font-size:0.88rem;font-weight:600;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#39e49a'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Solutions</a></li>
+              <li style="color:rgba(255,255,255,0.3);font-size:0.75rem;display:flex;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></li>
+              <li style="color:#39e49a;font-size:0.88rem;font-weight:700;">${item.name}</li>
+            </ol>
+          </nav>
           <div class="sol-detail-hero__grid">
             <div class="sol-detail-hero__content">
-              <div class="eyebrow-pill" style="border-color: rgba(57, 228, 154, 0.3); background: rgba(57, 228, 154, 0.1); color: #39e49a; margin-bottom: 1.5rem;">
-                <span class="eyebrow-pill__dot" style="background: #39e49a;"></span>
+              <div class="eyebrow-pill" style="border-color:rgba(57,228,154,0.3);background:rgba(57,228,154,0.1);color:#39e49a;margin-bottom:1.5rem;">
+                <span class="eyebrow-pill__dot" style="background:#39e49a;"></span>
                 <span>${item.hero.eyebrow}</span>
               </div>
               <h1 class="sol-detail-hero__title">${item.hero.title}</h1>
               <p class="sol-detail-hero__tagline">${item.hero.tagline}</p>
               <p class="sol-detail-hero__desc">${item.hero.description}</p>
               <div class="sol-detail-hero__actions">
-                <a href="${item.hero.primary_cta === 'Talk to a Carbon Expert' ? 'contact.html' : 'seller.html'}" class="btn btn-primary">
-                  <span>${item.hero.primary_cta}</span>
+                <a href="contact.html" class="btn btn-primary"><span>${item.hero.primary_cta}</span>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                 </a>
-                <a href="${item.hero.secondary_cta === 'Submit Your Project' ? 'seller.html' : 'contact.html'}" class="btn btn-outline" style="border-color: rgba(255,255,255,0.3); color: #ffffff;">
-                  <span>${item.hero.secondary_cta}</span>
-                </a>
+                <a href="seller.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.3);color:#fff;"><span>${item.hero.secondary_cta}</span></a>
               </div>
             </div>
-            <div class="sol-detail-hero__visual">
-              <img src="${heroImage}" alt="${item.name} Solution Visual" loading="eager">
-            </div>
+            <div class="sol-detail-hero__visual"><img src="${heroImage}" alt="${item.name}" loading="eager"></div>
           </div>
         </div>
       </section>
@@ -249,15 +65,11 @@
         <div class="container">
           <div class="sol-overview__grid">
             <div class="sol-overview__content">
-              <span class="section-label" style="color: #029a62; font-weight: 700; letter-spacing: 0.08em;">SOLUTION OVERVIEW</span>
+              <span class="section-label" style="color:#029a62;font-weight:700;letter-spacing:0.08em;">SOLUTION OVERVIEW</span>
               <h2 class="sol-overview__title">${item.overview.title}</h2>
-              <div class="sol-overview__paragraphs">
-                ${item.overview.paragraphs.map(p => `<p>${p}</p>`).join('')}
-              </div>
+              <div class="sol-overview__paragraphs">${item.overview.paragraphs.map(function(p) { return '<p>' + p + '</p>'; }).join('')}</div>
             </div>
-            <div class="sol-overview__visual-card">
-              <img src="${overviewImage}" alt="${item.name} Overview Visual">
-            </div>
+            <div class="sol-overview__visual-card"><img src="${overviewImage}" alt="${item.name} Overview"></div>
           </div>
         </div>
       </section>
@@ -265,19 +77,11 @@
       <!-- 3. KEY CAPABILITIES -->
       <section class="sol-caps-section">
         <div class="container">
-          <header class="text-center">
-            <span class="section-label" style="color: #029a62; font-weight: 700;">CAPABILITIES</span>
-            <h2 class="section-heading" style="color: #0f211a;">Key Capabilities & Features</h2>
-          </header>
+          <header class="text-center"><span class="section-label" style="color:#029a62;font-weight:700;">CAPABILITIES</span><h2 class="section-heading" style="color:#0f211a;">Key Capabilities & Features</h2></header>
           <div class="sol-caps__grid">
-            ${item.key_capabilities.map(cap => `
-              <div class="sol-cap-card">
-                <div class="sol-cap-card__icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <p>${cap}</p>
-              </div>
-            `).join('')}
+            ${item.key_capabilities.map(function(cap) {
+              return '<div class="sol-cap-card"><div class="sol-cap-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><p>' + cap + '</p></div>';
+            }).join('')}
           </div>
         </div>
       </section>
@@ -285,166 +89,202 @@
       <!-- 4. HOW IT WORKS -->
       <section class="sol-flow-section">
         <div class="container">
-          <header class="text-center">
-            <span class="section-label" style="color: #39e49a;">PROCESS FLOW</span>
-            <h2 class="section-heading" style="color: #ffffff;">How It Works</h2>
-          </header>
+          <header class="text-center"><span class="section-label" style="color:#39e49a;">PROCESS FLOW</span><h2 class="section-heading" style="color:#fff;">How It Works</h2></header>
           <div class="sol-flow__grid">
-            ${item.how_it_works.map(step => `
-              <div class="sol-flow-card">
-                <div class="sol-flow-card__step">0${step.step}</div>
-                <h3>${step.title}</h3>
-                <p>${step.description}</p>
-              </div>
-            `).join('')}
+            ${item.how_it_works.map(function(step) {
+              return '<div class="sol-flow-card"><div class="sol-flow-card__step">0' + step.step + '</div><h3>' + step.title + '</h3><p>' + step.description + '</p></div>';
+            }).join('')}
           </div>
         </div>
       </section>
 
-      <!-- 5 & 6. WHO IT IS FOR & USE CASES -->
-      <section style="padding-block: clamp(80px, 10vw, 120px); background: #ffffff;">
+      <!-- 5 & 6. WHO IT IS FOR & USE CASES — Premium Redesign -->
+      <section style="padding-block:clamp(90px,12vw,140px);background:linear-gradient(180deg,#ffffff 0%,#f0f7f4 100%);">
         <div class="container">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 5vw, 4.5rem);">
-            <div>
-              <span class="section-label" style="color: #029a62; font-weight: 700;">TARGET AUDIENCE</span>
-              <h2 class="section-heading" style="color: #0f211a; font-size: 2rem; margin-bottom: 1rem;">Who It Is For</h2>
-              <div class="sol-pills-grid">
-                ${item.who_it_is_for.map(aud => `
-                  <div class="sol-pill-tag">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span>${aud}</span>
-                  </div>
-                `).join('')}
-              </div>
-            </div>
-            <div>
-              <span class="section-label" style="color: #029a62; font-weight: 700;">APPLICATIONS</span>
-              <h2 class="section-heading" style="color: #0f211a; font-size: 2rem; margin-bottom: 1rem;">Use Cases</h2>
-              <div class="sol-pills-grid">
-                ${item.use_cases.map(uc => `
-                  <div class="sol-pill-tag" style="background: #f4f8f6; border-color: rgba(2, 154, 98, 0.15);">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span>${uc}</span>
-                  </div>
-                `).join('')}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 7. BENEFITS -->
-      <section style="padding-block: clamp(70px, 8vw, 100px); background: #f4f8f6;">
-        <div class="container">
-          <header class="text-center" style="margin-bottom: 3rem;">
-            <span class="section-label" style="color: #029a62; font-weight: 700;">VALUE DELIVERED</span>
-            <h2 class="section-heading" style="color: #0f211a;">Key Benefits</h2>
+          <header class="text-center" style="margin-bottom:clamp(3rem,5vw,4.5rem);">
+            <span class="section-label" style="color:#029a62;font-weight:700;letter-spacing:0.12em;">BUILT FOR YOUR ROLE</span>
+            <h2 class="section-heading" style="color:#0f211a;font-size:clamp(2rem,3.5vw,2.8rem);">Who It Serves & How It Applies</h2>
           </header>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
-            ${item.benefits.map(b => `
-              <div style="background: #ffffff; padding: 1.75rem; border-radius: 18px; border: 1px solid rgba(2, 154, 98, 0.15); display: flex; align-items: flex-start; gap: 1rem;">
-                <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(2, 154, 98, 0.1); color: #029a62; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,3vw,2.5rem);">
+
+            <!-- Target Audience Card -->
+            <div style="background:linear-gradient(165deg,#04101d 0%,#071e15 100%);border-radius:28px;padding:clamp(2rem,4vw,3.5rem);border:1px solid rgba(57,228,154,0.2);position:relative;overflow:hidden;">
+              <div style="position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(57,228,154,0.08),transparent 70%);pointer-events:none;"></div>
+              <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.75rem;">
+                <div style="width:44px;height:44px;border-radius:14px;background:rgba(57,228,154,0.12);display:flex;align-items:center;justify-content:center;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#39e49a" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 </div>
-                <p style="font-size: 1rem; font-weight: 600; color: #0f211a; margin: 0; line-height: 1.45;">${b}</p>
+                <div>
+                  <span style="font-size:0.7rem;font-weight:800;color:#39e49a;letter-spacing:0.12em;text-transform:uppercase;">Target Audience</span>
+                  <h3 style="font-size:1.5rem;font-weight:800;color:#ffffff;margin:0;line-height:1.2;">Who It Is For</h3>
+                </div>
               </div>
-            `).join('')}
+              <div style="display:flex;flex-direction:column;gap:0.85rem;">
+                ${item.who_it_is_for.map(function(aud, i) {
+                  return '<div style="display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;background:rgba(255,255,255,0.04);border:1px solid rgba(57,228,154,0.12);border-radius:14px;transition:all 0.3s ease;" onmouseover="this.style.background=\'rgba(57,228,154,0.08)\';this.style.borderColor=\'rgba(57,228,154,0.3)\'" onmouseout="this.style.background=\'rgba(255,255,255,0.04)\';this.style.borderColor=\'rgba(57,228,154,0.12)\'"><div style="width:32px;height:32px;border-radius:10px;background:rgba(57,228,154,0.1);color:#39e49a;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;font-weight:800;">0' + (i+1) + '</div><span style="font-size:1rem;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.3;">' + aud + '</span></div>';
+                }).join('')}
+              </div>
+            </div>
+
+            <!-- Use Cases Card -->
+            <div style="background:#ffffff;border-radius:28px;padding:clamp(2rem,4vw,3.5rem);border:1px solid rgba(2,154,98,0.12);box-shadow:0 20px 60px rgba(0,0,0,0.04);position:relative;overflow:hidden;">
+              <div style="position:absolute;bottom:-80px;left:-80px;width:220px;height:220px;background:radial-gradient(circle,rgba(2,154,98,0.06),transparent 70%);pointer-events:none;"></div>
+              <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.75rem;">
+                <div style="width:44px;height:44px;border-radius:14px;background:rgba(2,154,98,0.08);display:flex;align-items:center;justify-content:center;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#029a62" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <div>
+                  <span style="font-size:0.7rem;font-weight:800;color:#029a62;letter-spacing:0.12em;text-transform:uppercase;">Applications</span>
+                  <h3 style="font-size:1.5rem;font-weight:800;color:#0f211a;margin:0;line-height:1.2;">Use Cases</h3>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:0.85rem;">
+                ${item.use_cases.map(function(uc) {
+                  return '<div style="display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.25rem;background:#f8fbf9;border:1px solid rgba(2,154,98,0.1);border-left:3px solid #029a62;border-radius:12px;transition:all 0.3s ease;" onmouseover="this.style.background=\'rgba(2,154,98,0.04)\';this.style.boxShadow=\'0 4px 16px rgba(2,154,98,0.08)\'" onmouseout="this.style.background=\'#f8fbf9\';this.style.boxShadow=\'none\'"><div style="width:28px;height:28px;border-radius:50%;background:rgba(2,154,98,0.1);color:#029a62;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span style="font-size:0.975rem;font-weight:600;color:#1a3328;line-height:1.45;">' + uc + '</span></div>';
+                }).join('')}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      <!-- 8. CARBONNXT SUPPORT -->
-      <section class="sol-support-section">
-        <div class="container">
-          <header class="text-center">
-            <span class="section-label" style="color: #39e49a;">HOW CARBONNXT HELPS</span>
-            <h2 class="section-heading" style="color: #ffffff;">CarbonNxt Support</h2>
+      <!-- 7. BENEFITS — Premium Redesign -->
+      <section style="padding-block:clamp(90px,12vw,140px);background:#ffffff;position:relative;">
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 70% 0%,rgba(2,154,98,0.04),transparent 55%),radial-gradient(ellipse at 30% 100%,rgba(57,228,154,0.03),transparent 50%);pointer-events:none;"></div>
+        <div class="container" style="position:relative;z-index:1;">
+          <header class="text-center" style="margin-bottom:clamp(3rem,5vw,4.5rem);">
+            <span class="section-label" style="color:#029a62;font-weight:700;letter-spacing:0.12em;">VALUE DELIVERED</span>
+            <h2 class="section-heading" style="color:#0f211a;font-size:clamp(2rem,3.5vw,2.8rem);">Key Benefits</h2>
+            <p style="color:#4e6057;font-size:1.05rem;max-width:560px;margin:0.75rem auto 0;line-height:1.6;">Tangible outcomes that drive measurable impact across your carbon journey.</p>
           </header>
-          <div class="sol-support__grid">
-            ${item.carbonnxt_support.map(sup => `
-              <div class="sol-support-card">
-                <h3>${sup.title}</h3>
-                <p>${sup.description}</p>
-              </div>
-            `).join('')}
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+            ${item.benefits.map(function(b, i) {
+              var icons = [
+                '<polyline points="20 6 9 17 4 12"/>',
+                '<circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>',
+                '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>',
+                '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+                '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/>',
+                '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>',
+                '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
+                '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'
+              ];
+              var iconPath = icons[i % icons.length];
+              return '<div style="background:#ffffff;border:1px solid rgba(2,154,98,0.1);border-radius:22px;padding:clamp(1.75rem,3vw,2.5rem);position:relative;overflow:hidden;transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);cursor:default;" onmouseover="this.style.transform=\'translateY(-5px)\';this.style.boxShadow=\'0 20px 50px rgba(2,154,98,0.1)\';this.style.borderColor=\'rgba(2,154,98,0.25)\'" onmouseout="this.style.transform=\'translateY(0)\';this.style.boxShadow=\'none\';this.style.borderColor=\'rgba(2,154,98,0.1)\'">' +
+                '<div style="position:absolute;top:-30px;right:-30px;width:100px;height:100px;background:radial-gradient(circle,rgba(2,154,98,0.05),transparent 70%);pointer-events:none;"></div>' +
+                '<div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem;">' +
+                  '<div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(2,154,98,0.12),rgba(57,228,154,0.06));display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#029a62" stroke-width="2">' + iconPath + '</svg></div>' +
+                  '<div style="width:28px;height:28px;border-radius:50%;border:2px solid rgba(2,154,98,0.15);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;color:#029a62;">' + String(i+1).padStart(2,'0') + '</div>' +
+                '</div>' +
+                '<p style="font-size:1.05rem;font-weight:700;color:#0f211a;margin:0;line-height:1.4;">' + b + '</p>' +
+                '<div style="width:40px;height:3px;border-radius:3px;background:linear-gradient(90deg,#029a62,rgba(2,154,98,0.15));margin-top:1rem;"></div>' +
+              '</div>';
+            }).join('')}
           </div>
         </div>
       </section>
 
-      <!-- 9. FAQ ACCORDION -->
+      <!-- 8. CARBONNXT SUPPORT — Premium Journey Redesign -->
+      <section style="padding-block:clamp(90px,12vw,140px);background:linear-gradient(165deg,#04101d 0%,#071e15 50%,#04101d 100%);position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 20% 50%,rgba(57,228,154,0.05),transparent 60%),radial-gradient(ellipse at 80% 30%,rgba(2,154,98,0.04),transparent 50%);pointer-events:none;"></div>
+        <div class="container" style="position:relative;z-index:1;">
+          <header class="text-center" style="margin-bottom:clamp(3rem,6vw,5rem);">
+            <span class="section-label" style="color:#39e49a;letter-spacing:0.14em;font-weight:700;">YOUR JOURNEY WITH US</span>
+            <h2 class="section-heading" style="color:#fff;font-size:clamp(2rem,3.5vw,2.8rem);">CarbonNxt Support Journey</h2>
+            <p style="color:rgba(255,255,255,0.6);font-size:1.05rem;max-width:600px;margin:1rem auto 0;line-height:1.6;">End-to-end guidance at every stage of your carbon project lifecycle.</p>
+          </header>
+
+          <!-- Timeline connector line (desktop) -->
+          <div style="position:relative;">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;">
+              ${item.carbonnxt_support.map(function(sup, i) {
+                var title = typeof sup === 'string' ? sup : (sup.title || 'Support');
+                var icons = [
+                  '<path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/>',
+                  '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
+                  '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>',
+                  '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/>',
+                  '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+                  '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
+                  '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+                  '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>'
+                ];
+                var iconPath = icons[i % icons.length];
+                return '<div style="background:rgba(255,255,255,0.03);border:1px solid rgba(57,228,154,0.12);border-radius:22px;padding:clamp(1.5rem,3vw,2.25rem);position:relative;transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);cursor:default;" onmouseover="this.style.background=\'rgba(57,228,154,0.06)\';this.style.borderColor=\'rgba(57,228,154,0.35)\';this.style.transform=\'translateY(-6px)\';this.style.boxShadow=\'0 20px 50px rgba(57,228,154,0.1)\'" onmouseout="this.style.background=\'rgba(255,255,255,0.03)\';this.style.borderColor=\'rgba(57,228,154,0.12)\';this.style.transform=\'translateY(0)\';this.style.boxShadow=\'none\'">' +
+                  '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;">' +
+                    '<div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(57,228,154,0.15),rgba(2,154,98,0.08));display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#39e49a" stroke-width="1.8">' + iconPath + '</svg></div>' +
+                    '<div style="width:36px;height:36px;border-radius:50%;border:2px solid rgba(57,228,154,0.2);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:800;color:#39e49a;letter-spacing:0.02em;">' + String(i+1).padStart(2,'0') + '</div>' +
+                  '</div>' +
+                  '<h3 style="font-size:1.1rem;font-weight:700;color:#ffffff;margin:0 0 0.5rem 0;line-height:1.35;">' + title + '</h3>' +
+                  '<div style="width:40px;height:3px;border-radius:3px;background:linear-gradient(90deg,#39e49a,rgba(57,228,154,0.2));"></div>' +
+                '</div>';
+              }).join('')}
+            </div>
+          </div>
+
+          <!-- Bottom CTA row -->
+          <div style="text-align:center;margin-top:clamp(3rem,5vw,4rem);">
+            <a href="contact.html" class="btn btn-primary" style="padding:1rem 2.5rem;font-size:1rem;"><span>Start Your Journey</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. FAQ -->
       <section class="sol-faq-section">
         <div class="container">
-          <header class="text-center">
-            <span class="section-label" style="color: #029a62; font-weight: 700;">GOT QUESTIONS?</span>
-            <h2 class="section-heading" style="color: #0f211a;">Frequently Asked Questions</h2>
-          </header>
+          <header class="text-center"><span class="section-label" style="color:#029a62;font-weight:700;">GOT QUESTIONS?</span><h2 class="section-heading" style="color:#0f211a;">Frequently Asked Questions</h2></header>
           <div class="faq-accordion">
-            ${item.faq.map((q, idx) => `
-              <div class="faq-item ${idx === 0 ? 'is-open' : ''}">
-                <button class="faq-toggle" aria-expanded="${idx === 0 ? 'true' : 'false'}">
-                  <span>${q.question}</span>
-                  <div class="faq-icon">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-                  </div>
-                </button>
-                <div class="faq-content">
-                  <p>${q.answer}</p>
-                </div>
-              </div>
-            `).join('')}
+            ${item.faq.map(function(q, i) {
+              return '<div class="faq-item ' + (i === 0 ? 'is-open' : '') + '"><button class="faq-toggle" aria-expanded="' + (i === 0 ? 'true' : 'false') + '"><span>' + q.question + '</span><div class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div></button><div class="faq-content"><p>' + q.answer + '</p></div></div>';
+            }).join('')}
           </div>
         </div>
       </section>
 
       <!-- 10. FINAL CTA -->
-      <section style="padding-block: clamp(80px, 10vw, 120px); background: #04101d; color: #ffffff; text-align: center;">
-        <div class="container" style="max-width: 800px;">
-          <h2 style="font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 800; line-height: 1.2; margin-bottom: 1.25rem; color: #ffffff;">
-            ${item.cta.title}
-          </h2>
-          <p style="font-size: 1.15rem; line-height: 1.65; color: rgba(255, 255, 255, 0.8); margin-bottom: 2.5rem;">
-            ${item.cta.description}
-          </p>
-          <div style="display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap;">
-            <a href="contact.html" class="btn btn-primary" style="padding: 1rem 2.25rem; font-size: 1rem;">
-              <span>${item.cta.primary_button}</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-            <a href="seller.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.3); color: #ffffff; padding: 1rem 2.25rem; font-size: 1rem;">
-              <span>${item.cta.secondary_button}</span>
-            </a>
+      <section style="padding-block:clamp(80px,10vw,120px);background:#04101d;color:#fff;text-align:center;">
+        <div class="container" style="max-width:800px;">
+          <h2 style="font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;line-height:1.2;margin-bottom:1.25rem;color:#fff;">${item.cta.title}</h2>
+          <p style="font-size:1.15rem;line-height:1.65;color:rgba(255,255,255,0.8);margin-bottom:2.5rem;">${item.cta.description}</p>
+          <div style="display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn-primary" style="padding:1rem 2.25rem;font-size:1rem;"><span>${item.cta.primary_button}</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            <a href="seller.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.3);color:#fff;padding:1rem 2.25rem;font-size:1rem;"><span>${item.cta.secondary_button}</span></a>
           </div>
         </div>
       </section>
     `;
 
-    container.innerHTML = html;
-    bindFaqAccordion();
-  }
-
-  function bindFaqAccordion() {
-    const items = document.querySelectorAll('.faq-item');
-    items.forEach((item) => {
-      const toggle = item.querySelector('.faq-toggle');
-      if (!toggle) return;
-      toggle.addEventListener('click', () => {
-        const isOpen = item.classList.contains('is-open');
-        items.forEach((i) => {
-          i.classList.remove('is-open');
-          const t = i.querySelector('.faq-toggle');
-          if (t) t.setAttribute('aria-expanded', 'false');
-        });
-        if (!isOpen) {
-          item.classList.add('is-open');
-          toggle.setAttribute('aria-expanded', 'true');
-        }
+    // FAQ accordion
+    container.querySelectorAll('.faq-item').forEach(function (el) {
+      el.querySelector('.faq-toggle').addEventListener('click', function () {
+        var open = el.classList.contains('is-open');
+        container.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('is-open'); });
+        if (!open) el.classList.add('is-open');
       });
     });
   }
 
+  // ── Init ──
+  async function init() {
+    var container = document.getElementById('solution-detail-app');
+    if (!container) return;
+
+    var slug = getSlug();
+
+    try {
+      var data = await loadJSON();
+      var solution = data.solutions.find(function (s) { return s.slug === slug || s.id === slug; }) || data.solutions[0];
+      render(container, solution);
+    } catch (err) {
+      console.error('solution-detail.js error:', err);
+      container.innerHTML = '<div style="padding:180px 20px;text-align:center;"><h2 style="color:#0f211a;">Could not load solution</h2><p style="color:#4e6057;">Error: ' + err.message + '</p><a href="solutions.html" class="btn btn-primary" style="margin-top:1.5rem;">Back to Solutions</a></div>';
+    }
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSolutionDetail);
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    initSolutionDetail();
+    init();
   }
 })();
