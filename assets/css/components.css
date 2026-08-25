@@ -772,6 +772,108 @@ body.nav-open { overflow: hidden; }
   bottom: 0;
   left: 0;
   right: 0;
+  background: var(--color-deep);
+  border-top: 1px solid var(--color-border);
+  padding: 1rem;
+  z-index: 100;
+  transform: translateY(100%);
+  transition: transform var(--duration) var(--ease);
+}
+.compare-drawer.is-open { transform: translateY(0); }
+
+/* ==========================================================================
+   Global Form Controls & Lead Magnet Form Cards
+   ========================================================================== */
+
+.lead-magnet-form-card {
+  width: 100% !important;
+  max-width: 480px;
+  background: rgba(4, 20, 35, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(57, 228, 154, 0.3);
+  border-radius: 24px;
+  padding: clamp(28px, 4vw, 42px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+}
+
+.lead-magnet-form-card form {
+  width: 100% !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100% !important;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff !important;
+  margin-bottom: 0.6rem;
+  text-align: left;
+  letter-spacing: 0.02em;
+}
+
+.form-control,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  height: 52px;
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-sans, system-ui, sans-serif) !important;
+  font-size: 0.98rem !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 14px !important;
+  outline: none !important;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.12) !important;
+}
+
+textarea.form-control,
+textarea {
+  height: auto !important;
+  min-height: 120px;
+}
+
+.form-control::placeholder,
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55) !important;
+  font-weight: 400 !important;
+}
+
+.form-control:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #39e49a !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 0 0 4px rgba(57, 228, 154, 0.22), inset 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+.compare-drawer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 950;
   background: var(--color-glass-strong);
   border-top: 1px solid var(--color-border);
