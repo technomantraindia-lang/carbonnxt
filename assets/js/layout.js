@@ -67,7 +67,6 @@
                   <li class="nav-dropdown">
                     <a href="${prefix}solutions.html" class="site-nav__link nav-dropdown__toggle">
                       <span>Solutions</span>
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left: 0.25rem;"><polyline points="6 9 12 15 18 9"/></svg>
                     </a>
                     <div class="nav-dropdown__menu">
                       <div class="nav-dropdown__group">

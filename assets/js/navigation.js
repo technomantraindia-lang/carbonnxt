@@ -74,6 +74,12 @@ function initDropdowns() {
     toggle.setAttribute('aria-expanded', 'false')
 
     toggle.addEventListener('click', (e) => {
+      if (window.innerWidth > 980) {
+        const href = toggle.getAttribute('href')
+        if (href && href !== '#' && href !== 'javascript:void(0)') {
+          return
+        }
+      }
       e.preventDefault()
       const isOpen = dropdown.classList.contains('is-open')
       closeAll()
