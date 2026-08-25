@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carbon Market Solutions | CarbonNxt</title>
+  <meta name="description" content="CarbonNxt solutions: digital MRV & monitoring, carbon asset digitisation, carbon market advisory, knowledge & capacity building, field data & IoT integration — supporting climate-project developers and carbon-credit buyers.">
+  <link rel="canonical" href="https://carbonnxt.com/solutions.html">
+  <meta property="og:title" content="Carbon Market Solutions | CarbonNxt">
+  <meta property="og:description" content="Digital monitoring, advisory, asset management, knowledge support and field-data solutions alongside carbon-project market access.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <style>
+    /* ===== Solutions Page Styles ===== */
+    .sol-hero {
+      position: relative;
+      padding-block: clamp(9rem, 16vh, 13rem) clamp(5rem, 9vh, 7rem);
+      background: #020e1a;
+      color: var(--color-white);
+      overflow: hidden;
+    }
+    .sol-hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(115deg, rgba(2, 14, 26, 0.94) 0%, rgba(6, 35, 60, 0.82) 55%, rgba(2, 14, 26, 0.55) 100%),
+        url('assets/images/heroes/earth-horizon.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .sol-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 82% 18%, rgba(57, 228, 154, 0.14), transparent 50%);
+      pointer-events: none;
+    }
+    .sol-hero__content { position: relative; z-index: 2; }
+    .sol-hero__title {
+      font-size: clamp(2.5rem, 5vw, 4.25rem);
+      font-weight: 800;
+      color: var(--color-white);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      max-width: 820px;
+    }
+    .sol-hero__desc {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 780px;
+      margin-bottom: 1rem;
+    }
+
+    .sol-section { padding-block: clamp(4rem, 8vw, 7rem); }
+    .sol-section--alt { background: var(--color-bg-secondary); }
+    .sol-section--deep { background: #020e1a; color: var(--color-white); }
+    .sol-section--deep .section-heading { color: var(--color-white); }
+    .sol-section--deep .section-intro { color: rgba(255, 255, 255, 0.75); }
+    .sol-section--deep .section-label { color: #39e49a; }
+
+    /* Core solution showcase cards */
+    .sol-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 480px);
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+    .sol-card:last-child { margin-bottom: 0; }
+    .sol-card--flip .sol-card__media { order: 2; }
+    .sol-card__media img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(2, 14, 26, 0.12);
+      display: block;
+    }
+    .sol-card__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-green);
+      background: rgba(2, 154, 98, 0.06);
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+      border: 1px solid rgba(2, 154, 98, 0.12);
+      margin-bottom: 1.25rem;
+    }
+    .sol-card__title {
+      font-size: clamp(1.6rem, 3vw, 2.25rem);
+      font-weight: 800;
+      color: var(--color-text-primary);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .sol-card__text {
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--color-text-muted);
+      max-width: 560px;
+    }
+
+    /* Digital MRV split */
+    .mrv-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 500px);
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+    .mrv-wrap__media img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: block;
+    }
+    .mrv-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-top: clamp(2.5rem, 5vw, 3.5rem);
+    }
+    .mrv-step {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 16px;
+      padding: 1.75rem;
+      transition: transform 0.35s var(--ease), border-color 0.35s var(--ease);
+    }
+    .mrv-step:hover { transform: translateY(-4px); border-color: rgba(57, 228, 154, 0.45); }
+    .mrv-step__num {
+      font-family: monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #39e49a;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.85rem;
+      display: block;
+    }
+    .mrv-step h3 { color: var(--color-white); font-size: 1.15rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .mrv-step p { color: rgba(255, 255, 255, 0.68); font-size: 0.95rem; line-height: 1.55; }
+
+    /* Impact categories */
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: clamp(2.5rem, 5vw, 3.5rem);
+    }
+    .impact-card {
+      background: var(--color-white);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(2, 154, 98, 0.08);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+      transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    }
+    .impact-card:hover { transform: translateY(-6px); box-shadow: 0 22px 48px rgba(2, 154, 98, 0.1); }
+    .impact-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+    .impact-card__body { padding: 1.75rem; }
+    .impact-card__body h3 { font-size: 1.3rem; font-weight: 800; color: var(--color-text-primary); margin-bottom: 0.6rem; }
+    .impact-card__body p { color: var(--color-text-muted); font-size: 0.97rem; line-height: 1.6; }
+
+    /* Methodology areas */
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: clamp(2.5rem, 5vw, 3.5rem);
+    }
+    .area-card {
+      background: var(--color-white);
+      border-radius: 18px;
+      border: 1px solid rgba(2, 154, 98, 0.08);
+      padding: 1.75rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.02);
+      transition: transform 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+    }
+    .area-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(2, 154, 98, 0.25);
+      box-shadow: 0 18px 40px rgba(2, 154, 98, 0.08);
+    }
+    .area-card__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(2, 154, 98, 0.08);
+      color: var(--color-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .area-card h3 { font-size: 1.1rem; font-weight: 800; color: var(--color-text-primary); margin-bottom: 0.55rem; line-height: 1.3; }
+    .area-card p { color: var(--color-text-muted); font-size: 0.93rem; line-height: 1.55; }
+
+    /* Connection flow */
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.25rem;
+      position: relative;
+      margin-top: clamp(3rem, 6vw, 4rem);
+    }
+    .flow::before {
+      content: "";
+      position: absolute;
+      top: 28px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(57, 228, 154, 0.65), rgba(82, 189, 230, 0.45));
+    }
+    .flow-step { position: relative; text-align: center; }
+    .flow-step__num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #06233c;
+      border: 1px solid rgba(57, 228, 154, 0.45);
+      color: #39e49a;
+      font-weight: 800;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.1rem;
+      position: relative;
+      z-index: 1;
+    }
+    .flow-step h3 { color: var(--color-white); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .flow-step p { color: rgba(255, 255, 255, 0.62); font-size: 0.88rem; line-height: 1.5; }
+
+    /* Audience cards */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: clamp(2.5rem, 5vw, 3.5rem);
+    }
+    .audience-card {
+      background: var(--color-white);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(2, 154, 98, 0.08);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+      transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    }
+    .audience-card:hover { transform: translateY(-6px); box-shadow: 0 22px 48px rgba(2, 154, 98, 0.1); }
+    .audience-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+    .audience-card__body { padding: 1.75rem; }
+    .audience-card__body h3 { font-size: 1.25rem; font-weight: 800; color: var(--color-text-primary); margin-bottom: 0.6rem; }
+    .audience-card__body p { color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; }
+
+    /* CTA band */
+    .cta-band {
+      position: relative;
+      background: linear-gradient(135deg, #06233c 0%, #020e1a 100%);
+      color: var(--color-white);
+      padding-block: clamp(4rem, 8vw, 6.5rem);
+      text-align: center;
+      overflow: hidden;
+    }
+    .cta-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(57, 228, 154, 0.14), transparent 55%);
+      pointer-events: none;
+    }
+    .cta-band__inner { position: relative; z-index: 1; }
+    .cta-band h2 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--color-white);
+      max-width: 760px;
+      margin: 0 auto 1.25rem;
+    }
+    .cta-band p { color: rgba(255, 255, 255, 0.78); font-size: 1.08rem; line-height: 1.65; max-width: 640px; margin: 0 auto 2.25rem; }
+    .cta-band__actions { display: flex; justify-content: center; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+    .cta-band__email {
+      display: inline-block;
+      margin-top: 2rem;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+    }
+    .cta-band__email:hover { color: #39e49a; }
+
+    @media (max-width: 991px) {
+      .sol-card,
+      .mrv-wrap { grid-template-columns: 1fr; }
+      .sol-card--flip .sol-card__media { order: 0; }
+      .flow { grid-template-columns: 1fr; gap: 2rem; }
+      .flow::before { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div class="page-loader" id="page-loader" aria-hidden="true">
+    <div class="page-loader__logo">
+      <img src="logo.png" alt="CarbonNxt Logo" style="height: 50px; width: auto; object-fit: contain; display: block; margin: 0 auto 1rem;">
+    </div>
+    <p class="page-loader__tagline">Connecting the Future of Carbon Markets</p>
+  </div>
+
+  <div id="header-placeholder"></div>
+
+  <main id="main-content">
+
+    <!-- 01 / Solutions Hero -->
+    <section class="sol-hero">
+      <div class="sol-hero__bg" aria-hidden="true"></div>
+      <div class="container sol-hero__content" data-reveal="fade-up">
+        <div class="eyebrow-pill" aria-label="Section category" style="border-color: rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.05); color: var(--color-white); margin-bottom: 1.5rem;">
+          <span class="eyebrow-pill__dot" style="background: #39e49a;" aria-hidden="true"></span>
+          <span>OUR SOLUTIONS</span>
+        </div>
+        <h1 class="sol-hero__title">Solutions for a More Transparent Carbon Market</h1>
+        <p class="sol-hero__desc">
+          CarbonNxt brings together carbon-market expertise, digital monitoring, project support and transaction infrastructure to help organizations participate in carbon markets with greater visibility and confidence.
+        </p>
+        <p class="sol-hero__desc">
+          From field-level data and MRV to advisory, project readiness and carbon-asset management, our solutions are designed to support both climate-project developers and carbon-credit buyers.
+        </p>
+      </div>
+    </section>
+
+    <!-- 02 / Core Solutions -->
+    <section class="sol-section" id="core-solutions">
+      <div class="container">
+        <div style="max-width: 720px; margin-bottom: clamp(2.5rem, 5vw, 4rem);" data-reveal="fade-up">
+          <span class="section-label">Core Solutions</span>
+          <h2 class="section-heading">Everything You Need to Move from Project Data to Market Action</h2>
+        </div>
+
+        <article class="sol-card" data-reveal="fade-up">
+          <div class="sol-card__content">
+            <span class="sol-card__tag">Monitoring</span>
+            <h3 class="sol-card__title">Digital MRV & Monitoring</h3>
+            <p class="sol-card__text">
+              Structured digital measurement, reporting and verification workflows that help capture project activity, organize operational data and improve ongoing visibility into carbon-project performance.
+            </p>
+          </div>
+          <div class="sol-card__media">
+            <img src="assets/images/ui/service-reporting.jpg" alt="Digital MRV dashboards organizing carbon-project monitoring data" loading="lazy">
+          </div>
+        </article>
+
+        <article class="sol-card sol-card--flip" data-reveal="fade-up">
+          <div class="sol-card__content">
+            <span class="sol-card__tag">Digitisation</span>
+            <h3 class="sol-card__title">Carbon Asset Digitisation</h3>
+            <p class="sol-card__text">
+              Digital workflows for organizing carbon assets, project records and transaction information in a more traceable and manageable format across the carbon-credit lifecycle.
+            </p>
+          </div>
+          <div class="sol-card__media">
+            <img src="assets/images/ui/service-trading.jpg" alt="Digitised carbon-asset records and transaction workflows" loading="lazy">
+          </div>
+        </article>
+
+        <article class="sol-card" data-reveal="fade-up">
+          <div class="sol-card__content">
+            <span class="sol-card__tag">Advisory</span>
+            <h3 class="sol-card__title">Carbon Market Advisory</h3>
+            <p class="sol-card__text">
+              Expert support for project developers, buyers, corporates and intermediaries across certification readiness, sourcing, pricing, due diligence, market access and transaction strategy.
+            </p>
+          </div>
+          <div class="sol-card__media">
+            <img src="assets/images/ui/service-exchange.jpg" alt="Advisory session on carbon-market strategy and transactions" loading="lazy">
+          </div>
+        </article>
+
+        <article class="sol-card sol-card--flip" data-reveal="fade-up">
+          <div class="sol-card__content">
+            <span class="sol-card__tag">Learning</span>
+            <h3 class="sol-card__title">Knowledge & Capacity Building</h3>
+            <p class="sol-card__text">
+              Practical learning resources, training and market education designed to help teams understand carbon standards, project methodologies, buying decisions and compliance expectations.
+            </p>
+          </div>
+          <div class="sol-card__media">
+            <img src="assets/images/ui/markets-compliance.jpg" alt="Training on carbon standards and compliance expectations" loading="lazy">
+          </div>
+        </article>
+
+        <article class="sol-card" data-reveal="fade-up">
+          <div class="sol-card__content">
+            <span class="sol-card__tag">Field Technology</span>
+            <h3 class="sol-card__title">Field Data & IoT Integration</h3>
+            <p class="sol-card__text">
+              Connected devices, sensors and field-data tools that can strengthen monitoring, operational reporting and evidence collection where project methodology and implementation require it.
+            </p>
+          </div>
+          <div class="sol-card__media">
+            <img src="assets/images/ui/tech-hero.jpg" alt="IoT sensors streaming field data into monitoring workflows" loading="lazy">
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 03 / Digital MRV -->
+    <section class="sol-section sol-section--deep" id="digital-mrv">
+      <div class="container">
+        <div class="mrv-wrap">
+          <div data-reveal="fade-up">
+            <span class="section-label">Digital MRV</span>
+            <h2 class="section-heading">Continuous Data, Better Project Visibility</h2>
+            <p class="section-intro">
+              CarbonNxt's Digital MRV approach is intended to make measurement, reporting and verification more structured by bringing project data into a digital workflow instead of relying only on periodic manual documentation.
+            </p>
+          </div>
+          <div class="mrv-wrap__media" data-reveal="fade-up">
+            <img src="assets/images/ui/platform-side.jpg" alt="CarbonNxt digital MRV platform interface" loading="lazy">
+          </div>
+        </div>
+
+        <div class="mrv-steps">
+          <div class="mrv-step" data-reveal="fade-up">
+            <span class="mrv-step__num">01</span>
+            <h3>Measure</h3>
+            <p>Capture operational or field-level data relevant to the project methodology.</p>
+          </div>
+          <div class="mrv-step" data-reveal="fade-up">
+            <span class="mrv-step__num">02</span>
+            <h3>Report</h3>
+            <p>Organize project information into consistent, reviewable digital records.</p>
+          </div>
+          <div class="mrv-step" data-reveal="fade-up">
+            <span class="mrv-step__num">03</span>
+            <h3>Verify</h3>
+            <p>Support clearer evidence trails for review, monitoring and verification processes.</p>
+          </div>
+          <div class="mrv-step" data-reveal="fade-up">
+            <span class="mrv-step__num">04</span>
+            <h3>Connect</h3>
+            <p>Where applicable, pair field sensors or gateways with the monitoring workflow.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 / Project Impact Categories -->
+    <section class="sol-section sol-section--alt" id="impact-categories">
+      <div class="container">
+        <div style="max-width: 720px;" data-reveal="fade-up">
+          <span class="section-label">Project Impact Categories</span>
+          <h2 class="section-heading">Supporting Different Climate Outcomes</h2>
+          <p class="section-intro">
+            Projects can be organized according to the climate outcome they deliver, helping buyers and project developers understand where each methodology fits within the wider carbon market.
+          </p>
+        </div>
+
+        <div class="impact-grid">
+          <article class="impact-card" data-reveal="fade-up">
+            <img src="assets/images/projects/demo-carbon-removal.jpg" alt="Carbon removal project storing carbon dioxide long term" loading="lazy">
+            <div class="impact-card__body">
+              <h3>Carbon Removal</h3>
+              <p>Projects designed to remove carbon dioxide from the atmosphere and store it for a meaningful period.</p>
+            </div>
+          </article>
+          <article class="impact-card" data-reveal="fade-up">
+            <img src="assets/images/projects/demo-renewable.jpg" alt="Renewable energy project avoiding baseline emissions" loading="lazy">
+            <div class="impact-card__body">
+              <h3>Emissions Avoidance</h3>
+              <p>Projects that help prevent emissions that would otherwise have occurred under a baseline scenario.</p>
+            </div>
+          </article>
+          <article class="impact-card" data-reveal="fade-up">
+            <img src="assets/images/projects/demo-efficiency.jpg" alt="Efficiency project reducing greenhouse-gas emissions" loading="lazy">
+            <div class="impact-card__body">
+              <h3>Emissions Reduction</h3>
+              <p>Projects that reduce the quantity of greenhouse-gas emissions generated by existing activities or systems.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 / Project & Methodology Areas -->
+    <section class="sol-section" id="methodology-areas">
+      <div class="container">
+        <div style="max-width: 760px;" data-reveal="fade-up">
+          <span class="section-label">Project & Methodology Areas</span>
+          <h2 class="section-heading">Climate Projects Across Multiple Technology Pathways</h2>
+          <p class="section-intro">
+            The CarbonNxt project ecosystem can be structured across several practical methodology and technology areas, giving buyers clearer discovery pathways and project developers a more relevant market route.
+          </p>
+        </div>
+
+        <div class="areas-grid">
+          <article class="area-card" data-reveal="fade-up">
+            <div class="area-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3.19M15 6h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3.19"/><line x1="23" y1="13" x2="23" y2="11"/><polyline points="11 6 7 12 13 12 9 18"/></svg>
+            </div>
+            <h3>Electric Mobility</h3>
+            <p>Projects supporting the transition from conventional transport to electric mobility and lower-emission transport systems.</p>
+          </article>
+          <article class="area-card" data-reveal="fade-up">
+            <div class="area-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            </div>
+            <h3>Solar Energy</h3>
+            <p>Solar-generation projects that replace or reduce reliance on higher-emission energy sources.</p>
+          </article>
+          <article class="area-card" data-reveal="fade-up">
+            <div class="area-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <h3>Artisanal Biochar</h3>
+            <p>Small-scale or decentralized biochar production pathways that convert suitable biomass into stable carbon storage.</p>
+          </article>
+          <article class="area-card" data-reveal="fade-up">
+            <div class="area-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <h3>Industrial Biochar</h3>
+            <p>Larger-scale biochar systems designed for controlled production, durable carbon storage and measurable operational data.</p>
+          </article>
+          <article class="area-card" data-reveal="fade-up">
+            <div class="area-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg>
+            </div>
+            <h3>Methane Reduction – Cattle</h3>
+            <p>Projects focused on reducing or capturing methane associated with livestock and related agricultural operations.</p>
+          </article>
+          <article class="area-card" data-reveal="fade-up">
+            <div class="area-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+            </div>
+            <h3>Compressed Biogas (CBG)</h3>
+            <p>Projects that convert organic waste or feedstock into renewable biogas-based energy while reducing unmanaged emissions.</p>
+          </article>
+          <article class="area-card" data-reveal="fade-up">
+            <div class="area-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+            </div>
+            <h3>Clean Cooking & Cookstoves</h3>
+            <p>Improved cookstove and clean-cooking interventions designed to reduce fuel use, indoor pollution and associated emissions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 / How the Solutions Connect -->
+    <section class="sol-section sol-section--deep" id="how-it-connects">
+      <div class="container">
+        <div style="max-width: 760px; margin-inline: auto; text-align: center;" data-reveal="fade-up">
+          <span class="section-label">How the Solutions Connect</span>
+          <h2 class="section-heading">From Field Data to Certification, Market Access and Transactions</h2>
+        </div>
+
+        <div class="flow">
+          <div class="flow-step" data-reveal="fade-up">
+            <span class="flow-step__num">1</span>
+            <h3>Capture</h3>
+            <p>Field and operational data</p>
+          </div>
+          <div class="flow-step" data-reveal="fade-up">
+            <span class="flow-step__num">2</span>
+            <h3>Prepare</h3>
+            <p>Project documentation and readiness</p>
+          </div>
+          <div class="flow-step" data-reveal="fade-up">
+            <span class="flow-step__num">3</span>
+            <h3>Validate</h3>
+            <p>MRV and methodology alignment</p>
+          </div>
+          <div class="flow-step" data-reveal="fade-up">
+            <span class="flow-step__num">4</span>
+            <h3>Access Market</h3>
+            <p>Buyer, seller and trading support</p>
+          </div>
+          <div class="flow-step" data-reveal="fade-up">
+            <span class="flow-step__num">5</span>
+            <h3>Track</h3>
+            <p>Portfolio and transaction visibility</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 / Who These Solutions Are For -->
+    <section class="sol-section sol-section--alt" id="who-its-for">
+      <div class="container">
+        <div style="max-width: 720px;" data-reveal="fade-up">
+          <span class="section-label">Who These Solutions Are For</span>
+          <h2 class="section-heading">Built for Project Developers, Buyers and Market Participants</h2>
+        </div>
+
+        <div class="audience-grid">
+          <article class="audience-card" data-reveal="fade-up">
+            <img src="assets/images/ui/audience-developers.jpg" alt="Climate project developer preparing project documentation" loading="lazy">
+            <div class="audience-card__body">
+              <h3>Project Developers</h3>
+              <p>Project readiness, MRV, documentation, certification guidance and access to buyer demand.</p>
+            </div>
+          </article>
+          <article class="audience-card" data-reveal="fade-up">
+            <img src="assets/images/ui/audience-buyers.jpg" alt="Corporate buyer evaluating carbon-credit portfolios" loading="lazy">
+            <div class="audience-card__body">
+              <h3>Corporates & Buyers</h3>
+              <p>Project evaluation, sourcing, transaction support, reporting and portfolio visibility.</p>
+            </div>
+          </article>
+          <article class="audience-card" data-reveal="fade-up">
+            <img src="assets/images/ui/audience-brokers.jpg" alt="Broker coordinating carbon-market transactions" loading="lazy">
+            <div class="audience-card__body">
+              <h3>Brokers & Intermediaries</h3>
+              <p>Organized project information, market connectivity and transaction coordination.</p>
+            </div>
+          </article>
+          <article class="audience-card" data-reveal="fade-up">
+            <img src="assets/images/ui/audience-investors.jpg" alt="Investor reviewing climate-finance opportunities" loading="lazy">
+            <div class="audience-card__body">
+              <h3>Investors & Climate Finance</h3>
+              <p>Better visibility into project categories, carbon assets and market opportunities.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band">
+      <div class="container cta-band__inner" data-reveal="fade-up">
+        <h2>Need the Right Carbon Solution for Your Project or Organization?</h2>
+        <p>Talk to CarbonNxt about project monitoring, market readiness, buying, selling or carbon-market participation.</p>
+        <div class="cta-band__actions">
+          <a href="contact.html" class="btn btn-primary">Talk to a Carbon Expert</a>
+          <a href="seller.html" class="btn btn-ghost" style="border-color: rgba(255, 255, 255, 0.35); color: var(--color-white);">Submit Your Project</a>
+        </div>
+        <a class="cta-band__email" href="mailto:info@carbonnxt.com">info@carbonnxt.com</a>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="assets/js/site-config.js" defer></script>
+  <script src="assets/js/utils.js" defer></script>
+  <script src="assets/js/insights-data.js" defer></script>
+  <script src="assets/js/page-loader.js" defer></script>
+  <script src="assets/js/navigation.js" defer></script>
+  <script src="assets/js/forms.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/layout.js" defer></script>
+</body>
+</html>

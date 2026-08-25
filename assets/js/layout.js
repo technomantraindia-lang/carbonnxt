@@ -28,8 +28,48 @@
       if (mn) mn.removeAttribute('hidden')
     } catch {
       if (headerPh) {
+        // Full offline fallback (e.g. file://) — mirrors assets/partials/header.html
+        // so navigation still works without a local server.
+        const NAV_LINKS = [
+          ['index.html', 'Home'],
+          ['about.html', 'About'],
+          ['solutions.html', 'Solutions'],
+          ['buyer.html', 'Buyer'],
+          ['seller.html', 'Seller'],
+          ['marketplace.html', 'Marketplace'],
+          ['technology.html', 'Technology'],
+          ['insights.html', 'Insights'],
+          ['contact.html', 'Contact'],
+        ]
+        const desktopLinks = NAV_LINKS.map(
+          ([href, label]) => `<li><a href="${href}" class="site-nav__link">${label}</a></li>`
+        ).join('')
+        const mobileLinks = NAV_LINKS.map(
+          ([href, label]) => `<a href="${href}" class="mobile-nav__link">${label}</a>`
+        ).join('')
         headerPh.innerHTML =
-          '<header class="site-header is-solid" id="site-header"><div class="container site-header__inner"><a href="index.html" class="site-logo"><span class="site-logo__carbon">CARBON</span><span class="site-logo__nxt">NXT</span></a></div></header>'
+          '<header class="site-header is-solid" id="site-header">' +
+            '<div class="container site-header__inner">' +
+              '<a href="index.html" class="site-logo" aria-label="CarbonNxt Home">' +
+                '<img src="logo.png" alt="CarbonNxt Logo" class="site-logo__img" style="height: 55px; width: auto; object-fit: contain; display: block;">' +
+              '</a>' +
+              '<nav class="site-nav" aria-label="Main navigation">' +
+                `<ul class="site-nav__list">${desktopLinks}</ul>` +
+                '<div class="site-nav__actions">' +
+                  '<a href="contact.html" class="btn btn-primary">Inquiry</a>' +
+                '</div>' +
+              '</nav>' +
+              '<button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">' +
+                '<span class="nav-toggle__bar"></span>' +
+              '</button>' +
+            '</div>' +
+          '</header>' +
+          '<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">' +
+            `${mobileLinks}` +
+            '<div class="mobile-nav__actions">' +
+              '<a href="contact.html" class="btn btn-primary">Inquiry</a>' +
+            '</div>' +
+          '</nav>'
       }
     }
   }
@@ -58,12 +98,41 @@
     document.body.classList.add('page-transition', 'is-ready')
   }
 
+  function populateConfigData() {
+    if (typeof SITE_CONFIG === 'undefined') return
+
+    // Populate text content
+    document.querySelectorAll('[data-config-text]').forEach((el) => {
+      const key = el.getAttribute('data-config-text')
+      const val = SITE_CONFIG[key]
+      if (val) el.textContent = val
+    })
+
+    // Populate href attributes
+    document.querySelectorAll('[data-config-href]').forEach((el) => {
+      const key = el.getAttribute('data-config-href')
+      const type = el.getAttribute('data-config-type')
+      let val = SITE_CONFIG[key]
+      if (val) {
+        if (type === 'mailto' && !val.startsWith('mailto:')) {
+          val = `mailto:${val}`
+        }
+        el.setAttribute('href', val)
+      }
+    })
+  }
+
   function pageExtras() {
     const page = (window.location.pathname.split('/').pop() || 'index.html').split('?')[0]
     const map = {
       'index.html': ['assets/js/animations.js', 'assets/js/hero-video.js'],
       'marketplace.html': ['assets/js/marketplace-data.js', 'assets/js/marketplace.js'],
       'project-detail.html': ['assets/js/marketplace-data.js', 'assets/js/marketplace.js', 'assets/js/project-detail.js'],
+      'technology.html': ['assets/js/animations.js'],
+      'about.html': ['assets/js/animations.js'],
+      'contact.html': ['assets/js/animations.js'],
+      'buyer.html': ['assets/js/animations.js'],
+      'seller.html': ['assets/js/animations.js'],
       'insights.html': ['assets/js/insights-data.js', 'assets/js/insights.js'],
       'insight-detail.html': ['assets/js/insights-data.js', 'assets/js/insight-detail.js'],
       'faq.html': ['assets/js/faq.js'],
@@ -77,6 +146,7 @@
     setTimeout(dismissLoader, 3000)
 
     await loadPartials()
+    populateConfigData()
 
     for (const src of pageExtras()) {
       try {

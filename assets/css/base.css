@@ -40,7 +40,7 @@ body {
 h1, h2, h3, h4 {
   font-weight: 600;
   line-height: 1.2;
-  color: var(--color-white);
+  color: var(--color-text-primary);
 }
 
 h1 { font-size: clamp(2.25rem, 4vw + 1rem, 4rem); }
@@ -65,6 +65,7 @@ main.home-main { padding-top: 0; }
 .section {
   padding-block: clamp(4rem, 8vw, 7rem);
   position: relative;
+  scroll-margin-top: 100px;
 }
 
 .section-label {

@@ -1,36 +1,36 @@
 :root {
-  --color-bg-primary: #03182B;
-  --color-bg-secondary: #072C45;
-  --color-bg-deep: #010E1A;
-  --color-bg-black: #010B13;
+  --color-bg-primary: #ffffff; /* Pure white background */
+  --color-bg-secondary: #f4f8f6; /* Soft green-tinted light background */
+  --color-bg-deep: #ebf2ef; /* Darker green-tinted light background */
+  --color-bg-black: #e2eae6; /* Slate green background block */
 
-  --color-teal-dark: #064F5A;
-  --color-teal: #0E8390;
-  --color-cyan: #3AD0DE;
+  --color-teal-dark: #004d40;
+  --color-teal: #00796b;
+  --color-cyan: #00796b;
 
-  --color-green: #39E878;
-  --color-mint: #70F5A5;
-  --color-green-soft: rgba(57, 232, 120, 0.15);
+  --color-green: #029a62; /* Rich embedded green for high contrast on white */
+  --color-mint: #00796b;
+  --color-green-soft: rgba(2, 154, 98, 0.08);
 
-  --color-white: #F4FAF8;
-  --color-text-primary: #EDF8F5;
-  --color-text-muted: #B8CDD1;
-  --color-text-dark: #03182B;
+  --color-white: #ffffff;
+  --color-text-primary: #0f211a; /* Deep forest slate for body text */
+  --color-text-muted: #4e6057; /* Muted subtitle slate green */
+  --color-text-dark: #ffffff; /* White text for green highlight elements */
 
-  --color-border: rgba(112, 245, 165, 0.18);
-  --color-border-light: rgba(255, 255, 255, 0.1);
+  --color-border: rgba(2, 154, 98, 0.15);
+  --color-border-light: rgba(0, 0, 0, 0.08);
 
-  --color-glass: rgba(6, 35, 51, 0.58);
-  --color-glass-strong: rgba(3, 24, 43, 0.86);
+  --color-glass: rgba(255, 255, 255, 0.78);
+  --color-glass-strong: rgba(255, 255, 255, 0.94);
 
-  --color-surface: rgba(4, 28, 46, 0.92);
-  --color-surface-raised: linear-gradient(165deg, rgba(10, 48, 72, 0.95), rgba(3, 22, 38, 0.98));
-  --color-surface-inset: linear-gradient(165deg, rgba(3, 22, 38, 0.98), rgba(1, 12, 22, 0.99));
+  --color-surface: rgba(255, 255, 255, 0.9);
+  --color-surface-raised: linear-gradient(165deg, #ffffff 0%, #f4f8f6 100%);
+  --color-surface-inset: linear-gradient(165deg, #f4f8f6 0%, #ebf2ef 100%);
 
-  --shadow-green: 0 0 40px rgba(57, 232, 120, 0.15);
-  --shadow-dark: 0 30px 90px rgba(0, 0, 0, 0.35);
+  --shadow-green: 0 4px 20px rgba(2, 154, 98, 0.1);
+  --shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.04);
 
-  --container-width: 1280px;
+  --container-width: 1400px;
   --header-height: 84px;
   --gutter: clamp(1.25rem, 4vw, 2.5rem);
   --radius: 12px;

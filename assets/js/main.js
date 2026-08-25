@@ -1,29 +1,30 @@
 function initMain() {
   document.documentElement.classList.add('js')
-  initPageLoader()
-  initNavigation()
-  initForms()
-  initAuthUI()
-  Utils.observeReveal()
-  Utils.initBackToTop()
-  Utils.updateYear()
+  if (typeof initPageLoader === 'function') initPageLoader()
+  if (typeof initNavigation === 'function') initNavigation()
+  if (typeof initForms === 'function') initForms()
+  if (typeof initAuthUI === 'function') initAuthUI()
+  if (typeof Utils !== 'undefined' && Utils.observeReveal) Utils.observeReveal()
+  if (typeof Utils !== 'undefined' && Utils.initBackToTop) Utils.initBackToTop()
+  if (typeof Utils !== 'undefined' && Utils.updateYear) Utils.updateYear()
 
-  const page = Utils.getPageName()
+  const page = typeof Utils !== 'undefined' ? Utils.getPageName() : 'index.html'
 
   if (page === 'index.html' || page === '' || page === '/') {
-    initHomeAnimations()
-    initEcosystemTabs()
-    initAudienceTabs()
-    initCapabilityEcosystem()
-    initOnboardingTabs()
-    initCommandCentre()
-    initHomeInsights()
+    if (typeof initHomeAnimations === 'function') initHomeAnimations()
+    if (typeof initEcosystemTabs === 'function') initEcosystemTabs()
+    if (typeof initAudienceTabs === 'function') initAudienceTabs()
+    if (typeof initCapabilityEcosystem === 'function') initCapabilityEcosystem()
+    if (typeof initOnboardingTabs === 'function') initOnboardingTabs()
+    if (typeof initCommandCentre === 'function') initCommandCentre()
+    if (typeof initSectorsCoverflow === 'function') initSectorsCoverflow()
+    if (typeof initHomeInsights === 'function') initHomeInsights()
   }
-  if (page === 'marketplace.html') initMarketplace()
-  if (page === 'project-detail.html') initProjectDetail()
-  if (page === 'insights.html') initInsights()
-  if (page === 'insight-detail.html') initInsightDetail()
-  if (page === 'faq.html') initFAQ()
+  if (page === 'marketplace.html' && typeof initMarketplace === 'function') initMarketplace()
+  if (page === 'project-detail.html' && typeof initProjectDetail === 'function') initProjectDetail()
+  if (page === 'insights.html' && typeof initInsights === 'function') initInsights()
+  if (page === 'insight-detail.html' && typeof initInsightDetail === 'function') initInsightDetail()
+  if (page === 'faq.html' && typeof initFAQ === 'function') initFAQ()
 }
 
 function initCommandCentre() {
@@ -153,67 +154,67 @@ function initCapabilityEcosystem() {
 function initAudienceTabs() {
   const audienceData = {
     businesses: {
-      label: 'BUSINESSES & CORPORATES',
+      label: 'CORPORATES & BUSINESSES',
       progress: '01 / 04',
-      heading: 'Businesses & Corporates',
-      desc: 'Discover verified carbon credits, support sustainability and ESG commitments, and maintain transparent records for internal climate-action reporting.',
+      heading: 'Corporates & Businesses',
+      desc: 'Meet ESG and net-zero commitments with verified, audit-ready carbon credits — sourced and vetted by our team, not self-served from a raw listing.',
       img: 'assets/images/ui/audience-buyers.jpg',
-      imgAlt: 'Businesses & Corporates',
+      imgAlt: 'Corporates & Businesses',
       benefits: [
-        'Discover verified carbon credits',
-        'Support sustainability & ESG commitments',
-        'Maintain transparent transaction records',
-        'Internal climate-action reporting'
+        'Meet ESG and net-zero commitments',
+        'Verified, audit-ready carbon credits',
+        'Sourced and vetted by our expert team',
+        'Full transaction traceability and support'
       ],
       ctaText: 'Explore Buyer Solutions',
-      ctaLink: 'contact.html'
+      ctaLink: 'buyer.html'
     },
     developers: {
       label: 'PROJECT DEVELOPERS',
       progress: '02 / 04',
       heading: 'Project Developers',
-      desc: 'Present eligible carbon projects, manage project and credit information, and connect with organizations seeking credible environmental assets.',
+      desc: 'Get your carbon project certified and connected to genuine buyer demand. We manage documentation, standard alignment, and market access on your behalf.',
       img: 'assets/images/ui/audience-developers.jpg',
       imgAlt: 'Project Developers',
       benefits: [
-        'Present eligible carbon projects',
-        'Manage project & credit information',
-        'Connect with corporate buyers',
-        'Showcase credible environmental assets'
+        'Get your carbon project certified',
+        'Connect to genuine buyer demand',
+        'Professional documentation management',
+        'Standard alignment and market access'
       ],
       ctaText: 'List Your Project',
-      ctaLink: 'contact.html'
+      ctaLink: 'seller.html'
     },
     brokers: {
       label: 'BROKERS & INTERMEDIARIES',
       progress: '03 / 04',
-      heading: 'Brokers & Market Intermediaries',
-      desc: 'Access structured project information, support buyer and seller transactions, and maintain clear transaction and portfolio records.',
+      heading: 'Brokers & Intermediaries',
+      desc: 'Plug into our network and inventory to close deals faster, with transaction support and settlement handled end-to-end.',
       img: 'assets/images/ui/audience-brokers.jpg',
-      imgAlt: 'Brokers & Market Intermediaries',
+      imgAlt: 'Brokers & Intermediaries',
       benefits: [
-        'Access structured project information',
-        'Support buyer & seller transactions',
-        'Maintain clear transaction records',
-        'Centralized portfolio visibility'
+        'Plug into our network and inventory',
+        'Close transactions faster',
+        'Complete transaction support',
+        'End-to-end settlement handling'
       ],
-      ctaText: 'Explore Broker Capabilities',
+      ctaText: 'Partner With Us',
       ctaLink: 'contact.html'
     },
     investors: {
-      label: 'INVESTORS & CLIMATE-FINANCE',
+      label: 'INVESTORS & CLIMATE FINANCE',
       progress: '04 / 04',
-      heading: 'Investors & Climate-Finance Participants',
-      desc: 'Explore environmental assets, review market intelligence and monitor carbon-market opportunities through centralized portfolio tools.',
+      heading: 'Investors & Climate Finance',
+      desc: 'Get market intelligence and portfolio visibility on carbon assets before you commit capital.',
       img: 'assets/images/ui/audience-investors.jpg',
-      imgAlt: 'Investors & Climate-Finance Participants',
+      imgAlt: 'Investors & Climate Finance',
       benefits: [
-        'Explore environmental assets',
-        'Review carbon market intelligence',
-        'Monitor carbon-market opportunities',
-        'Centralized portfolio tools'
+        'Access carbon market intelligence',
+        'Portfolio visibility on carbon assets',
+        'High-fidelity market analytics',
+        'Vetted carbon asset data'
       ],
-      ctaText: 'Discover Market Opportunities',
+      ctaText: 'Explore Market Data',
       ctaLink: 'contact.html'
     }
   }
@@ -447,6 +448,149 @@ function initHomeInsights() {
           </a>
         </article>`).join('')}
     </div>`
+}
+
+function initSectorsCoverflow() {
+  const stage = document.getElementById('sectors-coverflow-stage')
+  const track = document.getElementById('sectors-coverflow-track')
+  const prevBtn = document.getElementById('sectors-prev-btn')
+  const nextBtn = document.getElementById('sectors-next-btn')
+  const dotsWrap = document.getElementById('sectors-dots-wrap')
+  const filterBtns = document.querySelectorAll('.sector-filter-btn')
+
+  if (!stage || !track) return
+
+  let cards = Array.from(track.querySelectorAll('.sector-cover-card'))
+  if (!cards.length) return
+
+  let activeIndex = 0
+
+  function renderDots() {
+    if (!dotsWrap) return
+    dotsWrap.innerHTML = cards.map((_, i) => `
+      <span class="coverflow-dot ${i === activeIndex ? 'is-active' : ''}" data-index="${i}"></span>
+    `).join('')
+
+    dotsWrap.querySelectorAll('.coverflow-dot').forEach(dot => {
+      dot.addEventListener('click', () => {
+        activeIndex = parseInt(dot.getAttribute('data-index'), 10)
+        updateCoverflow()
+      })
+    })
+  }
+
+  function updateCoverflow() {
+    const isMobile = window.innerWidth < 768
+    const spacing = isMobile ? 140 : 250
+    const depth = isMobile ? -50 : -80
+
+    cards.forEach((card, i) => {
+      const diff = i - activeIndex
+      const absDiff = Math.abs(diff)
+
+      if (diff === 0) {
+        // Active Center Card
+        card.style.transform = `translate3d(0, 0, 100px) rotateY(0deg) scale(1.05)`
+        card.style.zIndex = '30'
+        card.style.opacity = '1'
+        card.style.filter = 'none'
+        card.style.pointerEvents = 'auto'
+        card.classList.add('is-active')
+      } else {
+        card.classList.remove('is-active')
+        const direction = diff > 0 ? 1 : -1
+        const translateX = diff * spacing
+        const rotateY = direction * (isMobile ? -14 : -22)
+        const scale = Math.max(0.65, 1 - absDiff * 0.15)
+        const opacity = Math.max(0, 1 - absDiff * 0.3)
+        const zIndex = 30 - absDiff * 5
+        const blur = absDiff > 1 ? '1.5px' : '0px'
+
+        card.style.transform = `translate3d(${translateX}px, 0, ${diff * depth}px) rotateY(${rotateY}deg) scale(${scale})`
+        card.style.zIndex = zIndex.toString()
+        card.style.opacity = opacity.toString()
+        card.style.filter = blur !== '0px' ? `blur(${blur})` : 'none'
+        card.style.pointerEvents = absDiff === 1 ? 'auto' : 'none'
+      }
+    })
+
+    // Update dots
+    if (dotsWrap) {
+      const dots = dotsWrap.querySelectorAll('.coverflow-dot')
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === activeIndex)
+      })
+    }
+  }
+
+  // Click card to make center
+  cards.forEach((card, i) => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.sector-cover-card__cta')) return
+      if (i !== activeIndex) {
+        activeIndex = i
+        updateCoverflow()
+      }
+    })
+  })
+
+  // Nav buttons
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      activeIndex = (activeIndex - 1 + cards.length) % cards.length
+      updateCoverflow()
+    })
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      activeIndex = (activeIndex + 1) % cards.length
+      updateCoverflow()
+    })
+  }
+
+  // Filter pills
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter')
+
+      filterBtns.forEach(b => b.classList.toggle('is-active', b === btn))
+
+      if (filter === 'all') {
+        cards.forEach(c => c.style.display = 'flex')
+        activeIndex = 0
+      } else {
+        const matchingIndex = cards.findIndex(c => c.getAttribute('data-category') === filter)
+        if (matchingIndex !== -1) {
+          activeIndex = matchingIndex
+        }
+      }
+      updateCoverflow()
+    })
+  })
+
+  // Touch Swipe
+  let startX = 0
+  stage.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX
+  }, { passive: true })
+
+  stage.addEventListener('touchend', (e) => {
+    const diffX = e.changedTouches[0].clientX - startX
+    if (Math.abs(diffX) > 40) {
+      if (diffX < 0) {
+        activeIndex = (activeIndex + 1) % cards.length
+      } else {
+        activeIndex = (activeIndex - 1 + cards.length) % cards.length
+      }
+      updateCoverflow()
+    }
+  }, { passive: true })
+
+  window.addEventListener('resize', typeof Utils !== 'undefined' && Utils.debounce ? Utils.debounce(updateCoverflow, 150) : updateCoverflow)
+
+  renderDots()
+  updateCoverflow()
 }
 
 if (document.readyState === 'loading') {

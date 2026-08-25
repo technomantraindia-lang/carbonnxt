@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Carbon Credits with Confidence | CarbonNxt</title>
+  <meta name="description" content="Expert-led sourcing, project evaluation and transaction support to help businesses access high-quality carbon credits aligned with their climate goals, budget and reporting needs.">
+  <link rel="canonical" href="https://carbonnxt.com/buyer.html">
+  <meta property="og:title" content="Buy Carbon Credits with Confidence | CarbonNxt">
+  <meta property="og:description" content="Guided support from project selection through purchase, retirement and documentation.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <style>
+    /* Custom Styles for Buyer Page */
+    .subpage-hero {
+      position: relative;
+      padding-block: clamp(8rem, 15vh, 12rem) clamp(4rem, 8vh, 6rem);
+      background: linear-gradient(135deg, #020e1a 0%, #06233c 100%);
+      color: var(--color-white);
+      overflow: hidden;
+    }
+    .subpage-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(57, 228, 154, 0.12), transparent 50%);
+      pointer-events: none;
+    }
+    .subpage-hero__content {
+      position: relative;
+      z-index: 2;
+    }
+    .subpage-hero__title {
+      font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+      font-weight: 800;
+      color: var(--color-white);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      max-width: 900px;
+    }
+    .subpage-hero__desc {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 800px;
+      margin-bottom: 2rem;
+    }
+    .buyer-why-section {
+      padding-block: clamp(4rem, 8vw, 7rem);
+      background: var(--color-bg-primary);
+    }
+    .why-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .why-buy-card {
+      background: var(--color-bg-secondary);
+      border-radius: 20px;
+      border: 1px solid rgba(2, 154, 98, 0.06);
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+    }
+    .why-buy-card:hover {
+      border-color: rgba(2, 154, 98, 0.2);
+      transform: translateY(-2px);
+    }
+    .why-buy-card__title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--color-text-primary);
+    }
+    .why-buy-card__desc {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--color-text-muted);
+    }
+    .lead-magnet-section {
+      padding-block: clamp(4rem, 8vw, 6rem);
+      background: linear-gradient(135deg, #020e1a 0%, #06233c 100%);
+      color: var(--color-white);
+      position: relative;
+      overflow: hidden;
+    }
+    .lead-magnet-section h2 {
+      color: #ffffff !important;
+    }
+    .lead-magnet-section p {
+      color: rgba(255, 255, 255, 0.85) !important;
+    }
+    .lead-magnet-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .lead-magnet-form-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 2.5rem;
+      backdrop-filter: blur(10px);
+    }
+    .lead-magnet-form-card input::placeholder {
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+    .showcase-section {
+      padding-block: clamp(4rem, 8vw, 7rem);
+      background: var(--color-bg-secondary);
+    }
+    .showcase-note {
+      max-width: 720px;
+      margin: 1.25rem auto 0;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: var(--color-text-muted);
+    }
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .showcase-card {
+      background: var(--color-white);
+      border-radius: 20px;
+      border: 1px solid rgba(2, 154, 98, 0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+    }
+    .showcase-card:hover {
+      border-color: rgba(2, 154, 98, 0.24);
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(2, 14, 26, 0.08);
+    }
+    .showcase-card__media {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+    }
+    .showcase-card__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .sample-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(2, 14, 26, 0.78);
+      border: 1px solid rgba(255, 209, 102, 0.45);
+      color: #ffd166;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      backdrop-filter: blur(6px);
+    }
+    .sample-badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ffd166;
+    }
+    .showcase-card__body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      flex: 1;
+    }
+    .showcase-card__location {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-green);
+    }
+    .showcase-card__title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--color-text-primary);
+      line-height: 1.3;
+    }
+    .showcase-card__desc {
+      font-size: 0.93rem;
+      line-height: 1.6;
+      color: var(--color-text-muted);
+    }
+    .showcase-card__meta {
+      list-style: none;
+      margin: 0.25rem 0 0;
+      padding: 1rem 0 0;
+      border-top: 1px dashed rgba(2, 154, 98, 0.18);
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+    .showcase-card__meta li {
+      font-size: 0.86rem;
+      line-height: 1.5;
+      color: var(--color-text-muted);
+    }
+    .showcase-card__meta strong {
+      color: var(--color-text-primary);
+      font-weight: 700;
+    }
+    .showcase-card__footer {
+      margin-top: auto;
+      padding-top: 1.25rem;
+    }
+    .how-buying-section {
+      padding-block: clamp(4rem, 8vw, 7rem);
+      background: var(--color-bg-primary);
+    }
+    .linear-process-flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem 2rem;
+      margin-top: 3.5rem;
+    }
+    .process-flow-step {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+    }
+    .process-step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(2, 154, 98, 0.06);
+      color: var(--color-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      border: 1px solid rgba(2, 154, 98, 0.12);
+    }
+    .process-step-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--color-text-primary);
+    }
+    .process-step-desc {
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--color-text-muted);
+    }
+    .diligence-section {
+      padding-block: clamp(4rem, 8vw, 7rem);
+      background: var(--color-bg-secondary);
+    }
+    .diligence-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+    .diligence-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .diligence-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: var(--color-white);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.03);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+    }
+    .diligence-item svg {
+      color: var(--color-green);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .diligence-item-title {
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: 0.25rem;
+    }
+    .diligence-item-desc {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.45;
+    }
+    .standards-section {
+      padding-block: clamp(4rem, 8vw, 7rem);
+      background: var(--color-bg-primary);
+    }
+    .standards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+    .standards-intro {
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--color-text-muted);
+      margin-top: 1.5rem;
+    }
+    .standards-checklist {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .standards-checklist li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--color-white);
+      border: 1px solid rgba(2, 154, 98, 0.1);
+      border-radius: 12px;
+      padding: 1.15rem 1.5rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      font-size: 0.98rem;
+    }
+    .standards-checklist svg {
+      color: var(--color-green);
+      flex-shrink: 0;
+    }
+    .faq-section {
+      padding-block: clamp(4rem, 8vw, 7rem);
+      background: var(--color-bg-secondary);
+    }
+    .faq-wrap {
+      max-width: 820px;
+      margin: 3rem auto 0;
+    }
+    .final-cta-section {
+      padding-block: clamp(4.5rem, 9vw, 7.5rem);
+      background: linear-gradient(135deg, #020e1a 0%, #06233c 100%);
+      color: var(--color-white);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(57, 228, 154, 0.14), transparent 55%);
+      pointer-events: none;
+    }
+    .final-cta-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .final-cta-title {
+      font-size: clamp(1.9rem, 4vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--color-white);
+      margin-bottom: 1.25rem;
+    }
+    .final-cta-desc {
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.82);
+      margin-bottom: 2.25rem;
+    }
+    .final-cta-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .final-cta-email {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .final-cta-email a {
+      color: #39e49a;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .final-cta-email a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 991px) {
+      .why-cards-grid,
+      .lead-magnet-grid,
+      .showcase-grid,
+      .diligence-grid,
+      .standards-grid {
+        grid-template-columns: 1fr;
+      }
+      .linear-process-flow {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 640px) {
+      .linear-process-flow {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div class="page-loader" id="page-loader" aria-hidden="true">
+    <div class="page-loader__logo">
+      <img src="logo.png" alt="CarbonNxt Logo" style="height: 50px; width: auto; object-fit: contain; display: block; margin: 0 auto 1rem;">
+    </div>
+    <p class="page-loader__tagline">Connecting the Future of Carbon Markets</p>
+  </div>
+
+  <div id="header-placeholder"></div>
+
+  <main id="main-content">
+
+    <!-- 01 / Buyer Hero -->
+    <section class="subpage-hero">
+      <div class="container subpage-hero__content" data-reveal="fade-up">
+        <div class="eyebrow-pill" aria-label="Section category" style="border-color: rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.05); color: var(--color-white); margin-bottom: 1.5rem;">
+          <span class="eyebrow-pill__dot" style="background: #39e49a;" aria-hidden="true"></span>
+          <span>FOR CORPORATES & BUSINESSES</span>
+        </div>
+        <h1 class="subpage-hero__title">Buy Carbon Credits with Confidence. Fund What Matters.</h1>
+        <p class="subpage-hero__desc">
+          CarbonNxt combines expert-led sourcing, project evaluation and transaction support to help businesses access high-quality carbon credits aligned with their climate goals, budget and reporting needs. Instead of navigating a raw catalogue alone, buyers receive guided support from project selection through purchase, retirement and documentation.
+        </p>
+        <div class="hero__actions">
+          <a href="contact.html" class="btn btn-primary">Talk to a Carbon Expert</a>
+          <a href="#buyers-guide" class="btn btn-secondary">Download the Buyer's Guide</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 / Why Buy Through CarbonNxt -->
+    <section class="buyer-why-section">
+      <div class="container">
+        <header class="home-header text-center" data-reveal>
+          <span class="section-label">02 / WHY BUY THROUGH CARBONNXT</span>
+          <h2 class="section-heading">Buying Carbon Credits Shouldn't Feel Like a Gamble</h2>
+        </header>
+
+        <div class="why-cards-grid" data-reveal="fade-up">
+          <div class="why-buy-card">
+            <h3 class="why-buy-card__title">Vetted, Not Just Listed</h3>
+            <p class="why-buy-card__desc">
+              Projects are reviewed for registry status, methodology and supporting documentation before being presented to buyers.
+            </p>
+          </div>
+          <div class="why-buy-card">
+            <h3 class="why-buy-card__title">One Point of Accountability</h3>
+            <p class="why-buy-card__desc">
+              A dedicated advisor helps align project selection with your ESG goals, budget and preferred climate categories.
+            </p>
+          </div>
+          <div class="why-buy-card">
+            <h3 class="why-buy-card__title">Ongoing Quality Visibility</h3>
+            <p class="why-buy-card__desc">
+              Where data is available, CarbonNxt supports continued visibility into project and credit status after purchase.
+            </p>
+          </div>
+          <div class="why-buy-card">
+            <h3 class="why-buy-card__title">Audit-Ready Documentation</h3>
+            <p class="why-buy-card__desc">
+              Transactions are supported with relevant project references, verification records and retirement documentation where applicable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 / Buyer's Guide (Lead Magnet) -->
+    <section class="lead-magnet-section" id="buyers-guide">
+      <div class="container">
+        <div class="lead-magnet-grid">
+          <div data-reveal="fade-up">
+            <div class="eyebrow-pill" aria-label="Section category" style="border-color: rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.05); color: var(--color-white); margin-bottom: 1.5rem;">
+              <span class="eyebrow-pill__dot" style="background: #39e49a;" aria-hidden="true"></span>
+              <span>03 / BUYER'S GUIDE</span>
+            </div>
+            <h2 style="font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; line-height: 1.2; margin-bottom: 1.25rem; color: #ffffff;">Not Sure Where to Start?</h2>
+            <p style="font-size: 1.05rem; line-height: 1.65; color: rgba(255, 255, 255, 0.8); max-width: 500px;">
+              Get our Carbon Credit Buyer's Guide — a practical introduction to evaluating project quality, understanding recognized standards, comparing carbon-credit options and avoiding common purchasing mistakes.
+            </p>
+          </div>
+          <div class="lead-magnet-form-card" data-reveal="fade-up" data-delay="150">
+            <form class="js-form" action="#" method="POST">
+              <div class="form-group">
+                <label for="guide-name" class="form-label" style="color: var(--color-white);">Full Name</label>
+                <input type="text" id="guide-name" class="form-control" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); color: var(--color-white);" placeholder="e.g. Abhimanyu Rathi" required>
+              </div>
+              <div class="form-group" style="margin-bottom: 2rem;">
+                <label for="guide-email" class="form-label" style="color: var(--color-white);">Corporate Email</label>
+                <input type="email" id="guide-email" class="form-control" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); color: var(--color-white);" placeholder="name@company.com" required>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding-block: 0.85rem; justify-content: center;">
+                <span>Send Me the Guide</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 / Sample Project Showcase -->
+    <section class="showcase-section">
+      <div class="container">
+        <header class="home-header text-center" data-reveal>
+          <span class="section-label">04 / SAMPLE PROJECT SHOWCASE</span>
+          <h2 class="section-heading">Climate Projects Buyers Could Explore</h2>
+        </header>
+        <p class="showcase-note" data-reveal="fade-up">
+          The project concepts below are illustrative showcase examples for presentation purposes and are not live CarbonNxt inventory.
+        </p>
+
+        <div class="showcase-grid" data-reveal="fade-up">
+          <article class="showcase-card">
+            <div class="showcase-card__media">
+              <img src="assets/images/projects/demo-forestry.jpg" alt="Native forest restoration landscape in a semi-arid zone" loading="lazy">
+              <span class="sample-badge">Sample / Not Live</span>
+            </div>
+            <div class="showcase-card__body">
+              <span class="showcase-card__location">Rajasthan, India</span>
+              <h3 class="showcase-card__title">Aravalli Native Forest Restoration</h3>
+              <p class="showcase-card__desc">
+                A landscape restoration initiative focused on native tree planting, degraded-land recovery and long-term ecosystem resilience across semi-arid zones.
+              </p>
+              <ul class="showcase-card__meta">
+                <li><strong>Category:</strong> Forestry & Land Use</li>
+                <li><strong>Verification:</strong> Illustrative standard reference</li>
+                <li><strong>Climate value:</strong> Carbon removal + biodiversity co-benefits</li>
+              </ul>
+              <div class="showcase-card__footer">
+                <a href="contact.html" class="btn btn-secondary" style="padding: 0.55rem 1.25rem; font-size: 0.88rem;">Explore Project</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <div class="showcase-card__media">
+              <img src="assets/images/projects/demo-biochar.jpg" alt="Biochar production converting agricultural residues into stable carbon" loading="lazy">
+              <span class="sample-badge">Sample / Not Live</span>
+            </div>
+            <div class="showcase-card__body">
+              <span class="showcase-card__location">Gujarat, India</span>
+              <h3 class="showcase-card__title">Saurashtra Biochar Carbon Removal</h3>
+              <p class="showcase-card__desc">
+                A biomass-to-biochar project designed to convert agricultural residues into stable carbon while supporting circular resource use and soil improvement.
+              </p>
+              <ul class="showcase-card__meta">
+                <li><strong>Category:</strong> Biochar / Carbon Removal</li>
+                <li><strong>Verification:</strong> Illustrative standard reference</li>
+                <li><strong>Climate value:</strong> Durable carbon storage + residue management</li>
+              </ul>
+              <div class="showcase-card__footer">
+                <a href="contact.html" class="btn btn-secondary" style="padding: 0.55rem 1.25rem; font-size: 0.88rem;">Explore Project</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <div class="showcase-card__media">
+              <img src="assets/images/projects/demo-renewable.jpg" alt="Grid-connected solar generation displacing conventional power emissions" loading="lazy">
+              <span class="sample-badge">Sample / Not Live</span>
+            </div>
+            <div class="showcase-card__body">
+              <span class="showcase-card__location">Gujarat & Rajasthan, India</span>
+              <h3 class="showcase-card__title">Western India Solar Transition</h3>
+              <p class="showcase-card__desc">
+                A renewable-energy program supporting grid-connected solar generation and displacement of emissions associated with conventional power sources.
+              </p>
+              <ul class="showcase-card__meta">
+                <li><strong>Category:</strong> Renewable Energy</li>
+                <li><strong>Verification:</strong> Illustrative standard reference</li>
+                <li><strong>Climate value:</strong> Emissions reduction + clean energy</li>
+              </ul>
+              <div class="showcase-card__footer">
+                <a href="contact.html" class="btn btn-secondary" style="padding: 0.55rem 1.25rem; font-size: 0.88rem;">Explore Project</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <div class="showcase-card__media">
+              <img src="assets/images/projects/demo-blue-carbon.jpg" alt="Mangrove regeneration along the coastline supporting blue-carbon sequestration" loading="lazy">
+              <span class="sample-badge">Sample / Not Live</span>
+            </div>
+            <div class="showcase-card__body">
+              <span class="showcase-card__location">Western Coast, India</span>
+              <h3 class="showcase-card__title">Coastal Mangrove Resilience Program</h3>
+              <p class="showcase-card__desc">
+                A blue-carbon restoration concept focused on mangrove regeneration, coastal ecosystem protection and long-term carbon sequestration.
+              </p>
+              <ul class="showcase-card__meta">
+                <li><strong>Category:</strong> Blue Carbon</li>
+                <li><strong>Verification:</strong> Illustrative standard reference</li>
+                <li><strong>Climate value:</strong> Carbon removal + coastal resilience</li>
+              </ul>
+              <div class="showcase-card__footer">
+                <a href="contact.html" class="btn btn-secondary" style="padding: 0.55rem 1.25rem; font-size: 0.88rem;">Explore Project</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 / How Buying Works -->
+    <section class="how-buying-section">
+      <div class="container">
+        <header class="home-header text-center" data-reveal>
+          <span class="section-label">05 / HOW BUYING WORKS</span>
+          <h2 class="section-heading">From First Conversation to Certificate</h2>
+        </header>
+
+        <div class="linear-process-flow" data-reveal="fade-up">
+          <div class="process-flow-step">
+            <div class="process-step-num">01</div>
+            <h3 class="process-step-title">Consult</h3>
+            <p class="process-step-desc">Share your target volume, budget and preferred project categories.</p>
+          </div>
+          <div class="process-flow-step">
+            <div class="process-step-num">02</div>
+            <h3 class="process-step-title">Review</h3>
+            <p class="process-step-desc">Receive a curated set of relevant project and credit options with supporting information.</p>
+          </div>
+          <div class="process-flow-step">
+            <div class="process-step-num">03</div>
+            <h3 class="process-step-title">Select</h3>
+            <p class="process-step-desc">Choose the option that best aligns with your climate, brand and reporting objectives.</p>
+          </div>
+          <div class="process-flow-step">
+            <div class="process-step-num">04</div>
+            <h3 class="process-step-title">Transact</h3>
+            <p class="process-step-desc">CarbonNxt supports purchase execution, paperwork and settlement.</p>
+          </div>
+          <div class="process-flow-step">
+            <div class="process-step-num">05</div>
+            <h3 class="process-step-title">Retire</h3>
+            <p class="process-step-desc">Where required, credits can be retired in line with your instructions.</p>
+          </div>
+          <div class="process-flow-step">
+            <div class="process-step-num">06</div>
+            <h3 class="process-step-title">Document</h3>
+            <p class="process-step-desc">Receive supporting records and retirement documentation for reporting or audit use.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 / Quality Assurance & Due Diligence -->
+    <section class="diligence-section">
+      <div class="container">
+        <div class="diligence-grid">
+          <div data-reveal="fade-up">
+            <div class="eyebrow-pill" aria-label="Section category" style="margin-bottom: 1.5rem;">
+              <span class="eyebrow-pill__dot" aria-hidden="true"></span>
+              <span>06 / QUALITY ASSURANCE & DUE DILIGENCE</span>
+            </div>
+            <h2 style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; line-height: 1.15; color: var(--color-text-primary); margin-bottom: 1.5rem;">
+              We Navigate the Complex Parts So You Don't Have To
+            </h2>
+            <p style="font-size: 1.05rem; line-height: 1.65; color: var(--color-text-muted);">
+              CarbonNxt's buyer approach goes beyond basic project discovery. Our role is to help buyers understand documentation, methodology alignment, project quality indicators, delivery considerations and available market information before a transaction is completed.
+            </p>
+          </div>
+
+          <div class="diligence-list" data-reveal="fade-up" data-delay="150">
+            <div class="diligence-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <div>
+                <h4 class="diligence-item-title">Project Review</h4>
+                <p class="diligence-item-desc">Documentation, methodology and registry-status checks where available.</p>
+              </div>
+            </div>
+            <div class="diligence-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <div>
+                <h4 class="diligence-item-title">Risk Awareness</h4>
+                <p class="diligence-item-desc">Consideration of project delivery, permanence and implementation factors where relevant.</p>
+              </div>
+            </div>
+            <div class="diligence-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <div>
+                <h4 class="diligence-item-title">Portfolio Visibility</h4>
+                <p class="diligence-item-desc">A clearer view of purchased credits, supporting records and retirement status.</p>
+              </div>
+            </div>
+            <div class="diligence-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <div>
+                <h4 class="diligence-item-title">Reporting Support</h4>
+                <p class="diligence-item-desc">Documentation organized for sustainability, ESG and audit workflows.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 / Standards & Verification -->
+    <section class="standards-section">
+      <div class="container">
+        <div class="standards-grid">
+          <div data-reveal="fade-up">
+            <div class="eyebrow-pill" aria-label="Section category" style="margin-bottom: 1.5rem;">
+              <span class="eyebrow-pill__dot" aria-hidden="true"></span>
+              <span>07 / STANDARDS & VERIFICATION</span>
+            </div>
+            <h2 style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; line-height: 1.15; color: var(--color-text-primary);">
+              Grounded in Recognized Standards, Supported by Clear Data
+            </h2>
+            <p class="standards-intro">
+              CarbonNxt supports buyers in understanding projects aligned with recognized carbon standards and methodologies. Where applicable, monitoring, reporting and verification information helps provide continued visibility into project and credit quality.
+            </p>
+          </div>
+
+          <ul class="standards-checklist" data-reveal="fade-up" data-delay="150">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Registry-linked project references
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Verification & monitoring documentation
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Retirement records where applicable
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Audit-ready transaction files
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 / FAQ -->
+    <section class="faq-section">
+      <div class="container">
+        <header class="home-header text-center" data-reveal>
+          <span class="section-label">08 / FAQ</span>
+          <h2 class="section-heading">Buyer Questions</h2>
+        </header>
+
+        <div class="faq-wrap buyer-faq" data-reveal="fade-up">
+          <div class="accordion-item glass-panel" style="padding:0 1.25rem;margin-bottom:0.75rem">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="buyer-faq-panel-1" id="buyer-faq-trigger-1">
+              How do I know the credits are legitimate?
+            </button>
+            <div class="accordion-panel" id="buyer-faq-panel-1" role="region" aria-labelledby="buyer-faq-trigger-1">
+              <div class="accordion-panel__inner">
+                <div class="accordion-panel__content">CarbonNxt helps review relevant project, registry and verification information before presenting suitable options.</div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item glass-panel" style="padding:0 1.25rem;margin-bottom:0.75rem">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="buyer-faq-panel-2" id="buyer-faq-trigger-2">
+              Can I buy by project type or region?
+            </button>
+            <div class="accordion-panel" id="buyer-faq-panel-2" role="region" aria-labelledby="buyer-faq-trigger-2">
+              <div class="accordion-panel__inner">
+                <div class="accordion-panel__content">Yes. Your preferences can be used to build a more relevant shortlist based on available supply.</div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item glass-panel" style="padding:0 1.25rem;margin-bottom:0.75rem">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="buyer-faq-panel-3" id="buyer-faq-trigger-3">
+              How is pricing determined?
+            </button>
+            <div class="accordion-panel" id="buyer-faq-panel-3" role="region" aria-labelledby="buyer-faq-trigger-3">
+              <div class="accordion-panel__inner">
+                <div class="accordion-panel__content">Pricing can vary by project type, methodology, geography, vintage, market demand and other quality factors.</div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item glass-panel" style="padding:0 1.25rem;margin-bottom:0.75rem">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="buyer-faq-panel-4" id="buyer-faq-trigger-4">
+              What do I receive after purchase?
+            </button>
+            <div class="accordion-panel" id="buyer-faq-panel-4" role="region" aria-labelledby="buyer-faq-trigger-4">
+              <div class="accordion-panel__inner">
+                <div class="accordion-panel__content">Depending on the transaction, you may receive project references, verification records, transaction documents and retirement records where applicable.</div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item glass-panel" style="padding:0 1.25rem;margin-bottom:0.75rem">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="buyer-faq-panel-5" id="buyer-faq-trigger-5">
+              Can CarbonNxt support long-term buying strategies?
+            </button>
+            <div class="accordion-panel" id="buyer-faq-panel-5" role="region" aria-labelledby="buyer-faq-trigger-5">
+              <div class="accordion-panel__inner">
+                <div class="accordion-panel__content">The buyer model is designed to support both individual purchases and broader portfolio planning.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta-section">
+      <div class="container">
+        <div class="final-cta-inner" data-reveal="fade-up">
+          <h2 class="final-cta-title">Ready to Buy Carbon Credits with Confidence?</h2>
+          <p class="final-cta-desc">
+            Tell us your target volume, preferred category and climate objective. Our team can help you understand the market and identify suitable opportunities.
+          </p>
+          <div class="final-cta-actions">
+            <a href="contact.html" class="btn btn-primary">Talk to a Carbon Expert</a>
+            <a href="#buyers-guide" class="btn btn-secondary">Download the Buyer's Guide</a>
+          </div>
+          <p class="final-cta-email">
+            Prefer email? Reach us at <a href="mailto:info@carbonnxt.com">info@carbonnxt.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="assets/js/site-config.js" defer></script>
+  <script src="assets/js/utils.js" defer></script>
+  <script src="assets/js/page-loader.js" defer></script>
+  <script src="assets/js/navigation.js" defer></script>
+  <script src="assets/js/forms.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/layout.js" defer></script>
+  <script>
+    // Buyer FAQ accordion (static items on this page)
+    (function () {
+      const items = document.querySelectorAll('.buyer-faq .accordion-item');
+      items.forEach((item) => {
+        const btn = item.querySelector('.accordion-trigger');
+        if (!btn) return;
+        btn.addEventListener('click', () => {
+          const isOpen = item.classList.contains('is-open');
+          items.forEach((el) => {
+            el.classList.remove('is-open');
+            const t = el.querySelector('.accordion-trigger');
+            if (t) t.setAttribute('aria-expanded', 'false');
+          });
+          if (!isOpen) {
+            item.classList.add('is-open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

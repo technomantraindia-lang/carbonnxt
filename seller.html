@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List & Sell Your Carbon Project | CarbonNxt</title>
+  <meta name="description" content="Get certified, get funded, and get paid. Connect your carbon project with genuine corporate buyers with no upfront listing fees.">
+  <link rel="canonical" href="https://carbonnxt.com/seller.html">
+  <meta property="og:title" content="List & Sell Your Carbon Project | CarbonNxt">
+  <meta property="og:description" content="Get certified, get funded, and get paid. Connect your carbon project with genuine corporate buyers with no upfront listing fees.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <style>
+    /* Custom Styles for Seller Page */
+    .subpage-hero {
+      position: relative;
+      padding-block: clamp(8rem, 15vh, 12rem) clamp(4rem, 8vh, 6rem);
+      background: linear-gradient(135deg, #020e1a 0%, #06233c 100%);
+      color: var(--color-white);
+      overflow: hidden;
+    }
+    .subpage-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(57, 228, 154, 0.12), transparent 50%);
+      pointer-events: none;
+    }
+    .subpage-hero__content {
+      position: relative;
+      z-index: 2;
+    }
+    .subpage-hero__title {
+      font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+      font-weight: 800;
+      color: var(--color-white);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      max-width: 900px;
+    }
+    .subpage-hero__tagline {
+      font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+      font-weight: 600;
+      color: #39e49a;
+      margin-bottom: 1.5rem;
+    }
+    .subpage-hero__desc {
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 820px;
+      margin-bottom: 2rem;
+    }
+    .hero-check-list {
+      list-style: none;
+      padding: 0;
+      margin: 3rem 0 0 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem 1.75rem;
+      max-width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 2rem;
+    }
+    .hero-check-item {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .hero-check-item svg {
+      color: #39e49a;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .hero-check-item strong {
+      display: block;
+      font-weight: 700;
+      color: var(--color-white);
+      font-size: 0.95rem;
+      margin-bottom: 0.15rem;
+    }
+    .hero-check-item span {
+      display: block;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.72);
+    }
+    .seller-why-section {
+      padding-block: clamp(4rem, 8vw, 7rem);
+      background: var(--color-bg-primary);
+    }
+    .why-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .why-sell-card {
+      background: var(--color-bg-secondary);
+      border-radius: 20px;
+      border: 1px solid rgba(2, 154, 98, 0.06);
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+    }
+    .why-sell-card:hover {
+      border-color: rgba(2, 154, 98, 0.2);
+      transform: translateY(-2px);
+    }
+    .why-sell-card__title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--color-text-primary);
+    }
+    .why-sell-card__desc {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--color-text-muted);
+    }
+    .services-grid-section {
+      padding-block: clamp(4rem, 8vw, 7rem);
+      background: var(--color-bg-secondary);
+    }
+    .services-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+    }
+    .service-card {
+      background: var(--color-white);
+      border-radius: 20px;
+      border: 1px solid rgba(2, 154, 98, 0.05);
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.01);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .service-card__num {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(2, 154, 98, 0.06);
+      color: var(--color-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+    .service-card__title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--color-text-primary);
+    }
+    .service-card__desc {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--color-text-muted);
+    }
+    .lead-magnet-section {
+      padding-block: clamp(4rem, 8vw, 6rem);
+      background: linear-gradient(135deg, #020e1a 0%, #06233c 100%);
+      color: var(--color-white);
+      position: relative;
+      overflow: hidden;
+    }
+    .lead-magnet-section h2 {
+      color: #ffffff !important;
+    }
+    .lead-magnet-section p {
+      color: rgba(255, 255, 255, 0.85) !important;
+    }
+    .lead-magnet-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .lead-magnet-form-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 2.5rem;
+      backdrop-filter: blur(10px);
+    }
+    .lead-magnet-form-card input::placeholder {
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+    .how-selling-section {
+      padding-block: clamp(4rem, 8vw, 7rem);
+      background: var(--color-bg-primary);
+    }
+    .linear-process-flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+    .process-flow-step {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+    }
+    .process-step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(2, 154, 98, 0.06);
+      color: var(--color-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      border: 1px solid rgba(2, 154, 98, 0.12);
+    }
+    .process-step-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--color-text-primary);
+    }
+    .process-step-desc {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--color-text-muted);
+    }
+    .support-section {
+      padding-block: clamp(4rem, 8vw, 7rem);
+      background: var(--color-bg-secondary);
+    }
+    .support-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+    .support-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .support-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: var(--color-white);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.03);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+    }
+    .support-item svg {
+      color: var(--color-green);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .support-item-title {
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: 0.25rem;
+    }
+    .support-item-desc {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.45;
+    }
+
+    /* Standards & Verification */
+    .standards-section {
+      padding-block: clamp(4rem, 8vw, 7rem);
+      background: var(--color-bg-primary);
+    }
+    .standards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+    .standards-card {
+      background: var(--color-bg-secondary);
+      border-radius: 20px;
+      border: 1px solid rgba(2, 154, 98, 0.08);
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .standards-check {
+      display: flex;
+      gap: 0.9rem;
+      align-items: center;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      font-size: 0.98rem;
+      line-height: 1.4;
+    }
+    .standards-check svg {
+      color: var(--color-green);
+      flex-shrink: 0;
+    }
+    .mrv-note {
+      margin-top: 0.5rem;
+      padding: 1.1rem 1.35rem;
+      border-left: 3px solid var(--color-green);
+      background: rgba(2, 154, 98, 0.05);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--color-text-muted);
+    }
+
+    /* FAQ */
+    .faq-section {
+      padding-block: clamp(4rem, 8vw, 7rem);
+      background: var(--color-bg-secondary);
+    }
+    .faq-list {
+      max-width: 820px;
+      margin: 3rem auto 0;
+    }
+
+    /* Final CTA */
+    .final-cta-section {
+      position: relative;
+      padding-block: clamp(4.5rem, 9vw, 8rem);
+      background: linear-gradient(135deg, #020e1a 0%, #06233c 100%);
+      color: var(--color-white);
+      text-align: center;
+      overflow: hidden;
+    }
+    .final-cta-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(57, 228, 154, 0.14), transparent 55%);
+      pointer-events: none;
+    }
+    .final-cta__content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .final-cta__title {
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      font-weight: 800;
+      line-height: 1.18;
+      color: var(--color-white);
+      max-width: 720px;
+      margin-bottom: 1.25rem;
+    }
+    .final-cta__desc {
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 640px;
+      margin-bottom: 2.25rem;
+    }
+    .final-cta__email {
+      margin-top: 1.75rem;
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.65);
+    }
+    .final-cta__email a {
+      color: #39e49a;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .final-cta__email a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 991px) {
+      .why-cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .services-showcase-grid {
+        grid-template-columns: 1fr;
+      }
+      .lead-magnet-grid {
+        grid-template-columns: 1fr;
+      }
+      .linear-process-flow {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero-check-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+      .standards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 640px) {
+      .hero-check-list {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      .linear-process-flow {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div class="page-loader" id="page-loader" aria-hidden="true">
+    <div class="page-loader__logo">
+      <img src="logo.png" alt="CarbonNxt Logo" style="height: 50px; width: auto; object-fit: contain; display: block; margin: 0 auto 1rem;">
+    </div>
+    <p class="page-loader__tagline">Connecting the Future of Carbon Markets</p>
+  </div>
+
+  <div id="header-placeholder"></div>
+
+  <main id="main-content">
+
+    <!-- 01 / Seller Hero -->
+    <section class="subpage-hero">
+      <div class="container subpage-hero__content" data-reveal="fade-up">
+        <div class="eyebrow-pill" aria-label="Section category" style="border-color: rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.05); color: var(--color-white); margin-bottom: 1.5rem;">
+          <span class="eyebrow-pill__dot" style="background: #39e49a;" aria-hidden="true"></span>
+          <span>FOR PROJECT DEVELOPERS & CREDIT OWNERS</span>
+        </div>
+        <h1 class="subpage-hero__title">Get Certified. Get Funded. Get Paid.</h1>
+        <p class="subpage-hero__tagline">Your Project, Backed by an Expert Certification & Sales Team.</p>
+        <p class="subpage-hero__desc">
+          CarbonNxt helps project developers and credit owners prepare for certification, reach genuine buyer demand and manage the commercial journey from documentation to settlement.
+          With no upfront listing fee and one coordinated team supporting the process, your project gets more than a listing — it gets active market support.
+        </p>
+        <div class="hero__actions">
+          <a href="contact.html" class="btn btn-primary">Talk to Our Team</a>
+          <a href="contact.html" class="btn btn-secondary">Submit Your Project</a>
+        </div>
+
+        <ul class="hero-check-list">
+          <li class="hero-check-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <div>
+              <strong>No Upfront Listing Fees</strong>
+              <span>Get started without paying simply to appear in a catalogue.</span>
+            </div>
+          </li>
+          <li class="hero-check-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <div>
+              <strong>Certification Guidance</strong>
+              <span>Support with methodology, documentation and standard alignment.</span>
+            </div>
+          </li>
+          <li class="hero-check-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <div>
+              <strong>Active Buyer Access</strong>
+              <span>Projects are matched with relevant buyer demand instead of waiting passively.</span>
+            </div>
+          </li>
+          <li class="hero-check-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <div>
+              <strong>One Team, Start to Finish</strong>
+              <span>The same coordinated process supports readiness, sale and settlement.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 02 / Why Sell Through CarbonNxt -->
+    <section class="seller-why-section">
+      <div class="container">
+        <header class="home-header text-center" data-reveal>
+          <span class="section-label">WHY SELL THROUGH CARBONNXT</span>
+          <h2 class="section-heading">Selling Carbon Credits Shouldn't Mean Navigating the Market Alone</h2>
+        </header>
+
+        <div class="why-cards-grid" data-reveal="fade-up">
+          <div class="why-sell-card">
+            <h3 class="why-sell-card__title">No Upfront Cost</h3>
+            <p class="why-sell-card__desc">
+              CarbonNxt does not charge simply to list or begin the process. The seller proposition is tied to successful market outcomes.
+            </p>
+          </div>
+          <div class="why-sell-card">
+            <h3 class="why-sell-card__title">Certification Guidance, Not Just a Checklist</h3>
+            <p class="why-sell-card__desc">
+              Support starts with project readiness, methodology fit and documentation quality so avoidable gaps do not slow the project down.
+            </p>
+          </div>
+          <div class="why-sell-card">
+            <h3 class="why-sell-card__title">Real Buyer Access</h3>
+            <p class="why-sell-card__desc">
+              Your project can be introduced to corporates, brokers and consultancies looking for relevant project types and regions.
+            </p>
+          </div>
+          <div class="why-sell-card">
+            <h3 class="why-sell-card__title">One Advisor Journey</h3>
+            <p class="why-sell-card__desc">
+              Certification readiness, market positioning, negotiation and settlement stay connected instead of being handed between disconnected teams.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 / Seller Services -->
+    <section class="services-grid-section">
+      <div class="container">
+        <header class="home-header text-center" data-reveal>
+          <span class="section-label">SELLER SERVICES</span>
+          <h2 class="section-heading">Everything Between "We Have a Project" and "We Got Paid"</h2>
+        </header>
+
+        <div class="services-showcase-grid" data-reveal="fade-up">
+          <div class="service-card">
+            <div class="service-card__num">01</div>
+            <h3 class="service-card__title">Certification & Documentation Support</h3>
+            <p class="service-card__desc">
+              Guidance on methodology selection, monitoring-plan design and documentation preparation aligned with the standard that best fits the project.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-card__num">02</div>
+            <h3 class="service-card__title">Buyer Matching & Sales</h3>
+            <p class="service-card__desc">
+              Active matching with buyers seeking relevant project types, locations and carbon outcomes — not just passive publication.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-card__num">03</div>
+            <h3 class="service-card__title">Pricing Guidance</h3>
+            <p class="service-card__desc">
+              Support in understanding competitive market positioning using available market information and project characteristics.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-card__num">04</div>
+            <h3 class="service-card__title">Transaction & Settlement Management</h3>
+            <p class="service-card__desc">
+              Assistance with commercial discussions, contracts, transfer and settlement so the project team can stay focused on delivery.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 / Project Readiness Guide (Lead Magnet) -->
+    <section class="lead-magnet-section" id="developer-guide">
+      <div class="container">
+        <div class="lead-magnet-grid">
+          <div data-reveal="fade-up">
+            <div class="eyebrow-pill" aria-label="Section category" style="border-color: rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.05); color: var(--color-white); margin-bottom: 1.5rem;">
+              <span class="eyebrow-pill__dot" style="background: #39e49a;" aria-hidden="true"></span>
+              <span>PROJECT READINESS GUIDE</span>
+            </div>
+            <h2 style="font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; line-height: 1.2; margin-bottom: 1.25rem; color: #ffffff;">Not Sure if Your Project Qualifies?</h2>
+            <p style="font-size: 1.05rem; line-height: 1.65; color: rgba(255, 255, 255, 0.8); max-width: 520px;">
+              Get CarbonNxt's Project Developer's Guide to Carbon Certification — a practical introduction to project eligibility, standards, documentation requirements, common causes of delay and the factors that can influence carbon-credit pricing.
+            </p>
+          </div>
+          <div class="lead-magnet-form-card" data-reveal="fade-up" data-delay="150">
+            <form class="js-form" action="#" method="POST">
+              <div class="form-group">
+                <label for="guide-name" class="form-label" style="color: var(--color-white);">Full Name</label>
+                <input type="text" id="guide-name" class="form-control" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); color: var(--color-white);" placeholder="e.g. Abhimanyu Rathi" required>
+              </div>
+              <div class="form-group" style="margin-bottom: 2rem;">
+                <label for="guide-email" class="form-label" style="color: var(--color-white);">Corporate Email</label>
+                <input type="email" id="guide-email" class="form-control" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); color: var(--color-white);" placeholder="name@company.com" required>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding-block: 0.85rem; justify-content: center;">
+                <span>Send Me the Guide</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 / How Selling Works -->
+    <section class="how-selling-section">
+      <div class="container">
+        <header class="home-header text-center" data-reveal>
+          <span class="section-label">HOW SELLING WORKS</span>
+          <h2 class="section-heading">From Submission to Settlement, With a Clear Process</h2>
+        </header>
+
+        <div class="linear-process-flow" data-reveal="fade-up">
+          <div class="process-flow-step">
+            <div class="process-step-num">01</div>
+            <h3 class="process-step-title">Submit</h3>
+            <p class="process-step-desc">Share project details through the intake process. CarbonNxt reviews fit and likely standard alignment.</p>
+          </div>
+          <div class="process-flow-step">
+            <div class="process-step-num">02</div>
+            <h3 class="process-step-title">Certify</h3>
+            <p class="process-step-desc">Receive guidance on methodology and documentation needed to move toward the appropriate certification pathway.</p>
+          </div>
+          <div class="process-flow-step">
+            <div class="process-step-num">03</div>
+            <h3 class="process-step-title">List & Match</h3>
+            <p class="process-step-desc">The project is positioned for relevant buyer demand instead of being left in a public queue.</p>
+          </div>
+          <div class="process-flow-step">
+            <div class="process-step-num">04</div>
+            <h3 class="process-step-title">Negotiate & Contract</h3>
+            <p class="process-step-desc">CarbonNxt supports pricing discussions, commercial terms and transaction paperwork.</p>
+          </div>
+          <div class="process-flow-step">
+            <div class="process-step-num">05</div>
+            <h3 class="process-step-title">Settle & Get Paid</h3>
+            <p class="process-step-desc">After a transaction closes, transfer and settlement are coordinated so payment can reach the seller.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 / Beyond the Listing -->
+    <section class="support-section">
+      <div class="container">
+        <div class="support-grid">
+          <div data-reveal="fade-up">
+            <div class="eyebrow-pill" aria-label="Section category" style="margin-bottom: 1.5rem;">
+              <span class="eyebrow-pill__dot" aria-hidden="true"></span>
+              <span>BEYOND THE LISTING</span>
+            </div>
+            <h2 style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; line-height: 1.15; color: var(--color-text-primary); margin-bottom: 1.5rem;">
+              We Don't Just List Your Project — We Help It Sell
+            </h2>
+            <p style="font-size: 1.05rem; line-height: 1.65; color: var(--color-text-muted);">
+              CarbonNxt stays active after project submission. The goal is to improve visibility, relevance and buyer engagement rather than treating the project as another static catalogue entry.
+            </p>
+          </div>
+
+          <ul class="support-list" data-reveal="fade-up" data-delay="150">
+            <li class="support-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <div>
+                <h4 class="support-item-title">Buyer Outreach</h4>
+                <p class="support-item-desc">Direct engagement where buyer requirements match project type and region.</p>
+              </div>
+            </li>
+            <li class="support-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <div>
+                <h4 class="support-item-title">Project Positioning</h4>
+                <p class="support-item-desc">Support presenting the project story, methodology and co-benefits clearly.</p>
+              </div>
+            </li>
+            <li class="support-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <div>
+                <h4 class="support-item-title">Demand Visibility</h4>
+                <p class="support-item-desc">Opportunities to bring the project forward as suitable buyer demand appears.</p>
+              </div>
+            </li>
+            <li class="support-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <div>
+                <h4 class="support-item-title">Ongoing Follow-Up</h4>
+                <p class="support-item-desc">Continued communication so the project does not disappear after initial listing.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 / Standards & Verification -->
+    <section class="standards-section">
+      <div class="container">
+        <div class="standards-grid">
+          <div data-reveal="fade-up">
+            <div class="eyebrow-pill" aria-label="Section category" style="margin-bottom: 1.5rem;">
+              <span class="eyebrow-pill__dot" aria-hidden="true"></span>
+              <span>STANDARDS & VERIFICATION</span>
+            </div>
+            <h2 style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; line-height: 1.15; color: var(--color-text-primary); margin-bottom: 1.5rem;">
+              Certification Guidance Grounded in Recognized Standards
+            </h2>
+            <p style="font-size: 1.05rem; line-height: 1.65; color: var(--color-text-muted); margin-bottom: 1.25rem;">
+              CarbonNxt can support project developers in understanding alignment with globally recognized carbon standards and methodologies — including Verra (VCS), Gold Standard, ACR, CAR and Puro.earth.
+            </p>
+            <div class="mrv-note">
+              Where applicable, CarbonNxt also supports Monitoring, Reporting & Verification (MRV) planning so project quality and status can remain visible beyond initial certification.
+            </div>
+          </div>
+
+          <div class="standards-card" data-reveal="fade-up" data-delay="150">
+            <div class="standards-check">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Registry-linked project reference</span>
+            </div>
+            <div class="standards-check">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Standard-aligned documentation package</span>
+            </div>
+            <div class="standards-check">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Ongoing sale / retirement status visibility</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 / FAQ -->
+    <section class="faq-section" id="seller-faq">
+      <div class="container">
+        <header class="home-header text-center" data-reveal>
+          <span class="section-label">FAQ</span>
+          <h2 class="section-heading">Seller & Project Developer Questions</h2>
+        </header>
+
+        <div class="faq-list" data-reveal="fade-up">
+          <div class="accordion-item glass-panel" style="padding:0 1.25rem;margin-bottom:0.75rem">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="seller-faq-panel-1" id="seller-faq-trigger-1">
+              Do I need to already be certified before I submit my project?
+            </button>
+            <div class="accordion-panel" id="seller-faq-panel-1" role="region" aria-labelledby="seller-faq-trigger-1">
+              <div class="accordion-panel__inner">
+                <p>No. CarbonNxt specifically includes certification guidance for projects that are still preparing for market entry.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item glass-panel" style="padding:0 1.25rem;margin-bottom:0.75rem">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="seller-faq-panel-2" id="seller-faq-trigger-2">
+              What does it cost to list and sell through CarbonNxt?
+            </button>
+            <div class="accordion-panel" id="seller-faq-panel-2" role="region" aria-labelledby="seller-faq-trigger-2">
+              <div class="accordion-panel__inner">
+                <p>There is no upfront listing fee. Any detailed commercial terms or success fees are shared transparently before you commit.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item glass-panel" style="padding:0 1.25rem;margin-bottom:0.75rem">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="seller-faq-panel-3" id="seller-faq-trigger-3">
+              How long does certification take?
+            </button>
+            <div class="accordion-panel" id="seller-faq-panel-3" role="region" aria-labelledby="seller-faq-trigger-3">
+              <div class="accordion-panel__inner">
+                <p>Timelines vary by project type, methodology, documentation quality, validation requirements and the relevant standard or registry process.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item glass-panel" style="padding:0 1.25rem;margin-bottom:0.75rem">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="seller-faq-panel-4" id="seller-faq-trigger-4">
+              How do you find buyers?
+            </button>
+            <div class="accordion-panel" id="seller-faq-panel-4" role="region" aria-labelledby="seller-faq-trigger-4">
+              <div class="accordion-panel__inner">
+                <p>CarbonNxt actively matches suitable projects with buyer demand rather than relying only on a passive marketplace listing.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item glass-panel" style="padding:0 1.25rem;margin-bottom:0.75rem">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="seller-faq-panel-5" id="seller-faq-trigger-5">
+              How is pricing handled?
+            </button>
+            <div class="accordion-panel" id="seller-faq-panel-5" role="region" aria-labelledby="seller-faq-trigger-5">
+              <div class="accordion-panel__inner">
+                <p>Pricing guidance considers available market information and project characteristics, while the seller remains part of the commercial discussion.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item glass-panel" style="padding:0 1.25rem;margin-bottom:0.75rem">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="seller-faq-panel-6" id="seller-faq-trigger-6">
+              What happens after credits sell?
+            </button>
+            <div class="accordion-panel" id="seller-faq-panel-6" role="region" aria-labelledby="seller-faq-trigger-6">
+              <div class="accordion-panel__inner">
+                <p>CarbonNxt supports transfer and settlement so the commercial process can move through to payment.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta-section">
+      <div class="container final-cta__content" data-reveal="fade-up">
+        <div class="eyebrow-pill" aria-label="Section category" style="border-color: rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.05); color: var(--color-white); margin-bottom: 1.5rem;">
+          <span class="eyebrow-pill__dot" style="background: #39e49a;" aria-hidden="true"></span>
+          <span>GET STARTED</span>
+        </div>
+        <h2 class="final-cta__title">Ready to Get Your Project Certified and Sold?</h2>
+        <p class="final-cta__desc">
+          Tell us about your project. Our team can review fit, outline the next steps and help you move toward certification, market access and sale.
+        </p>
+        <div class="hero__actions" style="justify-content: center;">
+          <a href="contact.html" class="btn btn-primary">Talk to Our Team</a>
+          <a href="contact.html" class="btn btn-secondary">Submit Your Project</a>
+        </div>
+        <p class="final-cta__email">Or write to us directly at <a href="mailto:info@carbonnxt.com">info@carbonnxt.com</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="assets/js/site-config.js" defer></script>
+  <script src="assets/js/utils.js" defer></script>
+  <script src="assets/js/insights-data.js" defer></script>
+  <script src="assets/js/page-loader.js" defer></script>
+  <script src="assets/js/navigation.js" defer></script>
+  <script src="assets/js/forms.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/layout.js" defer></script>
+</body>
+</html>
