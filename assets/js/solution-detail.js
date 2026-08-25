@@ -205,7 +205,6 @@
 
     renderSolutionPage(container, solution);
   }
-  }
 
   function renderSolutionPage(container, item) {
     document.title = `${item.name} | CarbonNxt Solutions`;

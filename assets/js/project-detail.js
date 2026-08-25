@@ -321,7 +321,6 @@
 
     renderProjectPage(container, project);
   }
-  }
 
   function renderProjectPage(container, item) {
     document.title = `${item.name} | CarbonNxt Projects`;
