@@ -189,19 +189,19 @@
       </section>
 
       <!-- 7. BENEFITS -->
-      <section style="padding-block: clamp(70px, 8vw, 100px); background: #f4f8f6;">
+      <section style="padding-block: clamp(80px, 10vw, 120px); background: #ffffff;">
         <div class="container">
-          <header class="text-center" style="margin-bottom: 3rem;">
-            <span class="section-label" style="color: #029a62; font-weight: 700;">VALUE DELIVERED</span>
+          <header class="text-center" style="margin-bottom: 3.5rem;">
+            <span class="section-label" style="color: #029a62; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">VALUE DELIVERED</span>
             <h2 class="section-heading" style="color: #0f211a;">Key Benefits</h2>
           </header>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+          <div class="sol-benefits-grid">
             ${item.benefits.map(b => `
-              <div style="background: #ffffff; padding: 1.75rem; border-radius: 18px; border: 1px solid rgba(2, 154, 98, 0.15); display: flex; align-items: flex-start; gap: 1rem;">
-                <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(2, 154, 98, 0.1); color: #029a62; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <div class="sol-benefit-card">
+                <div style="width: 36px; height: 36px; border-radius: 10px; background: rgba(2, 154, 98, 0.12); color: #029a62; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
                 </div>
-                <p style="font-size: 1rem; font-weight: 600; color: #0f211a; margin: 0; line-height: 1.45;">${b}</p>
+                <p style="font-size: 1.02rem; font-weight: 700; color: #0f211a; margin: 0; line-height: 1.45;">${b}</p>
               </div>
             `).join('')}
           </div>
