@@ -232,90 +232,207 @@
 
     /* ---------- 1. HERO ---------- */
     .about-hero {
+    /* ---------- 1. HERO — ABOUT CARBONNXT (Redesigned 2-Column Layout) ---------- */
+    .about-hero {
       position: relative;
+      padding-block: clamp(100px, 12vw, 150px) clamp(60px, 8vw, 90px);
+      background: linear-gradient(165deg, #ffffff 0%, #f4f8f6 50%, #ebf2ef 100%);
       overflow: hidden;
-      min-height: min(88vh, 860px);
+    }
+
+    .about-hero__container {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(2rem, 5vw, 4.5rem);
+      align-items: center;
+    }
+
+    .about-hero__text-col {
+      text-align: left;
+    }
+
+    .about-hero__title {
+      font-size: clamp(2.4rem, 4.8vw, 3.8rem) !important;
+      line-height: 1.15 !important;
+      letter-spacing: -0.025em !important;
+      color: #0f211a !important;
+      margin-bottom: 1.25rem !important;
+      font-weight: 800 !important;
+    }
+
+    .about-hero__lead {
+      font-size: clamp(1.02rem, 1.4vw, 1.15rem) !important;
+      line-height: 1.7 !important;
+      color: #334e42 !important;
+      max-width: 64ch;
+      margin-bottom: 2rem !important;
+    }
+
+    .about-hero__actions {
       display: flex;
       align-items: center;
-      background: linear-gradient(180deg, var(--about-deep) 0%, var(--about-navy) 100%);
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
     }
-    .about-hero__photo {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
+
+    .about-hero__btn-main {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.8rem;
+      border-radius: 999px;
+      background: #029a62;
+      color: #ffffff !important;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(2, 154, 98, 0.28);
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    .about-hero__photo img {
+
+    .about-hero__btn-main:hover {
+      background: #027a4d;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(2, 154, 98, 0.38);
+    }
+
+    .about-hero__btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.85rem 1.8rem;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(2, 154, 98, 0.25);
+      color: #0f211a !important;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+    }
+
+    .about-hero__btn-ghost:hover {
+      border-color: #029a62;
+      color: #029a62 !important;
+      transform: translateY(-2px);
+    }
+
+    .about-hero__stats {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(2, 154, 98, 0.15);
+    }
+
+    .about-hero__stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .about-hero__stat-num {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #029a62;
+      line-height: 1.1;
+    }
+
+    .about-hero__stat-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #4e6057;
+      margin-top: 4px;
+    }
+
+    .about-hero__stat-divider {
+      width: 1px;
+      height: 36px;
+      background: rgba(2, 154, 98, 0.15);
+    }
+
+    /* Right Visual Frame */
+    .about-hero__visual-col {
+      position: relative;
+    }
+
+    .about-hero__visual-frame {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      aspect-ratio: 4 / 3;
+      background: #ffffff;
+    }
+
+    .about-hero__visual-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
-      opacity: 0.34;
+      display: block;
+      transition: transform 0.8s ease;
     }
-    .about-hero__photo::after {
-      content: "";
+
+    .about-hero__visual-frame:hover .about-hero__visual-img {
+      transform: scale(1.05);
+    }
+
+    .about-hero__badge {
       position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(1100px 520px at 78% -10%, rgba(61, 220, 151, 0.12), transparent 60%),
-        linear-gradient(180deg, rgba(4, 16, 29, 0.62) 0%, rgba(4, 16, 29, 0.42) 45%, var(--about-deep) 100%);
-    }
-    .about-hero__orb {
-      position: absolute;
-      z-index: 0;
-      border-radius: 50%;
-      filter: blur(70px);
-      opacity: 0.5;
-      pointer-events: none;
-      animation: aboutFloat 12s ease-in-out infinite alternate;
-    }
-    .about-hero__orb--a { width: 420px; height: 420px; top: -140px; right: -80px; background: rgba(61, 220, 151, 0.20); }
-    .about-hero__orb--b { width: 360px; height: 360px; bottom: -160px; left: -100px; background: rgba(56, 189, 248, 0.15); animation-delay: -6s; }
-    @keyframes aboutFloat {
-      from { transform: translate3d(0, 0, 0) scale(1); }
-      to   { transform: translate3d(0, 34px, 0) scale(1.08); }
-    }
-    .about-hero .subpage-hero__content { position: relative; z-index: 1; text-align: center; max-width: 900px; margin-inline: auto; }
-    .about-hero__title {
-      font-size: clamp(2.4rem, 5.4vw, 4.2rem);
-      line-height: 1.08;
-      letter-spacing: -0.02em;
-      margin: 22px 0 20px;
-      color: #ffffff;
-    }
-    .about-hero__lead {
-      font-size: clamp(1.02rem, 1.6vw, 1.2rem);
-      line-height: 1.7;
-      color: var(--about-muted);
-      max-width: 760px;
-      margin-inline: auto;
-    }
-    .about-hero__lead + .about-hero__lead { margin-top: 14px; font-size: clamp(0.95rem, 1.4vw, 1.06rem); }
-    .about-hero__scroll {
-      position: absolute;
-      left: 50%;
-      bottom: 28px;
-      transform: translateX(-50%);
-      width: 26px;
-      height: 42px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 999px;
+      z-index: 3;
       display: flex;
-      justify-content: center;
-      padding-top: 8px;
-      z-index: 1;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1.25rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 1);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
     }
-    .about-hero__scroll::before {
-      content: "";
-      width: 3px;
-      height: 9px;
-      border-radius: 999px;
-      background: var(--about-accent);
-      animation: aboutScroll 1.8s ease-in-out infinite;
+
+    .about-hero__badge--top {
+      top: 8%;
+      right: -4%;
     }
-    @keyframes aboutScroll {
-      0% { transform: translateY(0); opacity: 1; }
-      70% { transform: translateY(12px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 0; }
+
+    .about-hero__badge--bottom {
+      bottom: 8%;
+      left: -4%;
+    }
+
+    .about-hero__badge-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(2, 154, 98, 0.12);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .about-hero__badge strong {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0f211a;
+    }
+
+    .about-hero__badge span {
+      display: block;
+      font-size: 0.72rem;
+      color: #4e6057;
+      font-weight: 600;
+    }
+
+    @media (max-width: 980px) {
+      .about-hero__container {
+        grid-template-columns: 1fr;
+      }
+      .about-hero__badge--top { right: 2%; }
+      .about-hero__badge--bottom { left: 2%; }
     }
 
     /* ---------- 2. WHO WE ARE ---------- */
@@ -870,30 +987,87 @@
 
   <main id="main-content">
 
-    <!-- ============ 1. HERO — ABOUT CARBONNXT ============ -->
+    <!-- ============ 1. HERO — ABOUT CARBONNXT (Redesigned 2-Column Layout) ============ -->
     <section class="subpage-hero about-hero" aria-labelledby="about-hero-title">
-      <div class="about-hero__photo" aria-hidden="true">
-        <img src="assets/images/heroes/earth-horizon.jpg" alt="" width="1920" height="1080" fetchpriority="high">
-      </div>
       <div class="about-hero__orb about-hero__orb--a" aria-hidden="true"></div>
       <div class="about-hero__orb about-hero__orb--b" aria-hidden="true"></div>
-      <div class="container subpage-hero__content">
-        <span class="eyebrow-pill"><span class="eyebrow-pill__dot"></span>About CarbonNxt</span>
-        <h1 class="subpage-hero__title about-hero__title display-serif" id="about-hero-title">
-          Building a More Trusted Carbon Market
-        </h1>
-        <p class="about-hero__lead">
-          CarbonNxt is a specialist carbon advisory, certification, trading and exchange business
-          helping companies, project developers, brokers and investors participate in carbon markets
-          with greater clarity, confidence and support.
-        </p>
-        <p class="about-hero__lead">
-          By combining expert guidance with digital market infrastructure, we simplify the journey
-          from project certification and buyer discovery to transaction execution, portfolio
-          visibility and compliance-ready records.
-        </p>
+      
+      <div class="container about-hero__container">
+        <!-- Left Column: Typography & Metrics -->
+        <div class="about-hero__text-col" data-reveal>
+          <div class="eyebrow-pill" style="margin-bottom: 1.25rem;">
+            <span class="eyebrow-pill__dot" aria-hidden="true"></span>
+            <span>ABOUT CARBONNXT</span>
+          </div>
+
+          <h1 class="subpage-hero__title about-hero__title display-serif" id="about-hero-title">
+            Building a More Trusted Carbon Market
+          </h1>
+
+          <p class="about-hero__lead">
+            CarbonNxt is a specialist carbon credit advisory, certification readiness, trading and exchange platform.
+            We empower corporate buyers, project developers, brokers and institutional investors to navigate environmental asset markets with complete clarity, confidence and audit-ready governance.
+          </p>
+
+          <div class="about-hero__actions">
+            <a href="#who-we-are" class="about-hero__btn-main">
+              <span>Explore Our Ecosystem</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            </a>
+            <a href="contact.html" class="about-hero__btn-ghost">
+              <span>Talk to an Advisor</span>
+            </a>
+          </div>
+
+          <!-- Live Impact Metrics -->
+          <div class="about-hero__stats">
+            <div class="about-hero__stat-item">
+              <strong class="about-hero__stat-num">₹100M+</strong>
+              <span class="about-hero__stat-label">Advisory &amp; Asset Desk</span>
+            </div>
+            <div class="about-hero__stat-divider"></div>
+            <div class="about-hero__stat-item">
+              <strong class="about-hero__stat-num">100%</strong>
+              <span class="about-hero__stat-label">Verra &amp; GS Compliance</span>
+            </div>
+            <div class="about-hero__stat-divider"></div>
+            <div class="about-hero__stat-item">
+              <strong class="about-hero__stat-num">Pan-India</strong>
+              <span class="about-hero__stat-label">Project &amp; Buyer Network</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Visual Frame with Floating Badges -->
+        <div class="about-hero__visual-col" data-reveal>
+          <div class="about-hero__visual-frame">
+            <img src="assets/images/ui/service-trading.jpg" alt="CarbonNxt Advisory & Trading Infrastructure" class="about-hero__visual-img" loading="lazy">
+            <div class="about-hero__visual-glass-overlay"></div>
+
+            <!-- Floating Badge 1 -->
+            <div class="about-hero__badge about-hero__badge--top">
+              <div class="about-hero__badge-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#029a62" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <strong>Verra &amp; Gold Standard</strong>
+                <span>Methodology Verified</span>
+              </div>
+            </div>
+
+            <!-- Floating Badge 2 -->
+            <div class="about-hero__badge about-hero__badge--bottom">
+              <div class="about-hero__badge-icon" style="background: rgba(2, 154, 98, 0.15);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#029a62" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <div>
+                <strong>Direct Liquidity Desk</strong>
+                <span>Seamless Matching</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="about-hero__scroll" aria-hidden="true"></div>
     </section>
 
     <!-- ============ 2. WHO WE ARE ============ -->
