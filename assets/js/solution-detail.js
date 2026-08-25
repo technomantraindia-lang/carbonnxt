@@ -144,33 +144,46 @@
       </section>
 
       <!-- 5 & 6. WHO IT IS FOR & USE CASES -->
-      <section style="padding-block: clamp(80px, 10vw, 120px); background: #ffffff;">
+      <section style="padding-block: clamp(80px, 10vw, 120px); background: #f8faf9;">
         <div class="container">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 5vw, 4.5rem);">
-            <div>
-              <span class="section-label" style="color: #029a62; font-weight: 700;">TARGET AUDIENCE</span>
-              <h2 class="section-heading" style="color: #0f211a; font-size: 2rem; margin-bottom: 1rem;">Who It Is For</h2>
-              <div class="sol-pills-grid">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(2rem, 4vw, 3.5rem); align-items: stretch;">
+            
+            <!-- LEFT CARD: Who It Is For -->
+            <div style="background: linear-gradient(165deg, #04101d 0%, #061e14 100%); border-radius: 28px; padding: clamp(2.2rem, 4vw, 3.2rem); border: 1px solid rgba(57, 228, 154, 0.3); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25); display: flex; flex-direction: column;">
+              <div style="margin-bottom: 2rem;">
+                <span class="section-label" style="color: #39e49a; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">TARGET AUDIENCE</span>
+                <h2 style="font-size: clamp(1.8rem, 2.8vw, 2.4rem); font-weight: 800; color: #ffffff; margin-top: 0.5rem; line-height: 1.25;">Who It Is For</h2>
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; flex-grow: 1;">
                 ${item.who_it_is_for.map(aud => `
-                  <div class="sol-pill-tag">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span>${aud}</span>
+                  <div style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(57, 228, 154, 0.2); border-radius: 16px; padding: 1.1rem 1.25rem; display: flex; align-items: center; gap: 0.85rem; transition: all 0.3s ease;">
+                    <div style="width: 32px; height: 32px; border-radius: 10px; background: rgba(57, 228, 154, 0.16); color: #39e49a; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <span style="font-size: 0.98rem; font-weight: 700; color: #ffffff; line-height: 1.3;">${aud}</span>
                   </div>
                 `).join('')}
               </div>
             </div>
-            <div>
-              <span class="section-label" style="color: #029a62; font-weight: 700;">APPLICATIONS</span>
-              <h2 class="section-heading" style="color: #0f211a; font-size: 2rem; margin-bottom: 1rem;">Use Cases</h2>
-              <div class="sol-pills-grid">
+
+            <!-- RIGHT CARD: Use Cases -->
+            <div style="background: #ffffff; border-radius: 28px; padding: clamp(2.2rem, 4vw, 3.2rem); border: 1px solid rgba(2, 154, 98, 0.2); box-shadow: 0 20px 50px rgba(2, 154, 98, 0.06); display: flex; flex-direction: column;">
+              <div style="margin-bottom: 2rem;">
+                <span class="section-label" style="color: #029a62; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">APPLICATIONS</span>
+                <h2 style="font-size: clamp(1.8rem, 2.8vw, 2.4rem); font-weight: 800; color: #0f211a; margin-top: 0.5rem; line-height: 1.25;">Use Cases</h2>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 1rem; flex-grow: 1;">
                 ${item.use_cases.map(uc => `
-                  <div class="sol-pill-tag" style="background: #f4f8f6; border-color: rgba(2, 154, 98, 0.15);">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span>${uc}</span>
+                  <div style="background: #f4f8f6; border: 1px solid rgba(2, 154, 98, 0.14); border-radius: 16px; padding: 1.1rem 1.35rem; display: flex; align-items: center; gap: 1rem; transition: all 0.3s ease;">
+                    <div style="width: 34px; height: 34px; border-radius: 10px; background: rgba(2, 154, 98, 0.12); color: #029a62; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </div>
+                    <span style="font-size: 0.98rem; font-weight: 700; color: #0f211a; line-height: 1.35;">${uc}</span>
                   </div>
                 `).join('')}
               </div>
             </div>
+
           </div>
         </div>
       </section>
