@@ -664,29 +664,157 @@
       color: #d7e6df;
     }
 
-    /* ---------- 9. FINAL CTA ---------- */
+    /* ---------- 9. FINAL CTA REDESIGN ---------- */
     .about-cta {
       position: relative;
       overflow: hidden;
-      padding: clamp(80px, 12vw, 140px) 0;
-      background:
-        radial-gradient(900px 420px at 50% 120%, rgba(61, 220, 151, 0.18), transparent 65%),
-        linear-gradient(180deg, var(--about-deep), var(--about-navy));
+      padding: clamp(90px, 12vw, 150px) 0;
+      background: linear-gradient(180deg, #051424 0%, #030b14 100%);
       text-align: center;
+      border-top: 1px solid rgba(57, 228, 154, 0.2);
     }
-    .about-cta__inner { position: relative; z-index: 1; max-width: 760px; margin-inline: auto; }
+
+    .about-cta__mesh {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(800px 450px at 50% 50%, rgba(57, 228, 154, 0.18), transparent 70%),
+        radial-gradient(600px 300px at 20% 80%, rgba(56, 189, 248, 0.12), transparent 60%);
+      pointer-events: none;
+    }
+
+    .about-cta__inner {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      margin-inline: auto;
+    }
+
+    .about-cta__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: rgba(57, 228, 154, 0.12);
+      border: 1px solid rgba(57, 228, 154, 0.35);
+      color: #39e49a;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-cta__badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #39e49a;
+      box-shadow: 0 0 10px #39e49a;
+    }
+
     .about-cta h2 {
-      font-size: clamp(2rem, 4.6vw, 3.4rem);
-      line-height: 1.12;
+      font-size: clamp(2.4rem, 4.8vw, 3.6rem) !important;
+      line-height: 1.12 !important;
       letter-spacing: -0.02em;
-      color: #ffffff;
-      margin-bottom: 18px;
+      color: #ffffff !important;
+      margin-bottom: 1.25rem !important;
+      font-weight: 800 !important;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     }
-    .about-cta p { color: var(--about-muted); line-height: 1.7; font-size: clamp(0.98rem, 1.5vw, 1.12rem); margin-bottom: 36px; }
-    .about-cta__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .about-cta__mail { margin-top: 30px; font-size: 0.92rem; color: var(--about-muted); }
-    .about-cta__mail a { color: var(--about-accent); text-decoration: none; border-bottom: 1px solid rgba(61, 220, 151, 0.4); transition: border-color 0.3s ease; }
-    .about-cta__mail a:hover { border-color: var(--about-accent); }
+
+    .about-cta__lead {
+      color: rgba(255, 255, 255, 0.9) !important;
+      line-height: 1.7 !important;
+      font-size: clamp(1.05rem, 1.6vw, 1.2rem) !important;
+      max-width: 720px;
+      margin: 0 auto 2.5rem !important;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .about-cta__actions {
+      display: flex;
+      gap: 1.25rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .about-cta__btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.95rem 2.2rem;
+      border-radius: 999px;
+      background: #029a62;
+      color: #ffffff !important;
+      font-weight: 700;
+      font-size: 0.98rem;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(2, 154, 98, 0.4);
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .about-cta__btn-primary:hover {
+      background: #39e49a;
+      color: #04120e !important;
+      transform: translateY(-3px);
+      box-shadow: 0 14px 35px rgba(57, 228, 154, 0.45);
+    }
+
+    .about-cta__btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.95rem 2.2rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff !important;
+      font-weight: 700;
+      font-size: 0.98rem;
+      text-decoration: none;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-cta__btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: #39e49a;
+      color: #39e49a !important;
+      transform: translateY(-3px);
+    }
+
+    .about-cta__contact-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      background: rgba(4, 18, 14, 0.75);
+      border: 1px solid rgba(57, 228, 154, 0.3);
+      backdrop-filter: blur(12px);
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .about-cta__contact-pill a {
+      color: #39e49a !important;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(57, 228, 154, 0.5);
+      transition: all 0.2s ease;
+    }
+
+    .about-cta__contact-pill a:hover {
+      color: #ffffff !important;
+      border-bottom-color: #ffffff;
+    }
 
     /* ---------- Responsive ---------- */
     @media (max-width: 1100px) {
@@ -1121,19 +1249,38 @@
       </div>
     </section>
 
-    <!-- ============ 9. FINAL CTA ============ -->
+    <!-- ============ 9. FINAL CTA (Redesigned Hero Action Card) ============ -->
     <section class="about-cta" aria-labelledby="cta-title">
-      <div class="container about-cta__inner">
-        <h2 class="display-serif" id="cta-title">Ready to Start a Conversation?</h2>
-        <p>
-          Whether you want to buy carbon credits, develop a project or explore the market,
-          our team is ready to help.
-        </p>
-        <div class="about-cta__actions">
-          <a class="btn btn-primary" href="contact.html">Talk to a Carbon Expert</a>
-          <a class="btn btn-ghost" href="seller.html">Submit Your Project</a>
+      <div class="about-cta__mesh" aria-hidden="true"></div>
+      <div class="container about-cta__inner" data-reveal>
+        <div class="about-cta__badge">
+          <span class="about-cta__badge-dot"></span>
+          <span>GET IN TOUCH WITH OUR DESK</span>
         </div>
-        <p class="about-cta__mail"><a href="mailto:info@carbonnxt.com">info@carbonnxt.com</a></p>
+
+        <h2 class="display-serif" id="cta-title">Ready to Start a Conversation?</h2>
+        <p class="about-cta__lead">
+          Whether you want to buy verified carbon credits, develop a new project, or explore market liquidity,
+          our expert advisory team is ready to support your climate goals.
+        </p>
+
+        <div class="about-cta__actions">
+          <a class="about-cta__btn-primary" href="contact.html">
+            <span>Talk to a Carbon Expert</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+
+          <a class="about-cta__btn-secondary" href="seller.html">
+            <span>Submit Your Project</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+          </a>
+        </div>
+
+        <div class="about-cta__contact-pill">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#39e49a" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>Or email our advisory desk directly:</span>
+          <a href="mailto:info@carbonnxt.com">info@carbonnxt.com</a>
+        </div>
       </div>
     </section>
 
