@@ -2,7 +2,160 @@
  * Dynamic Solution Detail Page Renderer for CarbonNxt
  * Content source: CarbonNxt_Solution_Inner_Pages.json
  */
-(function () {
+  const FALLBACK_SOLUTIONS_DATA = {
+    "solutions": [
+      {
+        "id": "digital-mrv-monitoring",
+        "slug": "digital-mrv-monitoring",
+        "name": "Digital MRV & Monitoring",
+        "hero": {
+          "eyebrow": "DIGITAL MEASUREMENT, REPORTING & VERIFICATION",
+          "title": "Digital MRV & Monitoring",
+          "tagline": "Turn project activity into structured, traceable and review-ready data.",
+          "description": "CarbonNxt helps climate projects organize measurement, reporting and verification workflows through structured digital data capture, evidence management and ongoing monitoring support.",
+          "primary_cta": "Talk to a Carbon Expert",
+          "secondary_cta": "Submit Your Project"
+        },
+        "overview": {
+          "title": "Better Project Visibility Through Structured Digital MRV",
+          "paragraphs": [
+            "Carbon projects can involve large amounts of field, operational and documentary data. Digital MRV helps bring that information into a more organized workflow so project activity can be monitored and reviewed more consistently.",
+            "Depending on the methodology and project type, CarbonNxt can help structure data capture, evidence collection, monitoring records and reporting workflows.",
+            "The objective is not to replace the applicable standard or verifier, but to make project data easier to manage, trace and prepare for review."
+          ]
+        },
+        "key_capabilities": [
+          "Project data capture and organization",
+          "Field evidence management",
+          "Monitoring workflow design",
+          "Photo, video and document evidence structure",
+          "Operational record tracking",
+          "Location and timestamp data where relevant",
+          "Review-ready reporting workflows",
+          "Integration with field devices where applicable"
+        ],
+        "how_it_works": [
+          { "step": 1, "title": "Define Data Requirements", "description": "Identify the project, methodology and monitoring information that needs to be captured." },
+          { "step": 2, "title": "Structure Collection", "description": "Create consistent workflows for field, operational and documentary evidence." },
+          { "step": 3, "title": "Monitor Activity", "description": "Track project data over time instead of relying only on isolated reporting periods." },
+          { "step": 4, "title": "Prepare for Review", "description": "Organize evidence and reports so project teams can more easily support verification and audit processes." }
+        ],
+        "who_it_is_for": ["Project Developers", "Biochar Projects", "Clean Cooking Programs", "Methane Reduction Projects", "Renewable Energy Projects", "Carbon Removal Projects", "Corporate Carbon Programs"],
+        "use_cases": ["Biochar batch and production monitoring", "Cookstove distribution and usage records", "Livestock or methane intervention tracking", "Renewable-energy generation records", "Field-level project evidence", "Project documentation and monitoring history"],
+        "benefits": ["More consistent project-data capture", "Improved traceability", "Better evidence organization", "Reduced dependence on scattered manual records", "Clearer preparation for verification", "Stronger ongoing project visibility"],
+        "carbonnxt_support": ["MRV workflow planning", "Data-field definition", "Evidence-collection structure", "Project monitoring setup", "Documentation guidance", "Certification-readiness support", "Buyer-facing project-data preparation"],
+        "faq": [
+          { "question": "Does Digital MRV replace third-party verification?", "answer": "No. Digital MRV helps structure project data and evidence. Formal validation or verification requirements remain governed by the applicable standard and methodology." },
+          { "question": "Can Digital MRV work with field devices?", "answer": "Where suitable, field-data and IoT tools can be integrated into the monitoring workflow." },
+          { "question": "Is Digital MRV useful only after certification?", "answer": "No. It can also help developers prepare project records and monitoring systems before certification." }
+        ],
+        "cta": { "title": "Need a Better Way to Manage Project MRV?", "description": "Talk to CarbonNxt about structuring project monitoring, field evidence and verification-ready data workflows.", "primary_button": "Talk to a Carbon Expert", "secondary_button": "Submit Your Project" }
+      },
+      {
+        "id": "carbon-asset-digitisation",
+        "slug": "carbon-asset-digitisation",
+        "name": "Carbon Asset Digitisation",
+        "hero": {
+          "eyebrow": "DIGITAL CARBON ASSET MANAGEMENT",
+          "title": "Carbon Asset Digitisation",
+          "tagline": "Organize carbon projects, credits and transaction records in a clearer digital workflow.",
+          "description": "CarbonNxt helps structure carbon-asset information so project, credit, ownership and transaction records can be easier to manage, trace and review across the carbon-credit lifecycle.",
+          "primary_cta": "Talk to a Carbon Expert",
+          "secondary_cta": "Explore CarbonNxt"
+        },
+        "overview": {
+          "title": "From Fragmented Records to a More Connected Carbon-Asset View",
+          "paragraphs": [
+            "Carbon-market participants often work across project documents, registry references, transaction records, retirement information and portfolio files.",
+            "Carbon Asset Digitisation is intended to bring those records into a more structured digital format, helping users maintain better visibility across project and transaction activity.",
+            "CarbonNxt focuses on traceability and organization rather than presenting unsupported token or blockchain claims."
+          ]
+        },
+        "key_capabilities": ["Project record organization", "Credit and asset information management", "Transaction record tracking", "Ownership and retirement-status visibility", "Registry-reference organization", "Portfolio documentation structure", "Audit-trail support", "Buyer and seller record visibility"],
+        "how_it_works": [
+          { "step": 1, "title": "Collect Records", "description": "Bring together relevant project, credit, transaction and supporting information." },
+          { "step": 2, "title": "Structure the Asset", "description": "Organize records into a consistent digital format." },
+          { "step": 3, "title": "Track Changes", "description": "Maintain visibility across ownership, transaction and retirement events where applicable." },
+          { "step": 4, "title": "Use the Records", "description": "Support portfolio review, reporting, due diligence and audit workflows." }
+        ],
+        "who_it_is_for": ["Corporate Buyers", "Project Developers", "Brokers & Intermediaries", "Investors", "ESG & Sustainability Teams"],
+        "use_cases": ["Carbon-credit portfolio records", "Project documentation libraries", "Transaction history", "Retirement-status tracking", "Registry-reference management", "Audit and ESG record preparation"],
+        "benefits": ["Better carbon-asset visibility", "Improved traceability", "More organized records", "Simpler reporting workflows", "Clearer transaction history", "Reduced fragmentation across project and credit data"],
+        "carbonnxt_support": ["Carbon-asset record structure", "Portfolio organization", "Transaction-document management", "Registry-reference organization", "Retirement-record visibility", "Reporting support"],
+        "faq": [
+          { "question": "Is Carbon Asset Digitisation the same as tokenisation?", "answer": "Not necessarily. CarbonNxt uses this term to describe structured digital management of project and carbon-asset records." }
+        ],
+        "cta": { "title": "Need Clearer Visibility Across Your Carbon Assets?", "description": "CarbonNxt can help organize project, transaction and portfolio records into a more manageable digital workflow.", "primary_button": "Talk to a Carbon Expert", "secondary_button": "Contact CarbonNxt" }
+      },
+      {
+        "id": "carbon-market-advisory",
+        "slug": "carbon-market-advisory",
+        "name": "Carbon Market Advisory",
+        "hero": { "eyebrow": "EXPERT CARBON-MARKET SUPPORT", "title": "Carbon Market Advisory", "tagline": "Expert guidance from project readiness to buying, selling and transaction execution.", "description": "CarbonNxt supports buyers, sellers, project developers, brokers and investors with practical guidance across carbon-market participation, project readiness, sourcing, due diligence, pricing and transactions.", "primary_cta": "Talk to a Carbon Expert", "secondary_cta": "Contact Our Team" },
+        "overview": { "title": "Navigate the Carbon Market with an Expert at Your Side", "paragraphs": ["Carbon markets can be difficult to navigate because project quality, standards, methodologies, pricing and transaction requirements vary widely.", "CarbonNxt's advisory model is designed to give clients a clear point of support rather than leaving them to interpret the market alone.", "The advisory role can support both sides of the market: buyers looking for credible credits and project developers preparing projects for certification and sale."] },
+        "key_capabilities": ["Buyer requirement assessment", "Project-readiness guidance", "Certification-pathway support", "Credit sourcing", "Project and credit due diligence", "Pricing guidance", "Buyer-seller matching", "Transaction coordination"],
+        "how_it_works": [
+          { "step": 1, "title": "Understand the Goal", "description": "Clarify whether the client wants to buy, sell, develop, certify or evaluate carbon assets." },
+          { "step": 2, "title": "Assess the Market Path", "description": "Review project, credit, standard, documentation or buyer requirements." },
+          { "step": 3, "title": "Support Execution", "description": "Assist with sourcing, positioning, due diligence, pricing, matching or transaction steps." },
+          { "step": 4, "title": "Maintain Clear Records", "description": "Support documentation, portfolio visibility and reporting after the transaction." }
+        ],
+        "who_it_is_for": ["Corporates & Businesses", "Project Developers", "Carbon Credit Owners", "Brokers & Intermediaries", "Investors"],
+        "use_cases": ["First-time carbon-credit buying", "Long-term credit sourcing strategies", "Project certification readiness", "Carbon-credit sales", "Buyer matching", "Pricing discussions"],
+        "benefits": ["One point of accountability", "Reduced market complexity", "Better-informed buying and selling decisions", "Practical certification guidance"],
+        "carbonnxt_support": ["Buyer advisory", "Seller advisory", "Certification guidance", "Pricing guidance", "Market intelligence", "Project positioning", "Buyer matching", "Transaction management"],
+        "faq": [
+          { "question": "Is CarbonNxt only for large corporate buyers?", "answer": "No. The client-defined audience includes businesses, project developers, brokers, investors and sustainability teams." }
+        ],
+        "cta": { "title": "Need Help Navigating the Carbon Market?", "description": "Speak with CarbonNxt about buying, selling, certification, pricing, due diligence or market access.", "primary_button": "Talk to a Carbon Expert", "secondary_button": "Contact Our Team" }
+      },
+      {
+        "id": "knowledge-capacity-building",
+        "slug": "knowledge-capacity-building",
+        "name": "Knowledge & Capacity Building",
+        "hero": { "eyebrow": "CARBON-MARKET EDUCATION", "title": "Knowledge & Capacity Building", "tagline": "Help your team understand carbon markets before making critical decisions.", "description": "CarbonNxt provides practical learning support around carbon credits, standards, methodologies, project readiness, buying decisions, MRV and market participation.", "primary_cta": "Talk to Our Team", "secondary_cta": "Explore Insights" },
+        "overview": { "title": "Build Internal Carbon-Market Confidence", "paragraphs": ["Carbon markets involve specialist terminology, standards, project structures and transaction processes.", "CarbonNxt's knowledge and capacity-building solution is intended to make those concepts easier to understand through practical education.", "The focus is on helping organizations make better-informed decisions."] },
+        "key_capabilities": ["Carbon-market fundamentals", "Buyer education", "Project-developer education", "Standards orientation", "MRV awareness"],
+        "how_it_works": [
+          { "step": 1, "title": "Identify Knowledge Gaps", "description": "Understand what the team needs to know based on its role and goals." },
+          { "step": 2, "title": "Build the Learning Path", "description": "Focus on relevant topics such as buying, certification, MRV or project quality." },
+          { "step": 3, "title": "Deliver Practical Guidance", "description": "Use clear explanations, guides and examples." },
+          { "step": 4, "title": "Move from Learning to Action", "description": "Connect education with the next practical step in buying or developing." }
+        ],
+        "who_it_is_for": ["Corporate Sustainability Teams", "ESG Teams", "Project Developers", "Business Leadership"],
+        "use_cases": ["Buyer onboarding", "Project-developer readiness", "Internal ESG education", "Carbon-market orientation"],
+        "benefits": ["Better internal understanding", "More confident decision-making", "Reduced confusion around standards"],
+        "carbonnxt_support": ["Buyer guides", "Project Developer's Guide", "Educational content", "Standards orientation", "MRV awareness"],
+        "faq": [
+          { "question": "Is this only for project developers?", "answer": "No. It is useful for buyers, ESG teams, project developers, brokers and other market participants." }
+        ],
+        "cta": { "title": "Want Your Team to Understand Carbon Markets Better?", "description": "Talk to CarbonNxt about practical buyer, seller, certification and MRV education.", "primary_button": "Talk to Our Team", "secondary_button": "Explore Insights" }
+      },
+      {
+        "id": "field-data-iot-integration",
+        "slug": "field-data-iot-integration",
+        "name": "Field Data & IoT Integration",
+        "hero": { "eyebrow": "CONNECTED PROJECT MONITORING", "title": "Field Data & IoT Integration", "tagline": "Connect field activity with more consistent digital project monitoring.", "description": "Where project design and methodology support it, CarbonNxt can help structure field-data and connected-device workflows that improve operational visibility.", "primary_cta": "Talk to a Carbon Expert", "secondary_cta": "Submit Your Project" },
+        "overview": { "title": "Bring Field-Level Activity into the Digital Monitoring Workflow", "paragraphs": ["Many climate projects operate across farms, facilities, devices or distributed field locations.", "Field Data & IoT Integration is designed to connect relevant devices, sensors, gateways or structured field inputs with the broader monitoring workflow.", "The exact hardware and data approach depends on the project and methodology."] },
+        "key_capabilities": ["Field-data capture", "Sensor-data integration", "Gateway-supported collection", "Device identification", "Location-based evidence"],
+        "how_it_works": [
+          { "step": 1, "title": "Identify What Must Be Measured", "description": "Define the field or equipment data relevant to the project and methodology." },
+          { "step": 2, "title": "Select the Data Source", "description": "Use manual digital capture, sensors, devices or gateways." },
+          { "step": 3, "title": "Connect to Monitoring", "description": "Feed structured data into the project monitoring workflow." },
+          { "step": 4, "title": "Maintain Evidence", "description": "Use collected information to strengthen operational visibility." }
+        ],
+        "who_it_is_for": ["Biochar Projects", "Methane Reduction Projects", "Clean Cooking Programs", "Renewable Energy Projects"],
+        "use_cases": ["Biochar production monitoring", "Facility operating data", "Energy-generation data", "Field-device records"],
+        "benefits": ["More consistent field data", "Reduced manual fragmentation", "Improved project visibility"],
+        "carbonnxt_support": ["Field-data requirement planning", "Monitoring-workflow design", "Device and data mapping"],
+        "faq": [
+          { "question": "Does every CarbonNxt project need IoT hardware?", "answer": "No. Hardware should only be used where it adds value and is relevant." }
+        ],
+        "cta": { "title": "Need Better Field-Level Project Data?", "description": "Talk to CarbonNxt about connecting project activity, devices and field evidence.", "primary_button": "Talk to a Carbon Expert", "secondary_button": "Submit Your Project" }
+      }
+    ]
+  };
+
   async function initSolutionDetail() {
     const container = document.getElementById('solution-detail-app');
     if (!container) return;
@@ -21,6 +174,7 @@
       slug = 'digital-mrv-monitoring'; // Default fallback
     }
 
+    let data = null;
     try {
       const possiblePaths = [
         'CarbonNxt_Solution_Inner_Pages.json',
@@ -28,7 +182,6 @@
         '../CarbonNxt_Solution_Inner_Pages.json',
         '/CarbonNxt_Solution_Inner_Pages.json'
       ];
-      let data = null;
 
       for (const path of possiblePaths) {
         try {
@@ -39,30 +192,19 @@
           }
         } catch (e) {}
       }
+    } catch (err) {}
 
-      if (!data || !data.solutions) {
-        if (typeof FALLBACK_SOLUTIONS_DATA !== 'undefined') {
-          data = FALLBACK_SOLUTIONS_DATA;
-        } else {
-          throw new Error('Failed to load solutions data');
-        }
-      }
-
-      const solution = data.solutions.find(
-        (s) => s.slug === slug || s.id === slug
-      ) || data.solutions[0];
-
-      renderSolutionPage(container, solution);
-    } catch (err) {
-      console.error('Error rendering solution page:', err);
-      container.innerHTML = `
-        <div style="padding: 160px 20px; text-align: center; color: #0f211a;">
-          <h2 style="font-size: 2rem; margin-bottom: 1rem;">Solution Page</h2>
-          <p style="margin-bottom: 2rem;">Loading solution details...</p>
-          <a href="${window.location.pathname.includes('/solutions/') ? '../solutions.html' : 'solutions.html'}" class="btn btn-primary">Return to Solutions</a>
-        </div>
-      `;
+    if (!data || !data.solutions) {
+      data = FALLBACK_SOLUTIONS_DATA;
     }
+
+    const cleanSlug = slug.toLowerCase().trim();
+    const solution = data.solutions.find(
+      (s) => s.slug === cleanSlug || s.id === cleanSlug || cleanSlug.includes(s.slug) || s.slug.includes(cleanSlug)
+    ) || data.solutions[0];
+
+    renderSolutionPage(container, solution);
+  }
   }
 
   function renderSolutionPage(container, item) {
