@@ -10,6 +10,10 @@ function initNavigation() {
   const isHome = currentPage === 'index'
   header.classList.add(isHome ? 'is-transparent' : 'is-solid')
 
+  const urlParams = new URLSearchParams(window.location.search)
+  const slugParam = urlParams.get('slug')
+  const isSolutionsOrProjects = currentPage.includes('solution') || currentPage.includes('project') || (slugParam && slugParam.length > 0)
+
   const allNavLinks = document.querySelectorAll('.site-nav__link, .nav-dropdown__menu a, .mobile-nav a, .mobile-nav__link')
   allNavLinks.forEach((link) => {
     const href = link.getAttribute('href')
@@ -18,7 +22,16 @@ function initNavigation() {
     if (linkPage.endsWith('.html')) linkPage = linkPage.slice(0, -5)
     if (!linkPage || linkPage === '') linkPage = 'index'
 
-    if (linkPage === currentPage) {
+    let isMatch = false
+    if (slugParam && (href.includes(slugParam) || linkPage === slugParam)) {
+      isMatch = true
+    } else if (!slugParam && linkPage === currentPage) {
+      isMatch = true
+    } else if (isSolutionsOrProjects && linkPage === 'solutions' && link.classList.contains('nav-dropdown__toggle')) {
+      isMatch = true
+    }
+
+    if (isMatch) {
       link.classList.add('is-active', 'active')
       link.setAttribute('aria-current', 'page')
     } else {

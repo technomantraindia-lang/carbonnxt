@@ -198,19 +198,19 @@
 
     for (const src of pageExtras()) {
       try {
-        await loadScript(src)
+        await loadScript(prefix + src)
       } catch {
         /* optional page scripts */
       }
     }
 
     try {
-      await loadScript('assets/js/main.js')
+      await loadScript(prefix + 'assets/js/main.js')
     } catch {
       dismissLoader()
-      document.documentElement.classList.add('js')
-      Utils.$$('[data-reveal]').forEach((el) => el.classList.add('is-visible'))
     }
+    document.documentElement.classList.add('js')
+    Utils.$$('[data-reveal]').forEach((el) => el.classList.add('is-visible'))
   }
 
   if (document.readyState === 'loading') {
