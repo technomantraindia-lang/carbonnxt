@@ -23,8 +23,8 @@
 
     try {
       // Determine correct relative path to JSON file based on location
-      const jsonPath = window.location.pathname.includes('/solutions/') 
-        ? '../CarbonNxt_Solution_Inner_Pages.json' 
+      const jsonPath = window.location.pathname.includes('/solutions/')
+        ? '../CarbonNxt_Solution_Inner_Pages.json'
         : 'CarbonNxt_Solution_Inner_Pages.json';
 
       const response = await fetch(jsonPath);
@@ -144,64 +144,51 @@
       </section>
 
       <!-- 5 & 6. WHO IT IS FOR & USE CASES -->
-      <section style="padding-block: clamp(80px, 10vw, 120px); background: #f8faf9;">
+      <section style="padding-block: clamp(80px, 10vw, 120px); background: #ffffff;">
         <div class="container">
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(2rem, 4vw, 3.5rem); align-items: stretch;">
-            
-            <!-- LEFT CARD: Who It Is For -->
-            <div style="background: linear-gradient(165deg, #04101d 0%, #061e14 100%); border-radius: 28px; padding: clamp(2.2rem, 4vw, 3.2rem); border: 1px solid rgba(57, 228, 154, 0.3); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25); display: flex; flex-direction: column;">
-              <div style="margin-bottom: 2rem;">
-                <span class="section-label" style="color: #39e49a; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">TARGET AUDIENCE</span>
-                <h2 style="font-size: clamp(1.8rem, 2.8vw, 2.4rem); font-weight: 800; color: #ffffff; margin-top: 0.5rem; line-height: 1.25;">Who It Is For</h2>
-              </div>
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; flex-grow: 1;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 5vw, 4.5rem);">
+            <div>
+              <span class="section-label" style="color: #029a62; font-weight: 700;">TARGET AUDIENCE</span>
+              <h2 class="section-heading" style="color: #0f211a; font-size: 2rem; margin-bottom: 1rem;">Who It Is For</h2>
+              <div class="sol-pills-grid">
                 ${item.who_it_is_for.map(aud => `
-                  <div style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(57, 228, 154, 0.2); border-radius: 16px; padding: 1.1rem 1.25rem; display: flex; align-items: center; gap: 0.85rem; transition: all 0.3s ease;">
-                    <div style="width: 32px; height: 32px; border-radius: 10px; background: rgba(57, 228, 154, 0.16); color: #39e49a; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                    </div>
-                    <span style="font-size: 0.98rem; font-weight: 700; color: #ffffff; line-height: 1.3;">${aud}</span>
+                  <div class="sol-pill-tag">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>${aud}</span>
                   </div>
                 `).join('')}
               </div>
             </div>
-
-            <!-- RIGHT CARD: Use Cases -->
-            <div style="background: #ffffff; border-radius: 28px; padding: clamp(2.2rem, 4vw, 3.2rem); border: 1px solid rgba(2, 154, 98, 0.2); box-shadow: 0 20px 50px rgba(2, 154, 98, 0.06); display: flex; flex-direction: column;">
-              <div style="margin-bottom: 2rem;">
-                <span class="section-label" style="color: #029a62; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">APPLICATIONS</span>
-                <h2 style="font-size: clamp(1.8rem, 2.8vw, 2.4rem); font-weight: 800; color: #0f211a; margin-top: 0.5rem; line-height: 1.25;">Use Cases</h2>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 1rem; flex-grow: 1;">
+            <div>
+              <span class="section-label" style="color: #029a62; font-weight: 700;">APPLICATIONS</span>
+              <h2 class="section-heading" style="color: #0f211a; font-size: 2rem; margin-bottom: 1rem;">Use Cases</h2>
+              <div class="sol-pills-grid">
                 ${item.use_cases.map(uc => `
-                  <div style="background: #f4f8f6; border: 1px solid rgba(2, 154, 98, 0.14); border-radius: 16px; padding: 1.1rem 1.35rem; display: flex; align-items: center; gap: 1rem; transition: all 0.3s ease;">
-                    <div style="width: 34px; height: 34px; border-radius: 10px; background: rgba(2, 154, 98, 0.12); color: #029a62; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-                    </div>
-                    <span style="font-size: 0.98rem; font-weight: 700; color: #0f211a; line-height: 1.35;">${uc}</span>
+                  <div class="sol-pill-tag" style="background: #f4f8f6; border-color: rgba(2, 154, 98, 0.15);">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span>${uc}</span>
                   </div>
                 `).join('')}
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
       <!-- 7. BENEFITS -->
-      <section style="padding-block: clamp(80px, 10vw, 120px); background: #ffffff;">
+      <section style="padding-block: clamp(70px, 8vw, 100px); background: #f4f8f6;">
         <div class="container">
-          <header class="text-center" style="margin-bottom: 3.5rem;">
-            <span class="section-label" style="color: #029a62; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">VALUE DELIVERED</span>
+          <header class="text-center" style="margin-bottom: 3rem;">
+            <span class="section-label" style="color: #029a62; font-weight: 700;">VALUE DELIVERED</span>
             <h2 class="section-heading" style="color: #0f211a;">Key Benefits</h2>
           </header>
-          <div class="sol-benefits-grid">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
             ${item.benefits.map(b => `
-              <div class="sol-benefit-card">
-                <div style="width: 36px; height: 36px; border-radius: 10px; background: rgba(2, 154, 98, 0.12); color: #029a62; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <div style="background: #ffffff; padding: 1.75rem; border-radius: 18px; border: 1px solid rgba(2, 154, 98, 0.15); display: flex; align-items: flex-start; gap: 1rem;">
+                <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(2, 154, 98, 0.1); color: #029a62; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
                 </div>
-                <p style="font-size: 1.02rem; font-weight: 700; color: #0f211a; margin: 0; line-height: 1.45;">${b}</p>
+                <p style="font-size: 1rem; font-weight: 600; color: #0f211a; margin: 0; line-height: 1.45;">${b}</p>
               </div>
             `).join('')}
           </div>
@@ -212,27 +199,16 @@
       <section class="sol-support-section">
         <div class="container">
           <header class="text-center">
-            <span class="section-label" style="color: #39e49a; letter-spacing: 0.1em; text-transform: uppercase;">HOW CARBONNXT HELPS</span>
+            <span class="section-label" style="color: #39e49a;">HOW CARBONNXT HELPS</span>
             <h2 class="section-heading" style="color: #ffffff;">CarbonNxt Support</h2>
           </header>
           <div class="sol-support__grid">
-            ${item.carbonnxt_support.map((sup, idx) => {
-              const title = typeof sup === 'string' ? sup : (sup.title || sup.stage || sup.name || '');
-              const desc = typeof sup === 'object' && (sup.description || sup.details) ? (sup.description || sup.details) : '';
-              const num = idx + 1 < 10 ? `0${idx + 1}` : `${idx + 1}`;
-              return `
-                <div class="sol-support-card">
-                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
-                    <span style="font-family: monospace; font-size: 0.82rem; font-weight: 800; color: #39e49a; letter-spacing: 0.1em; background: rgba(57, 228, 154, 0.12); padding: 0.35rem 0.75rem; border-radius: 8px; border: 1px solid rgba(57, 228, 154, 0.25);">STEP ${num}</span>
-                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(57, 228, 154, 0.12); color: #39e49a; display: flex; align-items: center; justify-content: center;">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                    </div>
-                  </div>
-                  <h3 style="font-size: 1.12rem !important; font-weight: 700 !important; color: #ffffff !important; margin-bottom: ${desc ? '0.5rem' : '0'} !important; line-height: 1.4 !important;">${title}</h3>
-                  ${desc ? `<p style="font-size: 0.95rem; line-height: 1.6; color: rgba(255, 255, 255, 0.75); margin: 0;">${desc}</p>` : ''}
-                </div>
-              `;
-            }).join('')}
+            ${item.carbonnxt_support.map(sup => `
+              <div class="sol-support-card">
+                <h3>${sup.title}</h3>
+                <p>${sup.description}</p>
+              </div>
+            `).join('')}
           </div>
         </div>
       </section>

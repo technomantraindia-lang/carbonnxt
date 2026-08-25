@@ -1,13 +1,38 @@
 <header class="site-header" id="site-header">
   <div class="container site-header__inner">
     <a href="index.html" class="site-logo" aria-label="CarbonNxt Home">
-      <img src="logo.png" alt="CarbonNxt Logo" class="site-logo__img" style="height: 55px; width: auto; object-fit: contain; display: block;">
+      <img src="logo.png" alt="CarbonNxt Logo" class="site-logo__img" style="height: 48px; width: auto; object-fit: contain; display: block;">
     </a>
     <nav class="site-nav" aria-label="Main navigation">
       <ul class="site-nav__list">
         <li><a href="index.html" class="site-nav__link">Home</a></li>
         <li><a href="about.html" class="site-nav__link">About</a></li>
-        <li><a href="solutions.html" class="site-nav__link">Solutions</a></li>
+        <li class="nav-dropdown">
+          <a href="solutions.html" class="site-nav__link nav-dropdown__toggle">
+            <span>Solutions</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left: 0.25rem;"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown__menu">
+            <div class="nav-dropdown__group">
+              <span class="nav-dropdown__label">CORE SOLUTIONS</span>
+              <a href="solutions/digital-mrv-monitoring.html" class="nav-dropdown__item">Digital MRV &amp; Monitoring</a>
+              <a href="solutions/carbon-asset-digitisation.html" class="nav-dropdown__item">Carbon Asset Digitisation</a>
+              <a href="solutions/carbon-market-advisory.html" class="nav-dropdown__item">Carbon Market Advisory</a>
+              <a href="solutions/knowledge-capacity-building.html" class="nav-dropdown__item">Knowledge &amp; Capacity Building</a>
+              <a href="solutions/field-data-iot-integration.html" class="nav-dropdown__item">Field Data &amp; IoT Integration</a>
+            </div>
+            <div class="nav-dropdown__group">
+              <span class="nav-dropdown__label">PROJECT TYPES</span>
+              <a href="projects/electric-mobility.html" class="nav-dropdown__item">Electric Mobility</a>
+              <a href="projects/solar-energy.html" class="nav-dropdown__item">Solar Energy</a>
+              <a href="projects/artisanal-biochar.html" class="nav-dropdown__item">Artisanal Biochar</a>
+              <a href="projects/industrial-biochar.html" class="nav-dropdown__item">Industrial Biochar</a>
+              <a href="projects/methane-reduction-cattle.html" class="nav-dropdown__item">Methane Reduction – Cattle</a>
+              <a href="projects/compressed-biogas-cbg.html" class="nav-dropdown__item">Compressed Biogas (CBG)</a>
+              <a href="projects/clean-cooking-cookstoves.html" class="nav-dropdown__item">Clean Cooking &amp; Cookstoves</a>
+            </div>
+          </div>
+        </li>
         <li><a href="buyer.html" class="site-nav__link">Buyer</a></li>
         <li><a href="seller.html" class="site-nav__link">Seller</a></li>
         <li><a href="insights.html" class="site-nav__link">Insights</a></li>
@@ -25,7 +50,23 @@
 <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
   <a href="index.html" class="mobile-nav__link">Home</a>
   <a href="about.html" class="mobile-nav__link">About</a>
-  <a href="solutions.html" class="mobile-nav__link">Solutions</a>
+  <a href="solutions.html" class="mobile-nav__link">Solutions Overview</a>
+  <div style="padding-left: 1rem; border-left: 2px solid rgba(57, 228, 154, 0.3); margin-block: 0.5rem; display: flex; flex-direction: column; gap: 0.4rem;">
+    <span style="font-size: 0.75rem; font-weight: 700; color: #39e49a; letter-spacing: 0.08em; text-transform: uppercase;">SOLUTIONS</span>
+    <a href="solutions/digital-mrv-monitoring.html" class="mobile-nav__link" style="font-size: 0.9rem; padding-block: 0.2rem;">Digital MRV &amp; Monitoring</a>
+    <a href="solutions/carbon-asset-digitisation.html" class="mobile-nav__link" style="font-size: 0.9rem; padding-block: 0.2rem;">Carbon Asset Digitisation</a>
+    <a href="solutions/carbon-market-advisory.html" class="mobile-nav__link" style="font-size: 0.9rem; padding-block: 0.2rem;">Carbon Market Advisory</a>
+    <a href="solutions/knowledge-capacity-building.html" class="mobile-nav__link" style="font-size: 0.9rem; padding-block: 0.2rem;">Knowledge &amp; Capacity Building</a>
+    <a href="solutions/field-data-iot-integration.html" class="mobile-nav__link" style="font-size: 0.9rem; padding-block: 0.2rem;">Field Data &amp; IoT Integration</a>
+    <span style="font-size: 0.75rem; font-weight: 700; color: #39e49a; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.5rem;">PROJECT TYPES</span>
+    <a href="projects/electric-mobility.html" class="mobile-nav__link" style="font-size: 0.9rem; padding-block: 0.2rem;">Electric Mobility</a>
+    <a href="projects/solar-energy.html" class="mobile-nav__link" style="font-size: 0.9rem; padding-block: 0.2rem;">Solar Energy</a>
+    <a href="projects/artisanal-biochar.html" class="mobile-nav__link" style="font-size: 0.9rem; padding-block: 0.2rem;">Artisanal Biochar</a>
+    <a href="projects/industrial-biochar.html" class="mobile-nav__link" style="font-size: 0.9rem; padding-block: 0.2rem;">Industrial Biochar</a>
+    <a href="projects/methane-reduction-cattle.html" class="mobile-nav__link" style="font-size: 0.9rem; padding-block: 0.2rem;">Methane Reduction – Cattle</a>
+    <a href="projects/compressed-biogas-cbg.html" class="mobile-nav__link" style="font-size: 0.9rem; padding-block: 0.2rem;">Compressed Biogas (CBG)</a>
+    <a href="projects/clean-cooking-cookstoves.html" class="mobile-nav__link" style="font-size: 0.9rem; padding-block: 0.2rem;">Clean Cooking &amp; Cookstoves</a>
+  </div>
   <a href="buyer.html" class="mobile-nav__link">Buyer</a>
   <a href="seller.html" class="mobile-nav__link">Seller</a>
   <a href="insights.html" class="mobile-nav__link">Insights</a>

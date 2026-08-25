@@ -3,6 +3,22 @@
  * Must work even when fetch fails (e.g. file://) so content still appears.
  */
 (function () {
+  const path = window.location.pathname.replace(/\\/g, '/')
+  const isSubfolder = path.includes('/solutions/') || path.includes('/projects/')
+  const prefix = isSubfolder ? '../' : ''
+
+  function adjustRelativePaths(container) {
+    if (!isSubfolder || !container) return
+    container.querySelectorAll('[href], [src]').forEach((el) => {
+      ['href', 'src'].forEach((attr) => {
+        const val = el.getAttribute(attr)
+        if (val && !val.startsWith('http') && !val.startsWith('//') && !val.startsWith('#') && !val.startsWith('mailto:') && !val.startsWith('tel:') && !val.startsWith('../')) {
+          el.setAttribute(attr, prefix + val)
+        }
+      })
+    })
+  }
+
   async function loadPartials() {
     const headerPh = document.getElementById('header-placeholder')
     const footerPh = document.getElementById('footer-placeholder')
@@ -13,64 +29,94 @@
         throw new Error('Use a local server (not file://) for full navigation.')
       }
       const [h, f] = await Promise.all([
-        fetch('assets/partials/header.html').then((r) => {
+        fetch(`${prefix}assets/partials/header.html`).then((r) => {
           if (!r.ok) throw new Error('header')
           return r.text()
         }),
-        fetch('assets/partials/footer.html').then((r) => {
+        fetch(`${prefix}assets/partials/footer.html`).then((r) => {
           if (!r.ok) throw new Error('footer')
           return r.text()
         }),
       ])
-      if (headerPh) headerPh.outerHTML = h
-      if (footerPh) footerPh.outerHTML = f
+      if (headerPh) {
+        headerPh.outerHTML = h
+        const newHeader = document.getElementById('site-header')
+        if (newHeader && newHeader.parentElement) adjustRelativePaths(newHeader.parentElement)
+      }
+      if (footerPh) {
+        footerPh.outerHTML = f
+        const newFooter = document.querySelector('.site-footer')
+        if (newFooter && newFooter.parentElement) adjustRelativePaths(newFooter.parentElement)
+      }
       const mn = document.getElementById('mobile-nav')
       if (mn) mn.removeAttribute('hidden')
       if (typeof initNavigation === 'function') initNavigation()
     } catch {
       if (headerPh) {
         // Full offline fallback (e.g. file://) — mirrors assets/partials/header.html
-        // so navigation still works without a local server.
-        const NAV_LINKS = [
-          ['index.html', 'Home'],
-          ['about.html', 'About'],
-          ['solutions.html', 'Solutions'],
-          ['buyer.html', 'Buyer'],
-          ['seller.html', 'Seller'],
-          ['marketplace.html', 'Marketplace'],
-          ['technology.html', 'Technology'],
-          ['insights.html', 'Insights'],
-          ['contact.html', 'Contact'],
-        ]
-        const desktopLinks = NAV_LINKS.map(
-          ([href, label]) => `<li><a href="${href}" class="site-nav__link">${label}</a></li>`
-        ).join('')
-        const mobileLinks = NAV_LINKS.map(
-          ([href, label]) => `<a href="${href}" class="mobile-nav__link">${label}</a>`
-        ).join('')
-        headerPh.innerHTML =
-          '<header class="site-header is-solid" id="site-header">' +
-            '<div class="container site-header__inner">' +
-              '<a href="index.html" class="site-logo" aria-label="CarbonNxt Home">' +
-                '<img src="logo.png" alt="CarbonNxt Logo" class="site-logo__img" style="height: 55px; width: auto; object-fit: contain; display: block;">' +
-              '</a>' +
-              '<nav class="site-nav" aria-label="Main navigation">' +
-                `<ul class="site-nav__list">${desktopLinks}</ul>` +
-                '<div class="site-nav__actions">' +
-                  '<a href="contact.html" class="btn btn-primary">Inquiry</a>' +
-                '</div>' +
-              '</nav>' +
-              '<button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">' +
-                '<span class="nav-toggle__bar"></span>' +
-              '</button>' +
-            '</div>' +
-          '</header>' +
-          '<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">' +
-            `${mobileLinks}` +
-            '<div class="mobile-nav__actions">' +
-              '<a href="contact.html" class="btn btn-primary">Inquiry</a>' +
-            '</div>' +
-          '</nav>'
+        headerPh.innerHTML = `
+          <header class="site-header is-solid" id="site-header">
+            <div class="container site-header__inner">
+              <a href="${prefix}index.html" class="site-logo" aria-label="CarbonNxt Home">
+                <img src="${prefix}logo.png" alt="CarbonNxt Logo" class="site-logo__img" style="height: 48px; width: auto; object-fit: contain; display: block;">
+              </a>
+              <nav class="site-nav" aria-label="Main navigation">
+                <ul class="site-nav__list">
+                  <li><a href="${prefix}index.html" class="site-nav__link">Home</a></li>
+                  <li><a href="${prefix}about.html" class="site-nav__link">About</a></li>
+                  <li class="nav-dropdown">
+                    <a href="${prefix}solutions.html" class="site-nav__link nav-dropdown__toggle">
+                      <span>Solutions</span>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left: 0.25rem;"><polyline points="6 9 12 15 18 9"/></svg>
+                    </a>
+                    <div class="nav-dropdown__menu">
+                      <div class="nav-dropdown__group">
+                        <span class="nav-dropdown__label">CORE SOLUTIONS</span>
+                        <a href="${prefix}solutions/digital-mrv-monitoring.html" class="nav-dropdown__item">Digital MRV & Monitoring</a>
+                        <a href="${prefix}solutions/carbon-asset-digitisation.html" class="nav-dropdown__item">Carbon Asset Digitisation</a>
+                        <a href="${prefix}solutions/carbon-market-advisory.html" class="nav-dropdown__item">Carbon Market Advisory</a>
+                        <a href="${prefix}solutions/knowledge-capacity-building.html" class="nav-dropdown__item">Knowledge & Capacity Building</a>
+                        <a href="${prefix}solutions/field-data-iot-integration.html" class="nav-dropdown__item">Field Data & IoT Integration</a>
+                      </div>
+                      <div class="nav-dropdown__group">
+                        <span class="nav-dropdown__label">PROJECT TYPES</span>
+                        <a href="${prefix}projects/electric-mobility.html" class="nav-dropdown__item">Electric Mobility</a>
+                        <a href="${prefix}projects/solar-energy.html" class="nav-dropdown__item">Solar Energy</a>
+                        <a href="${prefix}projects/artisanal-biochar.html" class="nav-dropdown__item">Artisanal Biochar</a>
+                        <a href="${prefix}projects/industrial-biochar.html" class="nav-dropdown__item">Industrial Biochar</a>
+                        <a href="${prefix}projects/methane-reduction-cattle.html" class="nav-dropdown__item">Methane Reduction – Cattle</a>
+                        <a href="${prefix}projects/compressed-biogas-cbg.html" class="nav-dropdown__item">Compressed Biogas (CBG)</a>
+                        <a href="${prefix}projects/clean-cooking-cookstoves.html" class="nav-dropdown__item">Clean Cooking & Cookstoves</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li><a href="${prefix}buyer.html" class="site-nav__link">Buyer</a></li>
+                  <li><a href="${prefix}seller.html" class="site-nav__link">Seller</a></li>
+                  <li><a href="${prefix}insights.html" class="site-nav__link">Insights</a></li>
+                  <li><a href="${prefix}contact.html" class="site-nav__link">Contact</a></li>
+                </ul>
+                <div class="site-nav__actions">
+                  <a href="${prefix}contact.html" class="btn btn-primary">Inquiry</a>
+                </div>
+              </nav>
+              <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+                <span class="nav-toggle__bar"></span>
+              </button>
+            </div>
+          </header>
+          <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+            <a href="${prefix}index.html" class="mobile-nav__link">Home</a>
+            <a href="${prefix}about.html" class="mobile-nav__link">About</a>
+            <a href="${prefix}solutions.html" class="mobile-nav__link">Solutions Overview</a>
+            <a href="${prefix}buyer.html" class="mobile-nav__link">Buyer</a>
+            <a href="${prefix}seller.html" class="mobile-nav__link">Seller</a>
+            <a href="${prefix}insights.html" class="mobile-nav__link">Insights</a>
+            <a href="${prefix}contact.html" class="mobile-nav__link">Contact</a>
+            <div class="mobile-nav__actions">
+              <a href="${prefix}contact.html" class="btn btn-primary">Inquiry</a>
+            </div>
+          </nav>
+        `
         if (typeof initNavigation === 'function') initNavigation()
       }
     }
@@ -101,17 +147,12 @@
   }
 
   function populateConfigData() {
-    const config = typeof SITE_CONFIG !== 'undefined' ? SITE_CONFIG : {
-      email: 'info@carbonnxt.com',
-      phone: '+91 98982 26312',
-      phoneHref: 'tel:+919898226312',
-      address: '812, Fortune Business Hub, Near Shell Petrol Pump, Science City Road, Ahmedabad, Gujarat 380060',
-    }
+    if (typeof SITE_CONFIG === 'undefined') return
 
     // Populate text content
     document.querySelectorAll('[data-config-text]').forEach((el) => {
       const key = el.getAttribute('data-config-text')
-      const val = config[key]
+      const val = SITE_CONFIG[key]
       if (val) el.textContent = val
     })
 
@@ -119,7 +160,7 @@
     document.querySelectorAll('[data-config-href]').forEach((el) => {
       const key = el.getAttribute('data-config-href')
       const type = el.getAttribute('data-config-type')
-      let val = config[key]
+      let val = SITE_CONFIG[key]
       if (val) {
         if (type === 'mailto' && !val.startsWith('mailto:')) {
           val = `mailto:${val}`
