@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Type Details | CarbonNxt</title>
+  <meta name="description" content="Explore CarbonNxt project methodologies and carbon project types including electric mobility, solar, biochar, CBG, methane reduction, and clean cookstoves.">
+
+  <!-- Preconnect Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Global & Page Styles -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <style>
+    /* ==========================================================================
+       Project Detail Specific Styles
+       ========================================================================== */
+
+    .prj-detail-hero {
+      position: relative;
+      padding-top: clamp(140px, 14vw, 180px);
+      padding-bottom: clamp(60px, 8vw, 100px);
+      background: linear-gradient(165deg, #030d18 0%, #061e14 50%, #04101d 100%);
+      overflow: hidden;
+      color: #ffffff;
+    }
+
+    .prj-detail-hero__grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(2rem, 5vw, 4.5rem);
+      align-items: center;
+    }
+
+    .prj-detail-hero__title {
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem) !important;
+      line-height: 1.12 !important;
+      font-weight: 800 !important;
+      color: #ffffff !important;
+      margin-bottom: 1rem !important;
+      letter-spacing: -0.025em !important;
+    }
+
+    .prj-cat-badges {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .prj-cat-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(57, 228, 154, 0.15);
+      border: 1px solid rgba(57, 228, 154, 0.3);
+      color: #39e49a;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .prj-detail-hero__tagline {
+      font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+      font-weight: 600;
+      color: #39e49a;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .prj-detail-hero__desc {
+      font-size: clamp(1rem, 1.3vw, 1.12rem);
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 2.25rem;
+      max-width: 62ch;
+    }
+
+    .prj-detail-hero__actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .prj-detail-hero__visual {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(57, 228, 154, 0.3);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+      background: rgba(4, 20, 35, 0.9);
+      aspect-ratio: 4 / 3;
+    }
+
+    .prj-detail-hero__visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Section 2: Overview */
+    .prj-overview-section {
+      padding-block: clamp(80px, 10vw, 120px);
+      background: #ffffff;
+      color: #0f211a;
+    }
+
+    .prj-overview__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2.5rem, 6vw, 5rem);
+      align-items: center;
+    }
+
+    .prj-overview__title {
+      font-size: clamp(1.8rem, 3vw, 2.4rem) !important;
+      font-weight: 800 !important;
+      line-height: 1.3 !important;
+      color: #0f211a !important;
+      margin-bottom: 1.5rem !important;
+    }
+
+    .prj-overview__paragraphs p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #334e42;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Section 3 & 4: Process & Activities */
+    .prj-step-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2.25rem;
+      border: 1px solid rgba(2, 154, 98, 0.15);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
+
+    .prj-step-num {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #029a62;
+      margin-bottom: 1rem;
+    }
+
+    /* Section 6: MRV Data Points */
+    .prj-mrv-section {
+      padding-block: clamp(80px, 10vw, 120px);
+      background: #04101d;
+      color: #ffffff;
+    }
+
+    .prj-mrv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .prj-mrv-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      border: 1px solid rgba(57, 228, 154, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .prj-mrv-card svg {
+      color: #39e49a;
+      flex-shrink: 0;
+    }
+
+    .prj-mrv-card span {
+      font-size: 1rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Section 8 & 9: Buyer & Developer Relevance */
+    .relevance-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .relevance-card {
+      border-radius: 24px;
+      padding: clamp(2rem, 4vw, 3rem);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.04);
+    }
+
+    .relevance-card--buyer {
+      background: #ffffff;
+      border: 1px solid rgba(2, 154, 98, 0.2);
+    }
+
+    .relevance-card--developer {
+      background: linear-gradient(165deg, #04101d 0%, #061e14 100%);
+      color: #ffffff;
+      border: 1px solid rgba(57, 228, 154, 0.3);
+    }
+
+    .relevance-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.75rem 0 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .relevance-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      font-size: 1.02rem;
+      line-height: 1.5;
+      font-weight: 600;
+    }
+
+    .relevance-card--buyer .relevance-list li {
+      color: #1a3328;
+    }
+
+    .relevance-card--developer .relevance-list li {
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .relevance-list svg {
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* Section 10: CarbonNxt Support Journey */
+    .support-journey-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.75rem;
+      margin-top: 3.5rem;
+    }
+
+    .support-journey-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid rgba(2, 154, 98, 0.15);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
+
+    .support-journey-card h3 {
+      font-size: 1.2rem !important;
+      font-weight: 700 !important;
+      color: #029a62 !important;
+      margin-bottom: 0.75rem !important;
+    }
+
+    .support-journey-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #334e42;
+      margin: 0;
+    }
+
+    @media (max-width: 980px) {
+      .prj-detail-hero__grid,
+      .prj-overview__grid,
+      .relevance-split {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main id="main-content">
+    <!-- Rendered dynamically by assets/js/project-detail.js -->
+    <div id="project-detail-app">
+      <div style="padding: 180px 20px; text-align: center; color: #4e6057;">
+        <h2>Loading Project Type Details...</h2>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/project-detail.js"></script>
+</body>
+</html>
