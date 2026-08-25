@@ -248,7 +248,14 @@
 }
 
 .site-nav { display: flex; align-items: center; gap: 0.25rem; }
-.site-nav__list { display: flex; align-items: center; gap: 0.15rem; }
+.site-nav__list {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.15rem !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 .site-nav__link {
   display: flex;
   align-items: center;
