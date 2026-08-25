@@ -254,19 +254,30 @@
       </section>
 
       <!-- 10. CARBONNXT SUPPORT JOURNEY -->
-      <section style="padding-block: clamp(80px, 10vw, 120px); background: #ffffff;">
+      <section style="padding-block: clamp(80px, 10vw, 120px); background: linear-gradient(165deg, #021a12 0%, #04101d 100%); color: #ffffff;">
         <div class="container">
           <header class="text-center">
-            <span class="section-label" style="color: #029a62; font-weight: 700;">END-TO-END SUPPORT</span>
-            <h2 class="section-heading" style="color: #0f211a;">CarbonNxt Support Journey</h2>
+            <span class="section-label" style="color: #39e49a; letter-spacing: 0.1em; text-transform: uppercase;">END-TO-END SUPPORT</span>
+            <h2 class="section-heading" style="color: #ffffff;">CarbonNxt Support Journey</h2>
           </header>
           <div class="support-journey-grid">
-            ${item.carbonnxt_support.map(sup => `
-              <div class="support-journey-card">
-                <h3>${sup.stage}</h3>
-                <p>${sup.details}</p>
-              </div>
-            `).join('')}
+            ${item.carbonnxt_support.map((sup, idx) => {
+              const title = typeof sup === 'string' ? sup : (sup.title || sup.stage || sup.name || '');
+              const desc = typeof sup === 'object' && (sup.description || sup.details) ? (sup.description || sup.details) : '';
+              const num = idx + 1 < 10 ? `0${idx + 1}` : `${idx + 1}`;
+              return `
+                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 1.85rem 1.75rem; border: 1px solid rgba(57, 228, 154, 0.25); box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25); display: flex; flex-direction: column; transition: all 0.35s ease;">
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+                    <span style="font-family: monospace; font-size: 0.82rem; font-weight: 800; color: #39e49a; letter-spacing: 0.1em; background: rgba(57, 228, 154, 0.12); padding: 0.35rem 0.75rem; border-radius: 8px; border: 1px solid rgba(57, 228, 154, 0.25);">STEP ${num}</span>
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(57, 228, 154, 0.12); color: #39e49a; display: flex; align-items: center; justify-content: center;">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                  </div>
+                  <h3 style="font-size: 1.12rem !important; font-weight: 700 !important; color: #ffffff !important; margin-bottom: ${desc ? '0.5rem' : '0'} !important; line-height: 1.4 !important;">${title}</h3>
+                  ${desc ? `<p style="font-size: 0.95rem; line-height: 1.6; color: rgba(255, 255, 255, 0.75); margin: 0;">${desc}</p>` : ''}
+                </div>
+              `;
+            }).join('')}
           </div>
         </div>
       </section>
