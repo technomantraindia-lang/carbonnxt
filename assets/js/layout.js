@@ -101,12 +101,17 @@
   }
 
   function populateConfigData() {
-    if (typeof SITE_CONFIG === 'undefined') return
+    const config = typeof SITE_CONFIG !== 'undefined' ? SITE_CONFIG : {
+      email: 'info@carbonnxt.com',
+      phone: '+91 98982 26312',
+      phoneHref: 'tel:+919898226312',
+      address: '812, Fortune Business Hub, Near Shell Petrol Pump, Science City Road, Ahmedabad, Gujarat 380060',
+    }
 
     // Populate text content
     document.querySelectorAll('[data-config-text]').forEach((el) => {
       const key = el.getAttribute('data-config-text')
-      const val = SITE_CONFIG[key]
+      const val = config[key]
       if (val) el.textContent = val
     })
 
@@ -114,7 +119,7 @@
     document.querySelectorAll('[data-config-href]').forEach((el) => {
       const key = el.getAttribute('data-config-href')
       const type = el.getAttribute('data-config-type')
-      let val = SITE_CONFIG[key]
+      let val = config[key]
       if (val) {
         if (type === 'mailto' && !val.startsWith('mailto:')) {
           val = `mailto:${val}`
