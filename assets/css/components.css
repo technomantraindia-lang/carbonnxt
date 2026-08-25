@@ -353,11 +353,11 @@ body.nav-open { overflow: hidden; }
 /* Footer */
 /* Footer */
 .site-footer {
-  background: linear-gradient(180deg, #0a192f 0%, #050d18 100%);
-  border-top: 1px solid rgba(57, 228, 154, 0.15);
+  background: #04101d;
+  border-top: 1px solid rgba(57, 228, 154, 0.25);
   position: relative;
   padding-block: 5rem 3rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #ffffff;
 }
 .site-footer::before {
   content: '';
@@ -367,12 +367,12 @@ body.nav-open { overflow: hidden; }
   right: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, #39e49a, transparent);
-  opacity: 0.4;
+  opacity: 0.6;
   animation: footerGlow 4s ease-in-out infinite;
 }
 @keyframes footerGlow {
-  0%, 100% { opacity: 0.25; }
-  50% { opacity: 0.7; }
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.85; }
 }
 .site-footer__grid {
   display: grid;
@@ -380,50 +380,64 @@ body.nav-open { overflow: hidden; }
   gap: clamp(2rem, 5vw, 4rem);
   margin-bottom: 3.5rem;
 }
+.site-footer p {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
 .site-footer__brand p {
-  font-size: 0.92rem;
+  font-size: 0.94rem;
   margin-top: 1.25rem;
-  max-width: 42ch;
-  color: rgba(255, 255, 255, 0.65);
+  max-width: 44ch;
+  color: rgba(255, 255, 255, 0.88) !important;
   line-height: 1.65;
 }
 .site-footer__col h4 {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #ffffff;
+  color: #39e49a !important;
   margin-bottom: 1.25rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 .site-footer__col a {
   display: block;
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: #ffffff !important;
   padding: 0.45rem 0;
   transition: color var(--duration) var(--ease), transform 0.2s ease;
   text-decoration: none;
+  font-weight: 500;
 }
 .site-footer__col a:hover {
-  color: #39e49a;
+  color: #39e49a !important;
   transform: translateX(4px);
 }
 .site-footer__contact {
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
+  margin-top: 0.75rem;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.9) !important;
+  line-height: 1.7;
 }
 .site-footer__contact p {
   margin-top: 0.65rem;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+.site-footer__contact strong {
+  color: #39e49a !important;
+  font-weight: 700;
 }
 .site-footer__contact a {
-  color: #39e49a;
+  color: #ffffff !important;
   text-decoration: none;
   font-weight: 600;
-  transition: opacity 0.2s;
+  border-bottom: 1px solid rgba(57, 228, 154, 0.4);
+  transition: all 0.2s ease;
 }
 .site-footer__contact a:hover {
-  opacity: 0.85;
+  color: #39e49a !important;
+  border-bottom-color: #39e49a;
+}
+.site-footer__contact span {
+  color: rgba(255, 255, 255, 0.88) !important;
 }
 .site-footer__bottom {
   display: flex;
@@ -432,9 +446,12 @@ body.nav-open { overflow: hidden; }
   justify-content: space-between;
   gap: 1rem;
   padding-top: 2.25rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+.site-footer__bottom p {
+  color: rgba(255, 255, 255, 0.75) !important;
 }
 
 /* Cards */
