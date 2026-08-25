@@ -1,0 +1,896 @@
+{
+  "meta": {
+    "project": "CarbonNxt",
+    "content_type": "project_inner_pages",
+    "version": "1.0",
+    "notes": [
+      "Reusable JSON for CarbonNxt project-detail pages.",
+      "Project types follow the project/methodology areas already included in the CarbonNxt site direction.",
+      "All copy is original CarbonNxt-ready wording, not copied from RenewCred.",
+      "Do not publish live prices, project counts, registry partnerships, issuance volumes, or certification claims unless confirmed by the client.",
+      "Carbon Removal, Emissions Avoidance, and Emissions Reduction are used as classifications, not separate detail pages."
+    ]
+  },
+  "template_sections": [
+    "hero",
+    "overview",
+    "how_it_works",
+    "project_activities",
+    "climate_value",
+    "mrv_and_data",
+    "certification_readiness",
+    "buyer_relevance",
+    "developer_relevance",
+    "carbonnxt_support",
+    "faq",
+    "cta"
+  ],
+  "projects": [
+    {
+      "id": "electric-mobility",
+      "slug": "electric-mobility",
+      "name": "Electric Mobility",
+      "short_name": "EV",
+      "impact_category": [
+        "Emissions Reduction",
+        "Emissions Avoidance"
+      ],
+      "hero": {
+        "eyebrow": "LOW-CARBON TRANSPORT",
+        "title": "Electric Mobility Projects",
+        "tagline": "Accelerating the shift toward cleaner, lower-emission transport.",
+        "description": "CarbonNxt supports electric-mobility project developers with project-readiness guidance, monitoring structure, carbon-market positioning and buyer access where applicable eligibility requirements are met.",
+        "primary_cta": "Submit Your Project",
+        "secondary_cta": "Talk to a Carbon Expert"
+      },
+      "overview": {
+        "title": "Electric-mobility projects can reduce transport-related greenhouse-gas emissions by replacing higher-emission vehicles or transport systems with electric alternatives.",
+        "paragraphs": [
+          "Electric-mobility projects can reduce transport-related greenhouse-gas emissions by replacing higher-emission vehicles or transport systems with electric alternatives.",
+          "Potential activities can include electric fleets, buses, commercial vehicles and organized mobility-transition programs.",
+          "CarbonNxt helps developers understand readiness, data needs, monitoring expectations and market pathways."
+        ]
+      },
+      "how_it_works": [
+        {
+          "step": 1,
+          "title": "Define the Mobility Activity",
+          "description": "Identify vehicle category, operating model, baseline activity, geography and project boundary."
+        },
+        {
+          "step": 2,
+          "title": "Establish Data Requirements",
+          "description": "Organize vehicle activity, energy use, distance travelled, fleet records and other relevant data."
+        },
+        {
+          "step": 3,
+          "title": "Monitor Performance",
+          "description": "Track project activity through structured operating records and digital monitoring where applicable."
+        },
+        {
+          "step": 4,
+          "title": "Prepare for Market Access",
+          "description": "Align project documentation with the relevant certification pathway and buyer requirements."
+        }
+      ],
+      "project_activities": [
+        "Electric fleet transition programs",
+        "Electric buses and public transport",
+        "Electric commercial and delivery vehicles",
+        "Structured EV deployment programs",
+        "Charging-supported fleet operations where relevant"
+      ],
+      "climate_value": {
+        "title": "Potential Climate Value",
+        "points": [
+          "Reduced fossil-fuel consumption",
+          "Lower operational greenhouse-gas emissions",
+          "Support for cleaner mobility",
+          "Potential air-quality and energy-transition co-benefits"
+        ]
+      },
+      "mrv_and_data": {
+        "title": "Monitoring, Reporting & Verification",
+        "description": "Project-specific monitoring requirements depend on the selected methodology and standard. CarbonNxt can support structured data and evidence workflows where applicable.",
+        "data_points": [
+          "Vehicle and fleet identification",
+          "Distance travelled",
+          "Electricity or energy use",
+          "Baseline vehicle or fuel information",
+          "Operating dates and locations",
+          "Supporting field or system records"
+        ]
+      },
+      "certification_readiness": {
+        "title": "Certification Readiness",
+        "description": "Eligibility, baseline selection, additionality, monitoring rules and crediting requirements depend on the methodology and standard selected. CarbonNxt can support developers in organizing project information before formal certification engagement."
+      },
+      "buyer_relevance": {
+        "title": "Why Buyers May Consider EV",
+        "points": [
+          "Clear transport-decarbonisation story",
+          "Potential alignment with sustainable-mobility strategies",
+          "Operational data can support measurable tracking",
+          "Relevant for technology-led emissions-reduction portfolios"
+        ]
+      },
+      "developer_relevance": {
+        "title": "For Project Developers",
+        "description": "CarbonNxt can help EV project owners assess readiness, organize documentation, structure monitoring and prepare for buyer conversations."
+      },
+      "carbonnxt_support": [
+        "Project-readiness review",
+        "Methodology and documentation guidance",
+        "Digital MRV support where applicable",
+        "Market positioning",
+        "Buyer matching",
+        "Pricing and transaction support",
+        "Settlement support"
+      ],
+      "faq": [
+        {
+          "question": "Can every EV deployment generate carbon credits?",
+          "answer": "No. Eligibility depends on project structure, methodology, baseline, additionality, monitoring requirements and the selected standard."
+        },
+        {
+          "question": "What data may be needed?",
+          "answer": "Fleet activity, distance travelled, energy use, vehicle details, baseline information and operating records may be relevant."
+        },
+        {
+          "question": "Can CarbonNxt help before certification?",
+          "answer": "Yes. The CarbonNxt seller model includes project-readiness and certification guidance before market access."
+        }
+      ],
+      "cta": {
+        "title": "Planning an Electric Mobility Carbon Project?",
+        "description": "Share your project details with CarbonNxt and explore the next steps for monitoring, certification support and market access.",
+        "primary_button": "Submit Your Project",
+        "secondary_button": "Talk to Our Team"
+      }
+    },
+    {
+      "id": "solar-energy",
+      "slug": "solar-energy",
+      "name": "Solar Energy",
+      "short_name": "Solar",
+      "impact_category": [
+        "Emissions Reduction",
+        "Emissions Avoidance"
+      ],
+      "hero": {
+        "eyebrow": "RENEWABLE ENERGY",
+        "title": "Solar Energy Projects",
+        "tagline": "Supporting the transition from higher-emission power to cleaner generation.",
+        "description": "CarbonNxt supports eligible solar-energy projects with project-readiness guidance, documentation support, monitoring structure, carbon-market positioning and buyer connectivity.",
+        "primary_cta": "Submit Your Project",
+        "secondary_cta": "Talk to a Carbon Expert"
+      },
+      "overview": {
+        "title": "Solar projects can contribute to emissions reduction by replacing or displacing electricity generated from more carbon-intensive sources.",
+        "paragraphs": [
+          "Solar projects can contribute to emissions reduction by replacing or displacing electricity generated from more carbon-intensive sources.",
+          "Potential structures include grid-connected generation, distributed solar and commercial or industrial solar programs.",
+          "CarbonNxt helps developers organize project information, understand methodology requirements and prepare suitable projects for carbon-market participation."
+        ]
+      },
+      "how_it_works": [
+        {
+          "step": 1,
+          "title": "Define the Project",
+          "description": "Document installation, generation model, project boundary, commissioning timeline and operating structure."
+        },
+        {
+          "step": 2,
+          "title": "Establish the Baseline",
+          "description": "Identify the baseline scenario and emissions source being displaced or reduced."
+        },
+        {
+          "step": 3,
+          "title": "Monitor Generation",
+          "description": "Maintain reliable energy-generation and operating records."
+        },
+        {
+          "step": 4,
+          "title": "Prepare for Certification & Market",
+          "description": "Organize evidence, monitoring records and project documentation for the appropriate pathway."
+        }
+      ],
+      "project_activities": [
+        "Grid-connected solar",
+        "Commercial and industrial solar",
+        "Distributed solar programs",
+        "Solar replacing higher-emission electricity",
+        "Eligible renewable-energy transition projects"
+      ],
+      "climate_value": {
+        "title": "Potential Climate Value",
+        "points": [
+          "Lower electricity-related emissions",
+          "Reduced dependence on fossil-fuel-based power",
+          "Support for renewable-energy transition",
+          "Potential energy-access co-benefits"
+        ]
+      },
+      "mrv_and_data": {
+        "title": "Monitoring, Reporting & Verification",
+        "description": "Project-specific monitoring requirements depend on the selected methodology and standard. CarbonNxt can support structured data and evidence workflows where applicable.",
+        "data_points": [
+          "Electricity generation",
+          "Meter readings",
+          "Commissioning and operating dates",
+          "Project capacity",
+          "Grid or baseline information",
+          "Maintenance and operating records where required"
+        ]
+      },
+      "certification_readiness": {
+        "title": "Certification Readiness",
+        "description": "Carbon eligibility for solar depends on the selected standard, methodology, additionality requirements, baseline rules, geography and project timing. CarbonNxt can help organize information needed to evaluate the pathway."
+      },
+      "buyer_relevance": {
+        "title": "Why Buyers May Consider Solar",
+        "points": [
+          "Easy-to-understand renewable-energy narrative",
+          "Measurable generation data",
+          "Alignment with clean-energy strategies",
+          "Potential fit for emissions-reduction or avoidance portfolios"
+        ]
+      },
+      "developer_relevance": {
+        "title": "For Project Developers",
+        "description": "CarbonNxt can help solar developers assess readiness, improve documentation quality, structure data collection and prepare for market access where eligible."
+      },
+      "carbonnxt_support": [
+        "Project-readiness review",
+        "Certification and documentation guidance",
+        "MRV and data-structure support",
+        "Buyer matching",
+        "Market positioning",
+        "Pricing guidance",
+        "Transaction support"
+      ],
+      "faq": [
+        {
+          "question": "Does every solar project qualify?",
+          "answer": "No. Qualification depends on methodology, standard, additionality, baseline, geography, timing and other eligibility rules."
+        },
+        {
+          "question": "What records are important?",
+          "answer": "Generation data, meter records, project capacity, commissioning information, baseline data and supporting operational documentation may be relevant."
+        },
+        {
+          "question": "Can CarbonNxt help an operating project?",
+          "answer": "Yes. CarbonNxt can review available project information and help identify readiness or documentation gaps before market engagement."
+        }
+      ],
+      "cta": {
+        "title": "Have a Solar Project with Carbon-Market Potential?",
+        "description": "Talk to CarbonNxt about readiness, monitoring, certification support and access to suitable buyer demand.",
+        "primary_button": "Submit Your Project",
+        "secondary_button": "Talk to Our Team"
+      }
+    },
+    {
+      "id": "artisanal-biochar",
+      "slug": "artisanal-biochar",
+      "name": "Artisanal Biochar",
+      "short_name": "Biochar – Artisanal",
+      "impact_category": [
+        "Carbon Removal"
+      ],
+      "hero": {
+        "eyebrow": "DURABLE CARBON REMOVAL",
+        "title": "Artisanal Biochar Projects",
+        "tagline": "Decentralized biochar pathways designed for measurable, long-term carbon storage.",
+        "description": "CarbonNxt supports small-scale and decentralized biochar models with project-readiness guidance, field-data structure, digital MRV support, certification preparation and buyer access.",
+        "primary_cta": "Submit Your Project",
+        "secondary_cta": "Talk to a Carbon Expert"
+      },
+      "overview": {
+        "title": "Artisanal biochar projects can convert suitable biomass residues into stable biochar through controlled production processes.",
+        "paragraphs": [
+          "Artisanal biochar projects can convert suitable biomass residues into stable biochar through controlled production processes.",
+          "Because decentralized projects may involve many small production sites, batches, operators and evidence points, strong monitoring and data organization can be especially important.",
+          "CarbonNxt can help structure field evidence, production records, MRV workflows, certification readiness and market positioning."
+        ]
+      },
+      "how_it_works": [
+        {
+          "step": 1,
+          "title": "Source Suitable Biomass",
+          "description": "Identify eligible feedstock and maintain traceable sourcing records."
+        },
+        {
+          "step": 2,
+          "title": "Produce Biochar",
+          "description": "Convert biomass through the defined process and record relevant batch and operating information."
+        },
+        {
+          "step": 3,
+          "title": "Capture Evidence",
+          "description": "Maintain field records, photos, timestamps, quantities, locations and other relevant evidence."
+        },
+        {
+          "step": 4,
+          "title": "Monitor & Prepare for Market",
+          "description": "Organize MRV and project documentation for certification and buyer evaluation."
+        }
+      ],
+      "project_activities": [
+        "Small-scale biochar production",
+        "Decentralized kiln operations",
+        "Agricultural-residue utilization",
+        "Batch-level monitoring",
+        "Field evidence and sample collection",
+        "Biochar application or storage pathways where applicable"
+      ],
+      "climate_value": {
+        "title": "Potential Climate Value",
+        "points": [
+          "Durable carbon storage",
+          "Productive use of biomass residues",
+          "Potential reduction in unmanaged residue burning or decomposition",
+          "Possible soil and land-management co-benefits"
+        ]
+      },
+      "mrv_and_data": {
+        "title": "Monitoring, Reporting & Verification",
+        "description": "Project-specific monitoring requirements depend on the selected methodology and standard. CarbonNxt can support structured data and evidence workflows where applicable.",
+        "data_points": [
+          "Feedstock type and source",
+          "Batch identification",
+          "Production location",
+          "Production timestamps",
+          "Moisture/process observations where required",
+          "Biochar output quantity",
+          "Photo/video evidence",
+          "Sample records",
+          "Application or storage records where relevant"
+        ]
+      },
+      "certification_readiness": {
+        "title": "Certification Readiness",
+        "description": "Biochar projects require alignment with the selected methodology, eligible feedstock rules, production requirements, monitoring procedures, permanence assumptions and verification evidence. CarbonNxt can support readiness preparation."
+      },
+      "buyer_relevance": {
+        "title": "Why Buyers May Consider Biochar – Artisanal",
+        "points": [
+          "Durable carbon-removal pathway",
+          "Strong agricultural-residue narrative",
+          "Potential rural and livelihood co-benefits",
+          "Field-level evidence can strengthen traceability"
+        ]
+      },
+      "developer_relevance": {
+        "title": "For Project Developers",
+        "description": "CarbonNxt can help structure the project from field activity to market readiness, including digital evidence, monitoring workflows, certification preparation and buyer matching."
+      },
+      "carbonnxt_support": [
+        "Project design and readiness review",
+        "Field-data and digital MRV structure",
+        "Certification documentation guidance",
+        "Methodology-readiness support",
+        "Buyer matching",
+        "Pricing guidance",
+        "Transaction support"
+      ],
+      "faq": [
+        {
+          "question": "How is artisanal biochar different from industrial biochar?",
+          "answer": "Artisanal biochar generally involves smaller-scale or decentralized production, while industrial biochar typically uses larger centralized systems and more automated process controls."
+        },
+        {
+          "question": "Is field evidence important?",
+          "answer": "Yes. Decentralized production can require strong batch, feedstock, location, quantity and evidence records depending on the methodology."
+        },
+        {
+          "question": "Can CarbonNxt support digital MRV?",
+          "answer": "Yes, where appropriate. Digital MRV is one of the CarbonNxt solution areas already included in the website direction."
+        }
+      ],
+      "cta": {
+        "title": "Building an Artisanal Biochar Carbon Project?",
+        "description": "Connect with CarbonNxt to structure monitoring, certification readiness, buyer access and the carbon-market pathway.",
+        "primary_button": "Submit Your Project",
+        "secondary_button": "Talk to Our Team"
+      }
+    },
+    {
+      "id": "industrial-biochar",
+      "slug": "industrial-biochar",
+      "name": "Industrial Biochar",
+      "short_name": "Biochar – Industrial",
+      "impact_category": [
+        "Carbon Removal"
+      ],
+      "hero": {
+        "eyebrow": "ENGINEERED CARBON REMOVAL",
+        "title": "Industrial Biochar Projects",
+        "tagline": "Scalable biochar production with structured monitoring and durable carbon-storage potential.",
+        "description": "CarbonNxt supports industrial biochar projects with project readiness, monitoring structure, certification guidance, carbon-market positioning and buyer access.",
+        "primary_cta": "Submit Your Project",
+        "secondary_cta": "Talk to a Carbon Expert"
+      },
+      "overview": {
+        "title": "Industrial biochar projects typically use centralized production systems, controlled processing equipment and repeatable operating procedures.",
+        "paragraphs": [
+          "Industrial biochar projects typically use centralized production systems, controlled processing equipment and repeatable operating procedures.",
+          "These projects can generate detailed process and production data, creating opportunities for structured monitoring, consistent quality records and scalable carbon accounting.",
+          "CarbonNxt helps developers prepare documentation, monitoring systems, certification pathways and market-access materials."
+        ]
+      },
+      "how_it_works": [
+        {
+          "step": 1,
+          "title": "Feedstock Qualification",
+          "description": "Identify eligible biomass sources and establish traceable sourcing and handling records."
+        },
+        {
+          "step": 2,
+          "title": "Controlled Production",
+          "description": "Operate the conversion process with documented production parameters and batch records."
+        },
+        {
+          "step": 3,
+          "title": "Measure Output & Quality",
+          "description": "Record production quantities, samples and relevant process information."
+        },
+        {
+          "step": 4,
+          "title": "Verify & Commercialize",
+          "description": "Prepare the project for certification, buyer review and transaction execution."
+        }
+      ],
+      "project_activities": [
+        "Centralized industrial biochar plants",
+        "Biomass-residue conversion",
+        "Automated or semi-automated pyrolysis",
+        "Batch and production-line monitoring",
+        "Output sampling and quality records",
+        "Industrial-scale storage or application pathways"
+      ],
+      "climate_value": {
+        "title": "Potential Climate Value",
+        "points": [
+          "Durable carbon storage",
+          "Scalable biomass-residue treatment",
+          "Consistent process monitoring",
+          "Potential industrial and agricultural co-benefits"
+        ]
+      },
+      "mrv_and_data": {
+        "title": "Monitoring, Reporting & Verification",
+        "description": "Project-specific monitoring requirements depend on the selected methodology and standard. CarbonNxt can support structured data and evidence workflows where applicable.",
+        "data_points": [
+          "Feedstock origin and type",
+          "Feedstock quantity",
+          "Production batch records",
+          "Process conditions where required",
+          "Biochar output quantity",
+          "Sampling or quality records",
+          "Storage/application records",
+          "Facility operating data"
+        ]
+      },
+      "certification_readiness": {
+        "title": "Certification Readiness",
+        "description": "Certification requirements can include feedstock eligibility, production controls, permanence, monitoring, sampling and verification. CarbonNxt can help developers prepare a structured documentation package."
+      },
+      "buyer_relevance": {
+        "title": "Why Buyers May Consider Biochar – Industrial",
+        "points": [
+          "Durable carbon-removal narrative",
+          "Potential for scalable supply",
+          "Structured production and monitoring data",
+          "Technology-enabled operations"
+        ]
+      },
+      "developer_relevance": {
+        "title": "For Project Developers",
+        "description": "CarbonNxt can support project readiness, certification documentation, MRV structure, buyer positioning, pricing conversations and transaction execution."
+      },
+      "carbonnxt_support": [
+        "Project-readiness assessment",
+        "Certification and documentation guidance",
+        "Digital MRV and data workflow support",
+        "Buyer matching",
+        "Market positioning",
+        "Pricing guidance",
+        "Transaction support"
+      ],
+      "faq": [
+        {
+          "question": "Why separate industrial and artisanal biochar?",
+          "answer": "They can differ substantially in production scale, monitoring systems, process controls, data capture and operating structure."
+        },
+        {
+          "question": "Does industrial production automatically qualify?",
+          "answer": "No. Eligibility depends on methodology, feedstock, process, monitoring, permanence, additionality and certification requirements."
+        },
+        {
+          "question": "Can CarbonNxt help with buyer access?",
+          "answer": "Yes. Buyer matching and sales support are part of the client-defined CarbonNxt seller model."
+        }
+      ],
+      "cta": {
+        "title": "Scaling an Industrial Biochar Project?",
+        "description": "Speak with CarbonNxt about monitoring, certification readiness, pricing, buyer access and transaction support.",
+        "primary_button": "Submit Your Project",
+        "secondary_button": "Talk to Our Team"
+      }
+    },
+    {
+      "id": "methane-reduction-cattle",
+      "slug": "methane-reduction-cattle",
+      "name": "Methane Reduction – Cattle",
+      "short_name": "Methane (Cattle)",
+      "impact_category": [
+        "Emissions Reduction",
+        "Emissions Avoidance"
+      ],
+      "hero": {
+        "eyebrow": "AGRICULTURAL EMISSIONS",
+        "title": "Methane Reduction – Cattle",
+        "tagline": "Supporting measurable approaches to reducing livestock-related methane emissions.",
+        "description": "CarbonNxt supports eligible livestock methane-reduction projects with project readiness, monitoring structure, certification guidance and carbon-market access.",
+        "primary_cta": "Submit Your Project",
+        "secondary_cta": "Talk to a Carbon Expert"
+      },
+      "overview": {
+        "title": "Livestock systems can generate methane through biological and waste-management processes. Eligible carbon projects may focus on reducing, avoiding or capturing methane through defined interventions.",
+        "paragraphs": [
+          "Livestock systems can generate methane through biological and waste-management processes. Eligible carbon projects may focus on reducing, avoiding or capturing methane through defined interventions.",
+          "Project design and monitoring can vary significantly depending on the intervention, farm system, methodology and geography.",
+          "CarbonNxt can help developers organize project data, assess readiness and prepare suitable projects for certification and buyer engagement."
+        ]
+      },
+      "how_it_works": [
+        {
+          "step": 1,
+          "title": "Define the Baseline",
+          "description": "Document existing livestock or manure-management conditions and the emissions baseline."
+        },
+        {
+          "step": 2,
+          "title": "Implement the Intervention",
+          "description": "Apply the eligible methane-reduction, capture, treatment or management activity."
+        },
+        {
+          "step": 3,
+          "title": "Monitor Results",
+          "description": "Maintain relevant farm, animal, treatment, feed or waste records depending on methodology."
+        },
+        {
+          "step": 4,
+          "title": "Prepare for Verification",
+          "description": "Organize project evidence and monitoring records for the selected certification pathway."
+        }
+      ],
+      "project_activities": [
+        "Livestock methane-reduction interventions",
+        "Manure-management improvements",
+        "Methane capture or treatment systems",
+        "Eligible feed or operational interventions where supported",
+        "Farm-level monitoring and evidence collection"
+      ],
+      "climate_value": {
+        "title": "Potential Climate Value",
+        "points": [
+          "Reduction of a high-impact greenhouse gas",
+          "Improved livestock or waste-management practices",
+          "Potential farm-efficiency co-benefits",
+          "Potential integration with agricultural monitoring systems"
+        ]
+      },
+      "mrv_and_data": {
+        "title": "Monitoring, Reporting & Verification",
+        "description": "Project-specific monitoring requirements depend on the selected methodology and standard. CarbonNxt can support structured data and evidence workflows where applicable.",
+        "data_points": [
+          "Farm and herd information",
+          "Animal counts or categories",
+          "Intervention records",
+          "Feed/manure data where relevant",
+          "Operating dates",
+          "Monitoring measurements",
+          "Field evidence"
+        ]
+      },
+      "certification_readiness": {
+        "title": "Certification Readiness",
+        "description": "The applicable methodology determines which interventions are eligible and how reductions must be monitored and quantified. CarbonNxt can help organize project information before formal certification work."
+      },
+      "buyer_relevance": {
+        "title": "Why Buyers May Consider Methane (Cattle)",
+        "points": [
+          "Targets a potent greenhouse gas",
+          "Supports agricultural decarbonisation",
+          "Potential for measurable farm-level interventions",
+          "Relevant for agriculture-linked emissions-reduction portfolios"
+        ]
+      },
+      "developer_relevance": {
+        "title": "For Project Developers",
+        "description": "CarbonNxt can help structure project information, monitoring workflows, certification readiness, buyer positioning and transaction support."
+      },
+      "carbonnxt_support": [
+        "Project-readiness assessment",
+        "Monitoring-data structure",
+        "Certification guidance",
+        "Digital MRV where applicable",
+        "Buyer matching",
+        "Market positioning",
+        "Transaction support"
+      ],
+      "faq": [
+        {
+          "question": "What types of cattle methane projects qualify?",
+          "answer": "Eligibility depends on the intervention and methodology. CarbonNxt should not claim eligibility until the specific project is reviewed."
+        },
+        {
+          "question": "Is farm data required?",
+          "answer": "In many project structures, farm, herd, intervention and monitoring data may be required to establish and verify reductions."
+        },
+        {
+          "question": "Can this use IoT?",
+          "answer": "Field Data & IoT Integration is part of the CarbonNxt Solutions direction and may support monitoring where relevant."
+        }
+      ],
+      "cta": {
+        "title": "Developing a Livestock Methane-Reduction Project?",
+        "description": "Share your project with CarbonNxt and explore monitoring, certification readiness, buyer access and transaction support.",
+        "primary_button": "Submit Your Project",
+        "secondary_button": "Talk to Our Team"
+      }
+    },
+    {
+      "id": "compressed-biogas",
+      "slug": "compressed-biogas",
+      "name": "Compressed Biogas (CBG)",
+      "short_name": "CBG",
+      "impact_category": [
+        "Emissions Reduction",
+        "Emissions Avoidance"
+      ],
+      "hero": {
+        "eyebrow": "WASTE-TO-ENERGY",
+        "title": "Compressed Biogas (CBG) Projects",
+        "tagline": "Converting organic waste into renewable energy and measurable climate value.",
+        "description": "CarbonNxt supports eligible CBG projects with project readiness, monitoring structure, certification guidance, market positioning and buyer access.",
+        "primary_cta": "Submit Your Project",
+        "secondary_cta": "Talk to a Carbon Expert"
+      },
+      "overview": {
+        "title": "Compressed biogas projects can convert suitable organic feedstocks into renewable gas, potentially reducing unmanaged methane emissions and displacing fossil-based energy.",
+        "paragraphs": [
+          "Compressed biogas projects can convert suitable organic feedstocks into renewable gas, potentially reducing unmanaged methane emissions and displacing fossil-based energy.",
+          "Projects may involve agricultural residues, manure, food or organic waste, or other eligible feedstocks depending on the design and methodology.",
+          "CarbonNxt can help organize feedstock records, production data, monitoring systems, certification documentation and market-access materials."
+        ]
+      },
+      "how_it_works": [
+        {
+          "step": 1,
+          "title": "Source Feedstock",
+          "description": "Identify eligible organic feedstock and maintain traceable sourcing and quantity records."
+        },
+        {
+          "step": 2,
+          "title": "Produce Biogas",
+          "description": "Process feedstock through the defined digestion and gas-upgrading system."
+        },
+        {
+          "step": 3,
+          "title": "Monitor Energy & Emissions",
+          "description": "Record feedstock, gas production, energy use, leakage and other relevant operating data."
+        },
+        {
+          "step": 4,
+          "title": "Prepare for Market",
+          "description": "Organize methodology-relevant evidence for certification, buyer review and transaction support."
+        }
+      ],
+      "project_activities": [
+        "Anaerobic digestion",
+        "Biogas upgrading",
+        "Organic-waste processing",
+        "Agricultural-residue and manure utilization",
+        "Renewable-gas production",
+        "Fossil-fuel displacement where applicable"
+      ],
+      "climate_value": {
+        "title": "Potential Climate Value",
+        "points": [
+          "Methane avoidance or capture",
+          "Renewable-fuel production",
+          "Reduced unmanaged organic-waste emissions",
+          "Potential displacement of fossil-based energy"
+        ]
+      },
+      "mrv_and_data": {
+        "title": "Monitoring, Reporting & Verification",
+        "description": "Project-specific monitoring requirements depend on the selected methodology and standard. CarbonNxt can support structured data and evidence workflows where applicable.",
+        "data_points": [
+          "Feedstock type and quantity",
+          "Feedstock origin",
+          "Biogas production",
+          "Gas-upgrading output",
+          "Energy consumption",
+          "Leakage/loss records where applicable",
+          "Facility operating data",
+          "Fuel-use or displacement records"
+        ]
+      },
+      "certification_readiness": {
+        "title": "Certification Readiness",
+        "description": "Eligibility depends on project baseline, feedstock, methane treatment, energy use, leakage assumptions, additionality and methodology requirements. CarbonNxt can support structured preparation before formal certification."
+      },
+      "buyer_relevance": {
+        "title": "Why Buyers May Consider CBG",
+        "points": [
+          "Combines waste management and renewable energy",
+          "Potential methane-reduction benefits",
+          "Measurable facility-level operating data",
+          "Relevant for circular-economy and clean-energy strategies"
+        ]
+      },
+      "developer_relevance": {
+        "title": "For Project Developers",
+        "description": "CarbonNxt can help assess carbon-market readiness, organize monitoring data, support certification documentation and connect eligible projects with buyer demand."
+      },
+      "carbonnxt_support": [
+        "Project-readiness assessment",
+        "Feedstock and operational-data structure",
+        "Certification guidance",
+        "Digital MRV where applicable",
+        "Buyer matching",
+        "Pricing guidance",
+        "Transaction support"
+      ],
+      "faq": [
+        {
+          "question": "Can all CBG plants generate carbon credits?",
+          "answer": "No. Eligibility depends on baseline, feedstock, methane treatment, methodology, additionality and other criteria."
+        },
+        {
+          "question": "What operational data is important?",
+          "answer": "Feedstock quantities, gas production, facility operations, energy use, leakage-related data and displacement records may be relevant."
+        },
+        {
+          "question": "Can CarbonNxt help with buyer matching?",
+          "answer": "Yes. Buyer matching and sales support are part of the CarbonNxt seller model."
+        }
+      ],
+      "cta": {
+        "title": "Have a CBG Project with Carbon-Market Potential?",
+        "description": "Talk to CarbonNxt about readiness, monitoring, certification support, buyer access and carbon-credit transactions.",
+        "primary_button": "Submit Your Project",
+        "secondary_button": "Talk to Our Team"
+      }
+    },
+    {
+      "id": "clean-cooking-cookstoves",
+      "slug": "clean-cooking-cookstoves",
+      "name": "Clean Cooking & Cookstoves",
+      "short_name": "Cookstoves",
+      "impact_category": [
+        "Emissions Reduction",
+        "Emissions Avoidance"
+      ],
+      "hero": {
+        "eyebrow": "CLEAN COOKING",
+        "title": "Clean Cooking & Cookstove Projects",
+        "tagline": "Reducing fuel use and household emissions through improved cooking technologies.",
+        "description": "CarbonNxt supports eligible clean-cooking and cookstove programs with project readiness, monitoring structure, certification guidance, market positioning and buyer connectivity.",
+        "primary_cta": "Submit Your Project",
+        "secondary_cta": "Talk to a Carbon Expert"
+      },
+      "overview": {
+        "title": "Clean-cooking projects can reduce traditional fuel use by introducing more efficient or lower-emission cooking technologies.",
+        "paragraphs": [
+          "Clean-cooking projects can reduce traditional fuel use by introducing more efficient or lower-emission cooking technologies.",
+          "Depending on the program, monitoring may need to demonstrate distribution, continued use, fuel consumption, adoption, maintenance and other methodology-specific factors.",
+          "CarbonNxt can help developers organize implementation records, digital monitoring, certification readiness and market access."
+        ]
+      },
+      "how_it_works": [
+        {
+          "step": 1,
+          "title": "Define the Baseline",
+          "description": "Document existing cooking technology, fuel type, usage pattern and target population."
+        },
+        {
+          "step": 2,
+          "title": "Deploy the Intervention",
+          "description": "Distribute or install the eligible improved cooking technology and maintain recipient records."
+        },
+        {
+          "step": 3,
+          "title": "Monitor Use",
+          "description": "Track adoption, continued use, fuel savings, operating condition and required evidence."
+        },
+        {
+          "step": 4,
+          "title": "Verify & Access Market",
+          "description": "Prepare monitoring and project documentation for certification and buyer evaluation."
+        }
+      ],
+      "project_activities": [
+        "Improved biomass cookstoves",
+        "Cleaner household cooking technologies",
+        "Community or institutional cooking programs",
+        "Fuel-efficiency interventions",
+        "User-adoption and usage monitoring",
+        "Distribution and maintenance programs"
+      ],
+      "climate_value": {
+        "title": "Potential Climate Value",
+        "points": [
+          "Reduced household fuel consumption",
+          "Lower greenhouse-gas emissions",
+          "Potential reduction in pressure on biomass resources",
+          "Potential household air-quality and community co-benefits"
+        ]
+      },
+      "mrv_and_data": {
+        "title": "Monitoring, Reporting & Verification",
+        "description": "Project-specific monitoring requirements depend on the selected methodology and standard. CarbonNxt can support structured data and evidence workflows where applicable.",
+        "data_points": [
+          "Recipient or household records",
+          "Device or stove identification",
+          "Distribution dates",
+          "Usage monitoring",
+          "Fuel-consumption data",
+          "Survey records",
+          "Maintenance/replacement records",
+          "Location and field evidence where required"
+        ]
+      },
+      "certification_readiness": {
+        "title": "Certification Readiness",
+        "description": "Program eligibility depends on technology, baseline cooking practice, usage assumptions, monitoring approach, methodology, additionality and standard. CarbonNxt can support structured preparation."
+      },
+      "buyer_relevance": {
+        "title": "Why Buyers May Consider Cookstoves",
+        "points": [
+          "Clear household-level climate narrative",
+          "Potential community and health co-benefits",
+          "Scalable field implementation",
+          "Relevant for climate and social-impact portfolios"
+        ]
+      },
+      "developer_relevance": {
+        "title": "For Project Developers",
+        "description": "CarbonNxt can help structure field monitoring, certification documentation, market positioning, buyer matching and transaction support."
+      },
+      "carbonnxt_support": [
+        "Project-readiness assessment",
+        "Field-data and monitoring structure",
+        "Digital MRV where applicable",
+        "Certification guidance",
+        "Buyer matching",
+        "Project positioning",
+        "Transaction support"
+      ],
+      "faq": [
+        {
+          "question": "Does distributing cookstoves automatically create carbon credits?",
+          "answer": "No. The project must satisfy the applicable methodology and certification requirements, including baseline, usage, monitoring, additionality and verification."
+        },
+        {
+          "question": "Why is usage monitoring important?",
+          "answer": "Distribution alone may not demonstrate climate impact. Methodologies can require evidence that the technology is actually being used over time."
+        },
+        {
+          "question": "Can digital tools help?",
+          "answer": "Yes. CarbonNxt's Digital MRV and Field Data & IoT solution direction can support structured field-data workflows where appropriate."
+        }
+      ],
+      "cta": {
+        "title": "Developing a Clean-Cooking Carbon Program?",
+        "description": "Talk to CarbonNxt about monitoring, certification readiness, buyer access and transaction support.",
+        "primary_button": "Submit Your Project",
+        "secondary_button": "Talk to Our Team"
+      }
+    }
+  ]
+}
