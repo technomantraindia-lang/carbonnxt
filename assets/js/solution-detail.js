@@ -22,14 +22,31 @@
     }
 
     try {
-      // Determine correct relative path to JSON file based on location
-      const jsonPath = window.location.pathname.includes('/solutions/')
-        ? '../CarbonNxt_Solution_Inner_Pages.json'
-        : 'CarbonNxt_Solution_Inner_Pages.json';
+      const possiblePaths = [
+        'CarbonNxt_Solution_Inner_Pages.json',
+        './CarbonNxt_Solution_Inner_Pages.json',
+        '../CarbonNxt_Solution_Inner_Pages.json',
+        '/CarbonNxt_Solution_Inner_Pages.json'
+      ];
+      let data = null;
 
-      const response = await fetch(jsonPath);
-      if (!response.ok) throw new Error('Failed to load solutions data');
-      const data = await response.json();
+      for (const path of possiblePaths) {
+        try {
+          const res = await fetch(path);
+          if (res.ok) {
+            data = await res.json();
+            break;
+          }
+        } catch (e) {}
+      }
+
+      if (!data || !data.solutions) {
+        if (typeof FALLBACK_SOLUTIONS_DATA !== 'undefined') {
+          data = FALLBACK_SOLUTIONS_DATA;
+        } else {
+          throw new Error('Failed to load solutions data');
+        }
+      }
 
       const solution = data.solutions.find(
         (s) => s.slug === slug || s.id === slug
@@ -40,8 +57,8 @@
       console.error('Error rendering solution page:', err);
       container.innerHTML = `
         <div style="padding: 160px 20px; text-align: center; color: #0f211a;">
-          <h2 style="font-size: 2rem; margin-bottom: 1rem;">Solution Page Not Found</h2>
-          <p style="margin-bottom: 2rem;">We could not load the requested solution details.</p>
+          <h2 style="font-size: 2rem; margin-bottom: 1rem;">Solution Page</h2>
+          <p style="margin-bottom: 2rem;">Loading solution details...</p>
           <a href="${window.location.pathname.includes('/solutions/') ? '../solutions.html' : 'solutions.html'}" class="btn btn-primary">Return to Solutions</a>
         </div>
       `;

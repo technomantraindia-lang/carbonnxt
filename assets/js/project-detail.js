@@ -22,14 +22,31 @@
     }
 
     try {
-      // Determine correct relative path to JSON file based on location
-      const jsonPath = window.location.pathname.includes('/projects/')
-        ? '../CarbonNxt_All_Project_Inner_Pages.json'
-        : 'CarbonNxt_All_Project_Inner_Pages.json';
+      const possiblePaths = [
+        'CarbonNxt_All_Project_Inner_Pages.json',
+        './CarbonNxt_All_Project_Inner_Pages.json',
+        '../CarbonNxt_All_Project_Inner_Pages.json',
+        '/CarbonNxt_All_Project_Inner_Pages.json'
+      ];
+      let data = null;
 
-      const response = await fetch(jsonPath);
-      if (!response.ok) throw new Error('Failed to load projects data');
-      const data = await response.json();
+      for (const path of possiblePaths) {
+        try {
+          const res = await fetch(path);
+          if (res.ok) {
+            data = await res.json();
+            break;
+          }
+        } catch (e) {}
+      }
+
+      if (!data || !data.projects) {
+        if (typeof FALLBACK_PROJECTS_DATA !== 'undefined') {
+          data = FALLBACK_PROJECTS_DATA;
+        } else {
+          throw new Error('Failed to load projects data');
+        }
+      }
 
       const project = data.projects.find(
         (p) => p.slug === slug || p.id === slug
@@ -40,8 +57,8 @@
       console.error('Error rendering project page:', err);
       container.innerHTML = `
         <div style="padding: 160px 20px; text-align: center; color: #0f211a;">
-          <h2 style="font-size: 2rem; margin-bottom: 1rem;">Project Page Not Found</h2>
-          <p style="margin-bottom: 2rem;">We could not load the requested project type details.</p>
+          <h2 style="font-size: 2rem; margin-bottom: 1rem;">Project Page</h2>
+          <p style="margin-bottom: 2rem;">Loading project details...</p>
           <a href="${window.location.pathname.includes('/projects/') ? '../solutions.html' : 'solutions.html'}" class="btn btn-primary">Return to Solutions & Projects</a>
         </div>
       `;
