@@ -401,27 +401,20 @@
     }
 
     @media (max-width: 980px) {
-
       .sol-detail-hero__grid,
       .sol-overview__grid,
       .sol-role-grid {
         grid-template-columns: 1fr;
       }
-
-      .sol-benefits-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .sol-flow__grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .sol-flow__grid,
       .sol-benefits-grid,
-      .sol-support-grid {
-        grid-template-columns: 1fr;
+      .sol-support-grid,
+      .sol-caps__grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
       }
 
       .sol-role-card {
