@@ -95,11 +95,11 @@
     .ct-form-wrap {
       max-width: 900px;
       margin: clamp(2.5rem, 5vw, 3.5rem) auto 0;
-      background: var(--color-white);
+      background: #ffffff;
       border-radius: 24px;
       padding: clamp(2rem, 4vw, 3.5rem);
-      border: 1px solid rgba(2, 154, 98, 0.08);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+      border: 1px solid rgba(2, 154, 98, 0.15);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
     }
     .ct-form-grid {
       display: grid;
@@ -108,29 +108,55 @@
     }
     .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
     .form-group--full { grid-column: 1 / -1; }
-    .form-label { font-size: 0.88rem; font-weight: 700; color: var(--color-text-primary); }
-    .form-control {
-      width: 100%;
-      padding: 0.85rem 1.15rem;
-      border-radius: 8px;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      font-size: 0.95rem;
-      transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
-      background: var(--color-bg-secondary);
+    .ct-form-wrap .form-label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #0f211a !important;
+      margin-bottom: 0.35rem;
+      display: block;
     }
-    .form-control:focus {
-      outline: none;
-      border-color: var(--color-green);
-      box-shadow: 0 0 0 3px rgba(2, 154, 98, 0.08);
-      background: var(--color-white);
+    .ct-form-wrap .form-control,
+    .ct-form-wrap input,
+    .ct-form-wrap select,
+    .ct-form-wrap textarea {
+      width: 100% !important;
+      padding: 0.85rem 1.15rem !important;
+      border-radius: 10px !important;
+      border: 1px solid rgba(2, 154, 98, 0.25) !important;
+      font-size: 0.95rem !important;
+      color: #0f211a !important;
+      background: #f4f8f6 !important;
+      height: auto !important;
+      box-shadow: none !important;
+      font-family: inherit !important;
+      box-sizing: border-box !important;
+    }
+    .ct-form-wrap .form-control::placeholder,
+    .ct-form-wrap input::placeholder,
+    .ct-form-wrap textarea::placeholder {
+      color: #647a70 !important;
+      font-weight: 400 !important;
+    }
+    .ct-form-wrap .form-control:focus,
+    .ct-form-wrap input:focus,
+    .ct-form-wrap select:focus,
+    .ct-form-wrap textarea:focus {
+      outline: none !important;
+      border-color: #029a62 !important;
+      box-shadow: 0 0 0 4px rgba(2, 154, 98, 0.15) !important;
+      background: #ffffff !important;
+    }
+    .ct-form-wrap select option {
+      color: #0f211a !important;
+      background-color: #ffffff !important;
     }
     .form-select {
       appearance: none;
-      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236f5b64' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 1.15rem center;
-      background-size: 1.15rem;
-      padding-right: 2.5rem;
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23029a62' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+      background-repeat: no-repeat !important;
+      background-position: right 1.15rem center !important;
+      background-size: 1.15rem !important;
+      padding-right: 2.5rem !important;
     }
     @media (max-width: 640px) {
       .ct-form-grid { grid-template-columns: 1fr; }

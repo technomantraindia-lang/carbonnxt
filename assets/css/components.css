@@ -1083,7 +1083,7 @@ body.nav-open {
   flex-direction: column;
 }
 
-.form-group {
+.lead-magnet-form-card .form-group {
   margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -1091,7 +1091,7 @@ body.nav-open {
   width: 100% !important;
 }
 
-.form-label {
+.lead-magnet-form-card .form-label {
   display: block;
   font-size: 0.9rem;
   font-weight: 700;
@@ -1101,14 +1101,14 @@ body.nav-open {
   letter-spacing: 0.02em;
 }
 
-.form-control,
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="password"],
-input[type="number"],
-textarea,
-select {
+.lead-magnet-form-card .form-control,
+.lead-magnet-form-card input[type="text"],
+.lead-magnet-form-card input[type="email"],
+.lead-magnet-form-card input[type="tel"],
+.lead-magnet-form-card input[type="password"],
+.lead-magnet-form-card input[type="number"],
+.lead-magnet-form-card textarea,
+.lead-magnet-form-card select {
   display: block !important;
   width: 100% !important;
   box-sizing: border-box !important;
@@ -1126,23 +1126,23 @@ select {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.12) !important;
 }
 
-textarea.form-control,
-textarea {
+.lead-magnet-form-card textarea.form-control,
+.lead-magnet-form-card textarea {
   height: auto !important;
   min-height: 120px;
 }
 
-.form-control::placeholder,
-input::placeholder,
-textarea::placeholder {
+.lead-magnet-form-card .form-control::placeholder,
+.lead-magnet-form-card input::placeholder,
+.lead-magnet-form-card textarea::placeholder {
   color: rgba(255, 255, 255, 0.55) !important;
   font-weight: 400 !important;
 }
 
-.form-control:focus,
-input:focus,
-textarea:focus,
-select:focus {
+.lead-magnet-form-card .form-control:focus,
+.lead-magnet-form-card input:focus,
+.lead-magnet-form-card textarea:focus,
+.lead-magnet-form-card select:focus {
   border-color: #39e49a !important;
   background: rgba(255, 255, 255, 0.12) !important;
   box-shadow: 0 0 0 4px rgba(57, 228, 154, 0.22), inset 0 2px 4px rgba(0, 0, 0, 0.1) !important;

@@ -23,12 +23,13 @@
     document.title = item.name + ' | CarbonNxt Projects';
 
     const heroImg = {
-      'electric-mobility': 'assets/images/ui/buyer_journey.jpg',
+      'electric-mobility': 'assets/images/projects/electric-mobility.jpg',
       'solar-energy': 'assets/images/ui/section-forest.jpg',
-      'artisanal-biochar': 'assets/images/ui/seller_journey.jpg',
+      'artisanal-biochar': 'assets/images/projects/artisanal-biochar.jpg',
       'industrial-biochar': 'assets/images/ui/about-mission.jpg',
       'methane-reduction-cattle': 'assets/images/ui/why-trust.jpg',
       'compressed-biogas': 'assets/images/ui/platform-side.jpg',
+      'compressed-biogas-cbg': 'assets/images/ui/platform-side.jpg',
       'clean-cooking-cookstoves': 'assets/images/ui/cta-forest-network.jpg'
     };
     const img = heroImg[item.slug] || 'assets/images/ui/section-forest.jpg';
@@ -266,7 +267,14 @@
 
     try {
       var data = await loadJSON();
-      var project = data.projects.find(function (p) { return p.slug === slug || p.id === slug; }) || data.projects[0];
+      var project = data.projects.find(function (p) {
+        if (p.slug === slug || p.id === slug) return true;
+        if ((slug === 'compressed-biogas-cbg' || slug === 'compressed-biogas') &&
+            (p.slug === 'compressed-biogas-cbg' || p.slug === 'compressed-biogas' || p.id === 'compressed-biogas-cbg' || p.id === 'compressed-biogas')) {
+          return true;
+        }
+        return false;
+      }) || data.projects[0];
       render(container, project);
     } catch (err) {
       console.error('project-detail.js error:', err);

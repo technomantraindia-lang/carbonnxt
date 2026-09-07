@@ -643,8 +643,8 @@
       }
     },
     {
-      "id": "compressed-biogas",
-      "slug": "compressed-biogas",
+      "id": "compressed-biogas-cbg",
+      "slug": "compressed-biogas-cbg",
       "name": "Compressed Biogas (CBG)",
       "short_name": "CBG",
       "impact_category": [
