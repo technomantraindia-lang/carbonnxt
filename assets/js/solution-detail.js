@@ -99,19 +99,19 @@
       </section>
 
       <!-- 5 & 6. WHO IT IS FOR & USE CASES — Premium Redesign -->
-      <section style="padding-block:clamp(90px,12vw,140px);background:linear-gradient(180deg,#ffffff 0%,#f0f7f4 100%);">
+      <section style="padding-block:clamp(60px,10vw,120px);background:linear-gradient(180deg,#ffffff 0%,#f0f7f4 100%);">
         <div class="container">
-          <header class="text-center" style="margin-bottom:clamp(3rem,5vw,4.5rem);">
+          <header class="text-center" style="margin-bottom:clamp(2.5rem,5vw,4.5rem);">
             <span class="section-label" style="color:#029a62;font-weight:700;letter-spacing:0.12em;">BUILT FOR YOUR ROLE</span>
             <h2 class="section-heading" style="color:#0f211a;font-size:clamp(2rem,3.5vw,2.8rem);">Who It Serves & How It Applies</h2>
           </header>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,3vw,2.5rem);">
+          <div class="sol-role-grid">
 
             <!-- Target Audience Card -->
-            <div style="background:linear-gradient(165deg,#04101d 0%,#071e15 100%);border-radius:28px;padding:clamp(2rem,4vw,3.5rem);border:1px solid rgba(57,228,154,0.2);position:relative;overflow:hidden;">
+            <div class="sol-role-card" style="background:linear-gradient(165deg,#04101d 0%,#071e15 100%);border-radius:28px;padding:clamp(1.5rem,4vw,3.5rem);border:1px solid rgba(57,228,154,0.2);position:relative;overflow:hidden;">
               <div style="position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(57,228,154,0.08),transparent 70%);pointer-events:none;"></div>
-              <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.75rem;">
-                <div style="width:44px;height:44px;border-radius:14px;background:rgba(57,228,154,0.12);display:flex;align-items:center;justify-content:center;">
+              <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;">
+                <div style="width:44px;height:44px;border-radius:14px;background:rgba(57,228,154,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#39e49a" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 </div>
                 <div>
@@ -121,16 +121,16 @@
               </div>
               <div style="display:flex;flex-direction:column;gap:0.85rem;">
                 ${item.who_it_is_for.map(function(aud, i) {
-                  return '<div style="display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;background:rgba(255,255,255,0.04);border:1px solid rgba(57,228,154,0.12);border-radius:14px;transition:all 0.3s ease;" onmouseover="this.style.background=\'rgba(57,228,154,0.08)\';this.style.borderColor=\'rgba(57,228,154,0.3)\'" onmouseout="this.style.background=\'rgba(255,255,255,0.04)\';this.style.borderColor=\'rgba(57,228,154,0.12)\'"><div style="width:32px;height:32px;border-radius:10px;background:rgba(57,228,154,0.1);color:#39e49a;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;font-weight:800;">0' + (i+1) + '</div><span style="font-size:1rem;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.3;">' + aud + '</span></div>';
+                  return '<div class="sol-role-item" style="display:flex;align-items:center;gap:0.85rem;padding:0.85rem 1.15rem;background:rgba(255,255,255,0.04);border:1px solid rgba(57,228,154,0.12);border-radius:14px;transition:all 0.3s ease;" onmouseover="this.style.background=\'rgba(57,228,154,0.08)\';this.style.borderColor=\'rgba(57,228,154,0.3)\'" onmouseout="this.style.background=\'rgba(255,255,255,0.04)\';this.style.borderColor=\'rgba(57,228,154,0.12)\'"><div style="width:30px;height:30px;border-radius:10px;background:rgba(57,228,154,0.1);color:#39e49a;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;font-weight:800;">0' + (i+1) + '</div><span style="font-size:0.95rem;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.35;word-break:break-word;">' + aud + '</span></div>';
                 }).join('')}
               </div>
             </div>
 
             <!-- Use Cases Card -->
-            <div style="background:#ffffff;border-radius:28px;padding:clamp(2rem,4vw,3.5rem);border:1px solid rgba(2,154,98,0.12);box-shadow:0 20px 60px rgba(0,0,0,0.04);position:relative;overflow:hidden;">
+            <div class="sol-role-card" style="background:#ffffff;border-radius:28px;padding:clamp(1.5rem,4vw,3.5rem);border:1px solid rgba(2,154,98,0.12);box-shadow:0 20px 60px rgba(0,0,0,0.04);position:relative;overflow:hidden;">
               <div style="position:absolute;bottom:-80px;left:-80px;width:220px;height:220px;background:radial-gradient(circle,rgba(2,154,98,0.06),transparent 70%);pointer-events:none;"></div>
-              <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.75rem;">
-                <div style="width:44px;height:44px;border-radius:14px;background:rgba(2,154,98,0.08);display:flex;align-items:center;justify-content:center;">
+              <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;">
+                <div style="width:44px;height:44px;border-radius:14px;background:rgba(2,154,98,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#029a62" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
                 </div>
                 <div>
@@ -140,7 +140,7 @@
               </div>
               <div style="display:flex;flex-direction:column;gap:0.85rem;">
                 ${item.use_cases.map(function(uc) {
-                  return '<div style="display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.25rem;background:#f8fbf9;border:1px solid rgba(2,154,98,0.1);border-left:3px solid #029a62;border-radius:12px;transition:all 0.3s ease;" onmouseover="this.style.background=\'rgba(2,154,98,0.04)\';this.style.boxShadow=\'0 4px 16px rgba(2,154,98,0.08)\'" onmouseout="this.style.background=\'#f8fbf9\';this.style.boxShadow=\'none\'"><div style="width:28px;height:28px;border-radius:50%;background:rgba(2,154,98,0.1);color:#029a62;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span style="font-size:0.975rem;font-weight:600;color:#1a3328;line-height:1.45;">' + uc + '</span></div>';
+                  return '<div class="sol-role-item" style="display:flex;align-items:flex-start;gap:0.85rem;padding:0.85rem 1.15rem;background:#f8fbf9;border:1px solid rgba(2,154,98,0.1);border-left:3px solid #029a62;border-radius:12px;transition:all 0.3s ease;" onmouseover="this.style.background=\'rgba(2,154,98,0.04)\';this.style.boxShadow=\'0 4px 16px rgba(2,154,98,0.08)\'" onmouseout="this.style.background=\'#f8fbf9\';this.style.boxShadow=\'none\'"><div style="width:26px;height:26px;border-radius:50%;background:rgba(2,154,98,0.1);color:#029a62;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span style="font-size:0.95rem;font-weight:600;color:#1a3328;line-height:1.4;word-break:break-word;">' + uc + '</span></div>';
                 }).join('')}
               </div>
             </div>
@@ -150,15 +150,15 @@
       </section>
 
       <!-- 7. BENEFITS — Premium Redesign -->
-      <section style="padding-block:clamp(90px,12vw,140px);background:#ffffff;position:relative;">
+      <section style="padding-block:clamp(60px,10vw,120px);background:#ffffff;position:relative;">
         <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 70% 0%,rgba(2,154,98,0.04),transparent 55%),radial-gradient(ellipse at 30% 100%,rgba(57,228,154,0.03),transparent 50%);pointer-events:none;"></div>
         <div class="container" style="position:relative;z-index:1;">
-          <header class="text-center" style="margin-bottom:clamp(3rem,5vw,4.5rem);">
+          <header class="text-center" style="margin-bottom:clamp(2.5rem,5vw,4.5rem);">
             <span class="section-label" style="color:#029a62;font-weight:700;letter-spacing:0.12em;">VALUE DELIVERED</span>
             <h2 class="section-heading" style="color:#0f211a;font-size:clamp(2rem,3.5vw,2.8rem);">Key Benefits</h2>
             <p style="color:#4e6057;font-size:1.05rem;max-width:560px;margin:0.75rem auto 0;line-height:1.6;">Tangible outcomes that drive measurable impact across your carbon journey.</p>
           </header>
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+          <div class="sol-benefits-grid">
             ${item.benefits.map(function(b, i) {
               var icons = [
                 '<polyline points="20 6 9 17 4 12"/>',
@@ -171,7 +171,7 @@
                 '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'
               ];
               var iconPath = icons[i % icons.length];
-              return '<div style="background:#ffffff;border:1px solid rgba(2,154,98,0.1);border-radius:22px;padding:clamp(1.75rem,3vw,2.5rem);position:relative;overflow:hidden;transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);cursor:default;" onmouseover="this.style.transform=\'translateY(-5px)\';this.style.boxShadow=\'0 20px 50px rgba(2,154,98,0.1)\';this.style.borderColor=\'rgba(2,154,98,0.25)\'" onmouseout="this.style.transform=\'translateY(0)\';this.style.boxShadow=\'none\';this.style.borderColor=\'rgba(2,154,98,0.1)\'">' +
+              return '<div style="background:#ffffff;border:1px solid rgba(2,154,98,0.1);border-radius:22px;padding:clamp(1.5rem,3vw,2.5rem);position:relative;overflow:hidden;transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);cursor:default;" onmouseover="this.style.transform=\'translateY(-5px)\';this.style.boxShadow=\'0 20px 50px rgba(2,154,98,0.1)\';this.style.borderColor=\'rgba(2,154,98,0.25)\'" onmouseout="this.style.transform=\'translateY(0)\';this.style.boxShadow=\'none\';this.style.borderColor=\'rgba(2,154,98,0.1)\'">' +
                 '<div style="position:absolute;top:-30px;right:-30px;width:100px;height:100px;background:radial-gradient(circle,rgba(2,154,98,0.05),transparent 70%);pointer-events:none;"></div>' +
                 '<div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem;">' +
                   '<div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(2,154,98,0.12),rgba(57,228,154,0.06));display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#029a62" stroke-width="2">' + iconPath + '</svg></div>' +
@@ -186,10 +186,10 @@
       </section>
 
       <!-- 8. CARBONNXT SUPPORT — Premium Journey Redesign -->
-      <section style="padding-block:clamp(90px,12vw,140px);background:linear-gradient(165deg,#04101d 0%,#071e15 50%,#04101d 100%);position:relative;overflow:hidden;">
+      <section style="padding-block:clamp(60px,10vw,120px);background:linear-gradient(165deg,#04101d 0%,#071e15 50%,#04101d 100%);position:relative;overflow:hidden;">
         <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 20% 50%,rgba(57,228,154,0.05),transparent 60%),radial-gradient(ellipse at 80% 30%,rgba(2,154,98,0.04),transparent 50%);pointer-events:none;"></div>
         <div class="container" style="position:relative;z-index:1;">
-          <header class="text-center" style="margin-bottom:clamp(3rem,6vw,5rem);">
+          <header class="text-center" style="margin-bottom:clamp(2.5rem,5vw,5rem);">
             <span class="section-label" style="color:#39e49a;letter-spacing:0.14em;font-weight:700;">YOUR JOURNEY WITH US</span>
             <h2 class="section-heading" style="color:#fff;font-size:clamp(2rem,3.5vw,2.8rem);">CarbonNxt Support Journey</h2>
             <p style="color:rgba(255,255,255,0.6);font-size:1.05rem;max-width:600px;margin:1rem auto 0;line-height:1.6;">End-to-end guidance at every stage of your carbon project lifecycle.</p>
@@ -197,7 +197,7 @@
 
           <!-- Timeline connector line (desktop) -->
           <div style="position:relative;">
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;">
+            <div class="sol-support-grid">
               ${item.carbonnxt_support.map(function(sup, i) {
                 var title = typeof sup === 'string' ? sup : (sup.title || 'Support');
                 var icons = [
